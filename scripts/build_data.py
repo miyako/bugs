@@ -22,6 +22,7 @@ DATA_DIR = ROOT / "data"
 RAW_DIR = DATA_DIR / "raw" / "sha256"
 OUTPUT = ROOT / "public" / "data" / "fixed-bugs.json"
 DEFAULT_SEED = "https://developer.4d.com/FixedBugsList/versions/21.2/"
+DEFAULT_MAX_PAGES = 200
 HOST = "developer.4d.com"
 USER_AGENT = "4D-Fix-Finder/0.1 (+https://github.com/miyako/bugs)"
 ACI_PATTERN = re.compile(r"^ACI\d{7}$", re.IGNORECASE)
@@ -164,6 +165,29 @@ def version_from_url(url: str) -> dict[str, object]:
     return version
 
 
+def version_seed_urls(versions: list[dict[str, object]]) -> list[str]:
+    seeds: list[str] = []
+    for version in versions:
+        slug = version.get("officialSlug")
+        if not isinstance(slug, str) or not VERSION_PATTERN.fullmatch(slug):
+            raise ValueError(f"Invalid official version slug in existing dataset: {slug!r}")
+        seeds.append(f"https://{HOST}/FixedBugsList/versions/{slug}/")
+    return seeds
+
+
+def existing_version_seeds() -> list[str]:
+    if not OUTPUT.exists():
+        return []
+    try:
+        database = json.loads(OUTPUT.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError) as error:
+        raise ValueError(f"Could not read existing version seeds from {OUTPUT}: {error}") from error
+    versions = database.get("versions") if isinstance(database, dict) else None
+    if not isinstance(versions, list):
+        raise ValueError(f"Existing dataset has no version list: {OUTPUT}")
+    return version_seed_urls(versions)
+
+
 def parse_page(html: str, page_url: str, content_hash: str) -> tuple[dict[str, str], list[dict[str, str]], list[str]]:
     parser = FixedBugsPageParser()
     parser.feed(html)
@@ -297,9 +321,15 @@ def crawl(seeds: list[str], max_pages: int) -> dict[str, object]:
             records, page_evidence, discoveries = parse_page(html, url, content_hash)
         except (HTTPError, URLError, TimeoutError, ValueError, UnicodeError) as error:
             last_request = time.monotonic()
+            fetched_urls.add(url)
+            if isinstance(error, HTTPError) and error.code == 404:
+                page_version = version_from_url(url)
+                key = str(page_version["versionKey"])
+                versions.setdefault(key, {**page_version, "complete": False})
+                print(f"warning: official version page unavailable (HTTP 404): {url}", file=sys.stderr)
+                continue
             failures.append(f"{url}: {error}")
             print(f"warning: {failures[-1]}", file=sys.stderr)
-            fetched_urls.add(url)
             continue
 
         key = str(page_version["versionKey"])
@@ -395,11 +425,16 @@ def validate_database(database: dict[str, object]) -> None:
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--seed-url", action="append", default=[], help="Official version page to seed")
-    parser.add_argument("--max-pages", type=int, default=40, help="Maximum pages to fetch (default: 40)")
+    parser.add_argument(
+        "--max-pages",
+        type=int,
+        default=DEFAULT_MAX_PAGES,
+        help=f"Maximum pages to fetch (default: {DEFAULT_MAX_PAGES})",
+    )
     args = parser.parse_args()
     if args.max_pages < 1:
         parser.error("--max-pages must be at least 1")
-    seeds = args.seed_url or [DEFAULT_SEED]
+    seeds = args.seed_url or list(dict.fromkeys([DEFAULT_SEED, *existing_version_seeds()]))
     try:
         database = crawl(seeds, args.max_pages)
         validate_database(database)
@@ -412,8 +447,16 @@ def main() -> int:
         return 1
     print(
         f"Wrote {len(database['bugs'])} bugs, {len(database['versions'])} versions, "
+        f"{sum(bool(version['complete']) for version in database['versions'])} complete, "
+        f"{sum(not bool(version['complete']) for version in database['versions'])} incomplete, "
         f"and {len(database['evidence'])} fix events to {OUTPUT.relative_to(ROOT)}"
     )
+    if any(not bool(version["complete"]) for version in database["versions"]):
+        print(
+            "warning: some discovered versions remain incomplete because their pages were "
+            "unavailable or the page limit was reached",
+            file=sys.stderr,
+        )
     return 0
 
 

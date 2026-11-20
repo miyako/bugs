@@ -1,0 +1,345 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>4D - Bug Fixes</title>
+  <link rel="canonical" href="../../versions/20.2_HF1/">
+  <link rel="stylesheet" href="../../css/fixedbugs.css" type="text/css">
+  <script src="../../javascript/fixedbugs.js"></script>
+  <meta name="viewport" content="width=device-width, user-scalable=no">
+</head>
+<body>
+<div class="contain">
+<h1>All Products 20.2 HF1 <span class="superadmin">- Fixed bugs</span></h1>
+<a href="#top" title="Scroll top" class="scrollTop"></a>
+
+<table class="list">
+	<tr>
+		<td class="title">Reference</td>
+		<td class="description">Summary</td>
+		<td class="version">Fixed also with</td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0102960</th>
+		<td class="description">4D View Pro: Pivot tables may be corrupted when exporting a document.</td>
+		<td class="version"><a href="../../versions/20_R4/">20 R4</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103191</th>
+		<td class="description">4D View pro: error &quot;Incorrect file format&quot; generated when importing an Excel file.</td>
+		<td class="version"><a href="../../versions/20_R4/">20 R4</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103585</th>
+		<td class="description">4D View Pro: copy and paste of a formula returns wrong separator.</td>
+		<td class="version"><a href="../../versions/20_R4/">20 R4</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103597</th>
+		<td class="description">4D View Pro: the command &#39;VP REMOVE TABLE COLUMNS&#39; using Dutch or Spanish language doesn&#39;t work.</td>
+		<td class="version"><a href="../../versions/20_R4/">20 R4</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103660</th>
+		<td class="description">Using the command &#39;IMPORT DATA&#39; doesn&#39;t display the good choice of the Tables, after the use of &#39;SET TABLE TITLES&#39; and &#39;SET FIELD TITLES&#39;.</td>
+		<td class="version"><a href="../../versions/19.7_HF2/">19.7 HF2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103977</th>
+		<td class="description">When automatic session is disabled, the error stack may grow indefinitely on each REST access.</td>
+		<td class="version"><a href="../../versions/20_R4/">20 R4</a> <a href="../../versions/20_R3_HF1/">20 R3 HF1</a> <a href="../../versions/19.7_HF2/">19.7 HF2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104023</th>
+		<td class="description">Listbox scrolls unexpectedly to the end of the selection on drag operation.</td>
+		<td class="version"><a href="../../versions/20_R3/">20 R3</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104046</th>
+		<td class="description">In a listbox, incorrect redrawing of cell contents when scrolling if the text in the cell contains more lines than the max line height</td>
+		<td class="version"><a href="../../versions/20_R3/">20 R3</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104047</th>
+		<td class="description">After modifying the maximum line height via the command &#39;LISTBOX SET AUTO ROW HEIGHT&#39; , if you scroll via the command &#39;OBJECT SET SCROLL POSITION&#39;, the scroll does not take place at the correct position </td>
+		<td class="version"><a href="../../versions/20_R3/">20 R3</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104180</th>
+		<td class="description">In Japanese environment, runtime error in &#39;On Web Connection&#39; database method will cause an XML parse error and a corrupted Japanes text.</td>
+		<td class="version"><a href="../../versions/20_R3/">20 R3</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104203</th>
+		<td class="description">When you call &#39;WA OPEN WEB INSPECTOR&#39; on form with entryOrder, it may crash 4D.</td>
+		<td class="version"><a href="../../versions/20_R4/">20 R4</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104216</th>
+		<td class="description">4D View Pro: Memory Leak in 4D View Pro when using &#39;VP IMPORT FROM OBJECT&#39;.</td>
+		<td class="version"><a href="../../versions/20_R4/">20 R4</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104276</th>
+		<td class="description">The problem involves issues with accessing and editing code in the application C/S mode during development in 4D v20 on macOS. It can result in empty methods and/or frozen windows.</td>
+		<td class="version"><a href="../../versions/20_R3/">20 R3</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104337</th>
+		<td class="description">In the method editor : when trying to type a Japanese text that contains a dakuten in Half Width Katakana, the position of the cursor is not consistent; when deleting a certain text, a different text is deleted. </td>
+		<td class="version"><a href="../../versions/20_R3/">20 R3</a> <a href="../../versions/19.7_HF1/">19.7 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104353</th>
+		<td class="description">Unable to set text background color in label editor</td>
+		<td class="version"><a href="../../versions/19.7_HF2/">19.7 HF2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104360</th>
+		<td class="description">&#39;Compile Project&#39; command (with &quot;path to current file.project&quot; or &quot;external project file&quot;) doesn&#39;t compile successfully but returns a success and a wrong error message; if you have ORDA .save() in code but Compile Project() works fine.</td>
+		<td class="version"><a href="../../versions/20_R3/">20 R3</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104365</th>
+		<td class="description">&#39;PRINT LABEL&#39; command may print unexpectedly only 1 label per page in compiled mode (Windows system Only).</td>
+		<td class="version"><a href="../../versions/20_R3/">20 R3</a> <a href="../../versions/20_R2_HF2/">20 R2 HF2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104366</th>
+		<td class="description">4D application quits unexpectedly when sorting by relation attribute and object attribute</td>
+		<td class="version"><a href="../../versions/20_R3/">20 R3</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104381</th>
+		<td class="description">Depending of the scale display (Windows system option), picture pop-up menus are too small on windows high dpi.</td>
+		<td class="version"><a href="../../versions/20_R3/">20 R3</a> <a href="../../versions/20_R2_HF2/">20 R2 HF2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104384</th>
+		<td class="description">&#39;Create deployment license (mergedApp ; buildLicense ; oemLicense)&#39; works fine for built OEM server even if &quot;buildLicense&quot; isn&#39;t an OEM license.</td>
+		<td class="version"><a href="../../versions/20_R3/">20 R3</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104387</th>
+		<td class="description">4D Write Pro: Depending of HTML text, it may crash 4D Write Pro when opening it.</td>
+		<td class="version"><a href="../../versions/20_R3/">20 R3</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104388</th>
+		<td class="description">Listbox column bound to a list with multistyle will show &lt;span tags&gt; when entering and quit cell</td>
+		<td class="version"><a href="../../versions/20_R3/">20 R3</a> <a href="../../versions/19.7_HF1/">19.7 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104399</th>
+		<td class="description">Japanese text inappropriately taken away when deleting invalidated Japanese text</td>
+		<td class="version"><a href="../../versions/19.7_HF2/">19.7 HF2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104400</th>
+		<td class="description">After exporting to Project mode, invisible button with automatic Splitter action may miss its &quot;Pusher&quot; property.</td>
+		<td class="version"><a href="../../versions/20_R3/">20 R3</a> <a href="../../versions/19.7_HF1/">19.7 HF1</a> <a href="../../versions/20_R2_HF2/">20 R2 HF2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104401</th>
+		<td class="description">4D Write Pro: Breaks, other than paragraph, and line breaks can&#39;t be removed if they are at the end of the document.</td>
+		<td class="version"><a href="../../versions/20_R4/">20 R4</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104402</th>
+		<td class="description">Unexpected memory leaks generated by 4D.HTTPRequest.</td>
+		<td class="version"><a href="../../versions/20_R4/">20 R4</a> <a href="../../versions/20_R3_HF1/">20 R3 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104409</th>
+		<td class="description">&#39;OBJECT SET ENTERABLE&#39; doesn&#39;t disable properly a check box form object.</td>
+		<td class="version"><a href="../../versions/20_R3/">20 R3</a> <a href="../../versions/20_R2_HF2/">20 R2 HF2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104411</th>
+		<td class="description">Maximizing a window with a form containing a &#39;max width&#39; and a &#39;max height&#39; values may work with a wrong value of &#39;max width&#39;.</td>
+		<td class="version"><a href="../../versions/20_R3/">20 R3</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104413</th>
+		<td class="description">Using &#39;MAXIMIZE WINDOW&#39; 4D command after clicking on the window &#39;Maximise&#39; button may lead to a bad maximization.</td>
+		<td class="version"></td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104415</th>
+		<td class="description">After Maximizing and Minimizing a window in SDI mode, the restoring button doesn&#39;t restore the window at its previous position.</td>
+		<td class="version"><a href="../../versions/20_R4/">20 R4</a> <a href="../../versions/20_R3_HF1/">20 R3 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104417</th>
+		<td class="description">On Windows SVG images appear distorted if screen scaling is higher than 100&#37;</td>
+		<td class="version"></td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104418</th>
+		<td class="description">Using &quot;ObjectTools&quot; v5.1r1 plugin, the command &#39;OT GetPointer&#39; fails when ran in compiled mode.</td>
+		<td class="version"><a href="../../versions/20_R3/">20 R3</a> <a href="../../versions/20_R2_HF2/">20 R2 HF2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104419</th>
+		<td class="description">&#39;Create deployment license (mergedApp ; buildLicense ; oemLicense)&#39; works fine for built OEM server even if &quot;buildLicense&quot; is an OEM License with a &#39;timebomb&#39;.</td>
+		<td class="version"><a href="../../versions/20_R3/">20 R3</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104426</th>
+		<td class="description">A reference to pointer might be lost when passed to a component when this done in a process that has been created and killed several millions times</td>
+		<td class="version"><a href="../../versions/20_R3/">20 R3</a> <a href="../../versions/19.7_HF2/">19.7 HF2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104432</th>
+		<td class="description">The &#39;queryPath&#39; is invalid when performing joins with at least 3 level of &quot;AND&quot; and &quot;OR&quot; imbrications.</td>
+		<td class="version"><a href="../../versions/20_R3/">20 R3</a> <a href="../../versions/20_R2_HF2/">20 R2 HF2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104435</th>
+		<td class="description">Mandatory option of dataclass attributes does not generate an error as expected during the conversion from binary to project mode</td>
+		<td class="version"><a href="../../versions/20_R4/">20 R4</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104441</th>
+		<td class="description">4D quits unexpectedly after trying to display a listbox which properties are computed by a class object</td>
+		<td class="version"><a href="../../versions/20_R3/">20 R3</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104442</th>
+		<td class="description">Text of buttons are right-aligned after a conversion to project mode.</td>
+		<td class="version"><a href="../../versions/20_R3/">20 R3</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104445</th>
+		<td class="description">&quot;ServerEmbedsProjectDirectoryFile&quot; build key does not work correctly; directory.json file is copied to application folder but it remains invisible.</td>
+		<td class="version"><a href="../../versions/20_R4/">20 R4</a> <a href="../../versions/20_R3_HF1/">20 R3 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104446</th>
+		<td class="description">The command &quot;rename&quot; does not work for a macOS shared folder</td>
+		<td class="version"><a href="../../versions/20_R4/">20 R4</a> <a href="../../versions/19.7_HF2/">19.7 HF2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104450</th>
+		<td class="description">4D Write Pro: the dropdown of font list is not properly handled right after the font change</td>
+		<td class="version"><a href="../../versions/20_R4/">20 R4</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104452</th>
+		<td class="description">&#39;QR REPORT&#39; 4D command: Unexpected error 9850 when editing the field title.</td>
+		<td class="version"><a href="../../versions/20_R4/">20 R4</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104454</th>
+		<td class="description">Dropdown divider &quot;-&quot; is selectable using arrow keys when dropdown is set to &#39;Focusable&#39; and &#39;Tabbable&#39; on Windows.</td>
+		<td class="version"><a href="../../versions/20_R3_HF1/">20 R3 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104472</th>
+		<td class="description">Exported activity log from MSC has wrong data format. The Date information is not usable or understandable.</td>
+		<td class="version"><a href="../../versions/20_R4/">20 R4</a> <a href="../../versions/19.7_HF2/">19.7 HF2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104478</th>
+		<td class="description">Compiled mode range checking doesn&#39;t detect out of blob limits. A message like &quot;out of bound&quot; should appear.</td>
+		<td class="version"><a href="../../versions/20_R4/">20 R4</a> <a href="../../versions/20_R3_HF1/">20 R3 HF1</a> <a href="../../versions/19.7_HF2/">19.7 HF2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104486</th>
+		<td class="description">Toolbox dialog: in dark mode, text of Help tips is white and then not visible easily.</td>
+		<td class="version"><a href="../../versions/20_R4/">20 R4</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104490</th>
+		<td class="description">When you have a computed attributes in the Entity class of a table, it will generate error when you click on the listbox builder button in the form editor. </td>
+		<td class="version"><a href="../../versions/20_R4/">20 R4</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104497</th>
+		<td class="description">&#39;Compile project&#39; fails for external project for method marked as Web Service</td>
+		<td class="version"><a href="../../versions/20_R4/">20 R4</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104500</th>
+		<td class="description">If you compile with the option &quot;Generate syntax file for code completion when compiled&quot; checked, and without any class in the database, 4D crashes.</td>
+		<td class="version"><a href="../../versions/20_R3_HF1/">20 R3 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104510</th>
+		<td class="description">Optimization of freespace lookup in the very large datafile</td>
+		<td class="version"><a href="../../versions/20_R4/">20 R4</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104513</th>
+		<td class="description">Listbox EntitySelection with AutoRowHeight is not displayed correctly after changing the EntitySelection.  </td>
+		<td class="version"><a href="../../versions/20_R4/">20 R4</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104520</th>
+		<td class="description">4D View Pro: new function &quot;Formula Editor Panel&quot; does not work, as it if just empty.</td>
+		<td class="version"><a href="../../versions/20_R4/">20 R4</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104523</th>
+		<td class="description">Queries containing &#39;OR&#39; and &#39;AND&#39; operators mixed with relations-based search criteria might not return the right result.</td>
+		<td class="version"><a href="../../versions/20_R4/">20 R4</a> <a href="../../versions/20_R3_HF1/">20 R3 HF1</a> </td>
+	</tr>
+
+</table>
+
+</div>
+</body>
+</html>

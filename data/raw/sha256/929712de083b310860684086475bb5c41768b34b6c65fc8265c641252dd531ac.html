@@ -1,0 +1,393 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>4D - Bug Fixes</title>
+  <link rel="canonical" href="../../versions/19.7/">
+  <link rel="stylesheet" href="../../css/fixedbugs.css" type="text/css">
+  <script src="../../javascript/fixedbugs.js"></script>
+  <meta name="viewport" content="width=device-width, user-scalable=no">
+</head>
+<body>
+<div class="contain">
+<h1>All Products 19.7 <span class="superadmin">- Fixed bugs</span></h1>
+<a href="#top" title="Scroll top" class="scrollTop"></a>
+
+<table class="list">
+	<tr>
+		<td class="title">Reference</td>
+		<td class="description">Summary</td>
+		<td class="version">Fixed also with</td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0101038</th>
+		<td class="description">It may happen that break markers has different name between ruler and property list</td>
+		<td class="version"><a href="../../versions/20_R2/">20 R2</a> <a href="../../versions/20.1/">20.1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0101476</th>
+		<td class="description">Logical error window displayed behind instead of front Server (or 4D Explorer windows for 4D Standalone) when data contains duplicated keys not conform to structure definition.</td>
+		<td class="version"><a href="../../versions/20/">20</a> <a href="../../versions/19.6_HF1/">19.6 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0101877</th>
+		<td class="description">The first line in the import and export dialog is not adapted to dark mode: it stays white.</td>
+		<td class="version"></td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0102083</th>
+		<td class="description">&#39;ON EVENT CALL&#39; returns incorrect keycodes when used with modifier: when capturing keycodes during &#39;ON EVENT CALL&#39;, the returned keycodes do not match the expected character codes.</td>
+		<td class="version"><a href="../../versions/18.5_HF1/">18.5 HF1</a> <a href="../../versions/19.6_HF1/">19.6 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0102400</th>
+		<td class="description">&quot;Collection[0]&quot; expression is assignable in a method but becomes non-assignable in a form</td>
+		<td class="version"><a href="../../versions/20/">20</a> <a href="../../versions/19.6_HF2/">19.6 HF2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0102580</th>
+		<td class="description">4D Write Pro: In the toolbar of the widget, help tip lexical problem in french Localization (&quot;Insertions et vues&quot; tab, &quot;evaluer les expressions&quot; button)</td>
+		<td class="version"><a href="../../versions/20/">20</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0102582</th>
+		<td class="description">4D Write Pro: in toolbars, some help tips not translated in french Localization (For example &quot;Protect table&quot; instead of &quot;Protéger table&quot;)</td>
+		<td class="version"><a href="../../versions/19.6_HF2/">19.6 HF2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103554</th>
+		<td class="description">4D Server running as service does not restart</td>
+		<td class="version"><a href="../../versions/20/">20</a> <a href="../../versions/19.6_HF1/">19.6 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103613</th>
+		<td class="description">&#39;SQL LOGIN&#39; fails to connect using last release (v3.3.0) of Devart ODBC Driver (for Sybase)</td>
+		<td class="version"><a href="../../versions/20_R2/">20 R2</a> <a href="../../versions/20.1/">20.1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103676</th>
+		<td class="description">&quot;Get license info&quot; returns incorrect information about the number of connected clients in the configuration of several running services</td>
+		<td class="version"><a href="../../versions/20/">20</a> <a href="../../versions/19.6_HF2/">19.6 HF2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103716</th>
+		<td class="description">Using a collection/entityselection or a selection listbox doesn&#39;t preserve the undo (CTRL + &quot;z&quot;), whereas it works with an array listbox or a variable.</td>
+		<td class="version"><a href="../../versions/20/">20</a> <a href="../../versions/19.6_HF1/">19.6 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103725</th>
+		<td class="description">A listbox is not redrawn when window is resized</td>
+		<td class="version"><a href="../../versions/19_R8/">19 R8</a> <a href="../../versions/20/">20</a> <a href="../../versions/19.6_HF1/">19.6 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103732</th>
+		<td class="description">&quot;Web Client IP address to listen&quot; option is reset after calling &#39;SET DATABASE PARAMETER&#39; to set the option &#39;4D Remote mode timeout&#39;</td>
+		<td class="version"><a href="../../versions/20/">20</a> <a href="../../versions/19.6_HF1/">19.6 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103738</th>
+		<td class="description">4D Write Pro: Typing may lag on 4D Write Pro document containing high resolution image; Windows system only.</td>
+		<td class="version"><a href="../../versions/19.6_HF1/">19.6 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103761</th>
+		<td class="description">When capturing key codes during &#39;ON EVENT CALL&#39;, using english keyboard on Windows system, the returned key codes don&#39;t match the expected character codes.</td>
+		<td class="version"><a href="../../versions/19.6_HF1/">19.6 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103776</th>
+		<td class="description">The display of a keyboard shortcut for a menu item defined by programming may be incorrect (e.g.: for &quot;cmd #&quot; we may see &quot;cmd 3&quot;). It depends on system localization, the keyboard, and the character chosen for the shortcut.</td>
+		<td class="version"><a href="../../versions/20/">20</a> <a href="../../versions/19.6_HF1/">19.6 HF1</a> <a href="../../versions/19_R8_HF1/">19 R8 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103780</th>
+		<td class="description">In 4D v19 or upper, incorrect format handling of the SVG viewer: it returns an unexpected error #1.</td>
+		<td class="version"><a href="../../versions/20/">20</a> <a href="../../versions/19.6_HF1/">19.6 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103787</th>
+		<td class="description">A call to &#39;FILTER KEYSTROKE(&quot;&quot;)&#39; removes the selection of characters</td>
+		<td class="version"><a href="../../versions/20/">20</a> <a href="../../versions/19.6_HF1/">19.6 HF1</a> <a href="../../versions/19_R8_HF1/">19 R8 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103790</th>
+		<td class="description">Unicode inside &quot;Begin/End SQL&quot; block throws compiler error; on Windows system only</td>
+		<td class="version"><a href="../../versions/20/">20</a> <a href="../../versions/19.6_HF2/">19.6 HF2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103800</th>
+		<td class="description">Incorrect &#39;type&#39; name can appear (&#39;Application Server&#39; instead of &#39;Application process&#39;) in the Administration window type column.</td>
+		<td class="version"><a href="../../versions/20/">20</a> <a href="../../versions/19.6_HF1/">19.6 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103804</th>
+		<td class="description">4D Server blocks during executing the &#39;RESTART 4D&#39; command.</td>
+		<td class="version"><a href="../../versions/20/">20</a> <a href="../../versions/19.6_HF1/">19.6 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103817</th>
+		<td class="description">In the &#39;Settings&#39; dialog, English link does not open documentation page; it leads to a “Page not found” result.</td>
+		<td class="version"><a href="../../versions/20/">20</a> <a href="../../versions/19.6_HF2/">19.6 HF2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103827</th>
+		<td class="description">Connected Clients gets Disconnected after Rejecting New Connections on 4D Server. New Network Layer only (ServerNet)</td>
+		<td class="version"><a href="../../versions/19_R8/">19 R8</a> <a href="../../versions/20/">20</a> <a href="../../versions/19.6_HF1/">19.6 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103832</th>
+		<td class="description">Unable, on macOS, to connect to Sybase, using freeTDS ODBC driver with 4D, </td>
+		<td class="version"><a href="../../versions/20/">20</a> <a href="../../versions/19.6_HF2/">19.6 HF2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103833</th>
+		<td class="description">Very slow compilation when using Xcode 14.3 compared to Xcode 14.2 or 14.1</td>
+		<td class="version"><a href="../../versions/19.6_HF1/">19.6 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103880</th>
+		<td class="description">Help tips list (in Properties palette) may not be always updated properly in layout editor.</td>
+		<td class="version"><a href="../../versions/20/">20</a> <a href="../../versions/19.6_HF2/">19.6 HF2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103884</th>
+		<td class="description">By opening a database through the MSC, indexes are not detected.</td>
+		<td class="version"><a href="../../versions/20/">20</a> <a href="../../versions/19_R8_HF2/">19 R8 HF2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103886</th>
+		<td class="description">Using the command &#39;MAIL Convert from MIME&#39;, the property bodyValues may be missing in the eml file.</td>
+		<td class="version"><a href="../../versions/20/">20</a> <a href="../../versions/19.6_HF2/">19.6 HF2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103888</th>
+		<td class="description">Unexpected error when launching 4D on Windows server 2012 R2 and 2016 (&quot;The procedure entry point SetThreadDescription could not be located in the dynamic link &#39;C:\Users\....\4D\Kernel.dll&#39; &quot;)</td>
+		<td class="version"><a href="../../versions/20/">20</a> <a href="../../versions/19_R8_HF1/">19 R8 HF1</a> <a href="../../versions/19.6_HF2/">19.6 HF2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103889</th>
+		<td class="description">Calling the toolbox from a form (through Properties palette) should not mark the form as modified.</td>
+		<td class="version"><a href="../../versions/20/">20</a> <a href="../../versions/19.6_HF2/">19.6 HF2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103924</th>
+		<td class="description">Using client/server encryption downgrades the web server ssl notation</td>
+		<td class="version"><a href="../../versions/20/">20</a> <a href="../../versions/19.6_HF2/">19.6 HF2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103925</th>
+		<td class="description">4D Write Pro: the command &#39;WP PRINT&#39; may crash.</td>
+		<td class="version"><a href="../../versions/20/">20</a> <a href="../../versions/19.6_HF2/">19.6 HF2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103928</th>
+		<td class="description">Unexpected error #2 when doing a Login LDAP a second time (using parameter &quot;LDAP password plain text&quot;).</td>
+		<td class="version"><a href="../../versions/20/">20</a> <a href="../../versions/20_R2/">20 R2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103933</th>
+		<td class="description">On macOS, when iODBC framework is not installed, &#39;SQL GET DATA SOURCE LIST&#39; command returns an internal error (array of null size).</td>
+		<td class="version"><a href="../../versions/20/">20</a> <a href="../../versions/19.6_HF2/">19.6 HF2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103943</th>
+		<td class="description">4D Server can freeze when quitting while different web processes call the command &#39;WEB SEND TEXT&#39;.</td>
+		<td class="version"><a href="../../versions/19.6_HF2/">19.6 HF2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103944</th>
+		<td class="description">4D Write Pro: Unxpected error #108 when using the &quot;Find&quot; page of the 4D Write Pro toolbar (top) in a sub form.</td>
+		<td class="version"><a href="../../versions/20/">20</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103950</th>
+		<td class="description">Attempt to create a form with a name that already exists throw runtime error (file already exists...)</td>
+		<td class="version"><a href="../../versions/20_R2/">20 R2</a> <a href="../../versions/20.1/">20.1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103954</th>
+		<td class="description">4D Write Pro: Wingdings characters are not displayed in a PDF created with the command &#39;WP EXPORT DOCUMENT&#39;.</td>
+		<td class="version"><a href="../../versions/19.6_HF2/">19.6 HF2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103975</th>
+		<td class="description">On a macOS system, a long type of a character key may display a choice of other charcater (for instance, type on &quot;u&quot;, the choice is &quot;u&quot;, &quot;û&quot;, &quot;ü&quot;, &quot;ù&quot;, etc ...). Selecting one fo them may display a wrong text.</td>
+		<td class="version"><a href="../../versions/20.1/">20.1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103976</th>
+		<td class="description">4D Write Pro: Exporting a 4D Write Pro document with the upper toolbar brings an unexpected error; only with Windows system.</td>
+		<td class="version"><a href="../../versions/20/">20</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103980</th>
+		<td class="description">After tabbing, the focus may get lost when there is only one form object of type subform in the main form </td>
+		<td class="version"><a href="../../versions/20/">20</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103984</th>
+		<td class="description">Ruler type object form with negative minimum values doesn&#39;t display itself correctly after moving the handle in positive values.</td>
+		<td class="version"><a href="../../versions/20/">20</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103986</th>
+		<td class="description">Values of a ruler object form may be incorrect: the first value starts at the &#39;step&#39; value instead at the &#39;minimum&#39; value. </td>
+		<td class="version"><a href="../../versions/20/">20</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103990</th>
+		<td class="description">The copyright is &quot;2022&quot; instead of 2023 on file/package information.</td>
+		<td class="version"></td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103991</th>
+		<td class="description">In &#39;IMPORT DATA&#39; dialog, if you select Fixed Length Text in popup, it will cause error asking for style sheet.</td>
+		<td class="version"><a href="../../versions/20/">20</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103994</th>
+		<td class="description">&#39;SQL LOGIN&#39; makes 4D application crash if iODBC Framework is not installed</td>
+		<td class="version"><a href="../../versions/20_R2/">20 R2</a> <a href="../../versions/20.1/">20.1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103998</th>
+		<td class="description">Crash when quiting 4D Server while Settings dialog is open</td>
+		<td class="version"><a href="../../versions/20/">20</a> <a href="../../versions/19_R8_HF2/">19 R8 HF2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104006</th>
+		<td class="description">Database settings must be readonly when a .4DZ is opened</td>
+		<td class="version"><a href="../../versions/20.1_HF1/">20.1 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104013</th>
+		<td class="description">4D View Pro: Conversion of &#39;Substring&#39; formula from 4D View to 4D View Pro returns wrong results</td>
+		<td class="version"><a href="../../versions/20.1/">20.1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104022</th>
+		<td class="description">IMAP Transporter.searchMails fails when looking for mails with long messageIDs</td>
+		<td class="version"><a href="../../versions/20/">20</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104026</th>
+		<td class="description">Emptying the 4D Explorer trash that contains a table and a method might lead 4D application to quit unexpectedly</td>
+		<td class="version"><a href="../../versions/20_R2/">20 R2</a> <a href="../../versions/20.1/">20.1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104032</th>
+		<td class="description">Unexpected error message in application event log, of Windows system, after start/quit engined single user, or client version; only in SDI mode.</td>
+		<td class="version"></td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104050</th>
+		<td class="description">Unexpected error message can happen when opening application and when CEF (Chromium Embedded Framework) has not the correct path (&quot;The entry point .... is not find in the Dynamic Link Library ...&quot;)</td>
+		<td class="version"><a href="../../versions/20/">20</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104059</th>
+		<td class="description">4D Write Pro: A page break is automatically inserted before a table if it is added to a subsection that has different horizontal margins from the following subsection</td>
+		<td class="version"><a href="../../versions/20_R2/">20 R2</a> <a href="../../versions/20.1/">20.1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104061</th>
+		<td class="description">4D Write Pro: PDF export from 4D Write Pro has a bad char display compared to a printed PDF (several chars are moved on top of each other); it depends of the font.</td>
+		<td class="version"><a href="../../versions/20_R2/">20 R2</a> <a href="../../versions/20.1/">20.1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104081</th>
+		<td class="description">Slowness on &quot;Get system info&quot; due to network drives; Windows system only.</td>
+		<td class="version"><a href="../../versions/20.1/">20.1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104085</th>
+		<td class="description">ORDA query returns Null or crashes when the &#39;IN&#39; collection is empty and the query includes OR with multiple INs</td>
+		<td class="version"><a href="../../versions/20.1/">20.1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104106</th>
+		<td class="description">The First client (4D Remote) connected may crash if, in a second client connected, a method is created outside of the &quot;Top level&quot; folder of the Explorer.</td>
+		<td class="version"><a href="../../versions/20_R2/">20 R2</a> <a href="../../versions/20.1/">20.1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104148</th>
+		<td class="description">The &#39;ERASE WINDOW&#39; command changes the color of the chars from black to light gray; macOS only.</td>
+		<td class="version"><a href="../../versions/20_R2/">20 R2</a> <a href="../../versions/20.1_HF1/">20.1 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104173</th>
+		<td class="description">Memory corruption using 4D command &#39;SET ASSERT ENABLED&#39; or global debug log.</td>
+		<td class="version"><a href="../../versions/20_R2/">20 R2</a> <a href="../../versions/20.1_HF1/">20.1 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104191</th>
+		<td class="description">When the &#39;Encrypt Client-Server Communications&#39; option is ON, disconnection errors could occur on the &#39;4D Remote&#39; side after a postponed state of a process; potentially, it leads to memory corruption. </td>
+		<td class="version"><a href="../../versions/20_R2/">20 R2</a> <a href="../../versions/20.1_HF1/">20.1 HF1</a> </td>
+	</tr>
+
+</table>
+
+</div>
+</body>
+</html>

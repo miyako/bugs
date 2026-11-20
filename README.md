@@ -14,13 +14,16 @@ npm ci
 npm run dev
 ```
 
-The initial seed is the official 4D 21.2 Fixed Bugs List. Increase
-`--max-pages` to follow more official “Fixed also with” pages, or provide
-additional `--seed-url` arguments. Requests are sequential and rate-limited.
+The initial seed is the official 4D 21.2 Fixed Bugs List. The default crawl
+limit is 200 pages; previously indexed official version pages are also seeded
+so they are refreshed even when the current 21.2 link graph does not reach
+them. Increase `--max-pages` for larger graphs, or provide additional
+`--seed-url` arguments. Requests are sequential and rate-limited.
 The crawler stores content-addressed HTML under `data/raw/` and writes the
 browser dataset to `public/data/fixed-bugs.json`. Any page reached but failing
-to fetch or parse aborts the refresh; references not reached before the page
-limit remain marked incomplete and cannot produce a negative verdict.
+to parse or any non-404 fetch failure aborts the refresh. Official version
+pages returning 404 remain explicitly incomplete; references not reached before
+the page limit also remain incomplete and cannot produce a negative verdict.
 
 ## Data and verdict semantics
 

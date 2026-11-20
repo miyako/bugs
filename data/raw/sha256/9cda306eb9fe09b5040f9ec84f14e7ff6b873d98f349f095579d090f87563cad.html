@@ -1,0 +1,69 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>4D - Bug Fixes</title>
+  <link rel="canonical" href="../../versions/20_R5_HF2/">
+  <link rel="stylesheet" href="../../css/fixedbugs.css" type="text/css">
+  <script src="../../javascript/fixedbugs.js"></script>
+  <meta name="viewport" content="width=device-width, user-scalable=no">
+</head>
+<body>
+<div class="contain">
+<h1>All Products 20 R5 HF2 <span class="superadmin">- Fixed bugs</span></h1>
+<a href="#top" title="Scroll top" class="scrollTop"></a>
+
+<table class="list">
+	<tr>
+		<td class="title">Reference</td>
+		<td class="description">Summary</td>
+		<td class="version">Fixed also with</td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104908</th>
+		<td class="description">When a new request log is created, sometimes the first request log gets corrupted and the information, starting from the &quot;request&quot; column, repeats the information from the start of the log (&quot;Log Session Identifier...&quot;).</td>
+		<td class="version"><a href="../../versions/20_R6/">20 R6</a> <a href="../../versions/20.5/">20.5</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104920</th>
+		<td class="description">Let a database in client-server mode, with a Designer password, with web processes in &#39;Legacy&#39; mode (not scalable). Trying to access a set from a web process may create an unexpected error &quot;Bad User Password&quot;.</td>
+		<td class="version"><a href="../../versions/20_R6/">20 R6</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104936</th>
+		<td class="description">In the toolbar, the “Query” button appears activated whereas no database is open (appeared since version 20 R5).</td>
+		<td class="version"><a href="../../versions/20_R6/">20 R6</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0105003</th>
+		<td class="description">ORDA: the &#39;.diff()&#39; function on entities with a picture or blob attribute could return null, even if the attribute had been modified.</td>
+		<td class="version"><a href="../../versions/20_R6/">20 R6</a> <a href="../../versions/20.5/">20.5</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0105017</th>
+		<td class="description">4D quits unexpectedly at the command call &quot;Convert to text&quot; command under macOS system for &quot;UTF-7&quot; character set.</td>
+		<td class="version"><a href="../../versions/20_R6/">20 R6</a> <a href="../../versions/20.5/">20.5</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0105032</th>
+		<td class="description">With some &#39;old&#39; databases converted from Binary mode to Project mode, they may crash when opened since version 20 R5.</td>
+		<td class="version"><a href="../../versions/20_R6/">20 R6</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0105050</th>
+		<td class="description">Compacting with &#39;Force updating of the records&#39; option would lose blob/picture external path stored in the record.</td>
+		<td class="version"><a href="../../versions/20_R6/">20 R6</a> <a href="../../versions/20.5/">20.5</a> </td>
+	</tr>
+
+</table>
+
+</div>
+</body>
+</html>

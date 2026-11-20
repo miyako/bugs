@@ -1,0 +1,99 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>4D - Bug Fixes</title>
+  <link rel="canonical" href="../../versions/20_R2_HF1/">
+  <link rel="stylesheet" href="../../css/fixedbugs.css" type="text/css">
+  <script src="../../javascript/fixedbugs.js"></script>
+  <meta name="viewport" content="width=device-width, user-scalable=no">
+</head>
+<body>
+<div class="contain">
+<h1>All Products 20 R2 HF1 <span class="superadmin">- Fixed bugs</span></h1>
+<a href="#top" title="Scroll top" class="scrollTop"></a>
+
+<table class="list">
+	<tr>
+		<td class="title">Reference</td>
+		<td class="description">Summary</td>
+		<td class="version">Fixed also with</td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103971</th>
+		<td class="description">4D View Pro: it always displays a dot as decimal when using the numeric pad</td>
+		<td class="version"><a href="../../versions/20.1_HF1/">20.1 HF1</a> <a href="../../versions/19.7_HF1/">19.7 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104111</th>
+		<td class="description">Operators &quot;+&quot; and &quot;-&quot; and anything following them are unexpectedly being concatened to the first process variable (operand) when the name starts with a digit. And so, the operation is not executed ; the variable is undefined.</td>
+		<td class="version"><a href="../../versions/20_R3/">20 R3</a> <a href="../../versions/20.2/">20.2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104138</th>
+		<td class="description">4D View Pro: Memory saturated after using &#39;VP PASTE FROM OBJECT&#39; command in a loop</td>
+		<td class="version"><a href="../../versions/20_R3/">20 R3</a> <a href="../../versions/20.2/">20.2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104174</th>
+		<td class="description">When sending a message with the SMTP transporter without &quot;From&quot; in a mail object, $transporter.send($mail) returns the error &quot;failed to send message&quot;</td>
+		<td class="version"><a href="../../versions/20.1_HF1/">20.1 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104210</th>
+		<td class="description">&#39;Get application info&#39; does not return always the correct remote debugger session ID</td>
+		<td class="version"><a href="../../versions/20_R3/">20 R3</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104211</th>
+		<td class="description">Accessing a picture array from 4D Plugin SDK might lead the application to quit</td>
+		<td class="version"><a href="../../versions/20_R3/">20 R3</a> <a href="../../versions/20.2/">20.2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104228</th>
+		<td class="description">By renaming a variable (not local) there is an unexpected label (&quot;-- set by C code --&quot; instead of &quot;rename variable in all the database&quot;) for the checkbox that appears</td>
+		<td class="version"><a href="../../versions/20_R3/">20 R3</a> <a href="../../versions/20.2/">20.2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104253</th>
+		<td class="description">In listbox with &quot;automatic rows height&quot; and with a large volume of data displayed, the scroll becomes unusable</td>
+		<td class="version"><a href="../../versions/20_R3/">20 R3</a> <a href="../../versions/20.2/">20.2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104329</th>
+		<td class="description">FileHandle readText() issue with a file with BOM, which causes JSON Parse failure</td>
+		<td class="version"><a href="../../versions/20_R3/">20 R3</a> <a href="../../versions/20.2/">20.2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104369</th>
+		<td class="description">4D View Pro: Assigning a format of type &quot;Currency&quot; using the format dialog manually in French and German language has a separator at the wrong position, e.g. &quot;495,00. €&quot;  (see the dot after the last &quot;0&quot;)</td>
+		<td class="version"><a href="../../versions/20_R3/">20 R3</a> <a href="../../versions/20.2/">20.2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104370</th>
+		<td class="description">When two 4Ds are launched on a same machine, automatic incrementation of WebAdmin ports are not taken into account when calling the &#39;DataExplorer&#39;; the URL retains the &#39; Default Settings&#39; port.</td>
+		<td class="version"><a href="../../versions/20_R3/">20 R3</a> <a href="../../versions/20.2/">20.2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104410</th>
+		<td class="description">Bad result on dataClass.query with null at the end of the criteria string</td>
+		<td class="version"><a href="../../versions/20_R3/">20 R3</a> <a href="../../versions/20.2/">20.2</a> </td>
+	</tr>
+
+</table>
+
+</div>
+</body>
+</html>

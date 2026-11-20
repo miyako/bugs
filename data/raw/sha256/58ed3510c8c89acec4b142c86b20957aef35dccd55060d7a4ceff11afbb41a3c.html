@@ -1,0 +1,537 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>4D - Bug Fixes</title>
+  <link rel="canonical" href="../../versions/20_R3/">
+  <link rel="stylesheet" href="../../css/fixedbugs.css" type="text/css">
+  <script src="../../javascript/fixedbugs.js"></script>
+  <meta name="viewport" content="width=device-width, user-scalable=no">
+</head>
+<body>
+<div class="contain">
+<h1>All Products 20 R3 <span class="superadmin">- Fixed bugs</span></h1>
+<a href="#top" title="Scroll top" class="scrollTop"></a>
+
+<table class="list">
+	<tr>
+		<td class="title">Reference</td>
+		<td class="description">Summary</td>
+		<td class="version">Fixed also with</td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0101819</th>
+		<td class="description">Search for unused local variables does not work correctly with class functions</td>
+		<td class="version"><a href="../../versions/20.1/">20.1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0102977</th>
+		<td class="description">Let that code line &quot;return Path is system&quot;. By closing and reopening the method, the word &quot;return&quot; unexpectedly disappears.</td>
+		<td class="version"><a href="../../versions/20.1/">20.1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103234</th>
+		<td class="description">Wrong message when creating a class MyTableEntity</td>
+		<td class="version"><a href="../../versions/20.1_HF1/">20.1 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103726</th>
+		<td class="description">export dialog  : changing delemiter addes all tables fields in the Preview Area.</td>
+		<td class="version"></td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103773</th>
+		<td class="description">Unexpected behavior when selecting a row in a entity selection listbox with arrow keys or shift key after a query</td>
+		<td class="version"><a href="../../versions/20.1/">20.1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103915</th>
+		<td class="description">Code editor: tagging (//MARK: …)</td>
+		<td class="version"></td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103945</th>
+		<td class="description">4D Write Pro: some text elements are missing when converting from docx to PDF.</td>
+		<td class="version"><a href="../../versions/20.2/">20.2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103964</th>
+		<td class="description">Problem with &#39;Open form window&#39; command when using variables or expressions; they should not be executed/evalated.</td>
+		<td class="version"><a href="../../versions/20.1/">20.1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103975</th>
+		<td class="description">On a macOS system, a long type of a character key may display a choice of other charcater (for instance, type on &quot;u&quot;, the choice is &quot;u&quot;, &quot;û&quot;, &quot;ü&quot;, &quot;ù&quot;, etc ...). Selecting one fo them may display a wrong text.</td>
+		<td class="version"><a href="../../versions/20.1/">20.1</a> <a href="../../versions/19.7/">19.7</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104006</th>
+		<td class="description">Database settings must be readonly when a .4DZ is opened</td>
+		<td class="version"><a href="../../versions/19.7/">19.7</a> <a href="../../versions/20.1_HF1/">20.1 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104022</th>
+		<td class="description">IMAP Transporter.searchMails fails when looking for mails with long messageIDs</td>
+		<td class="version"><a href="../../versions/20/">20</a> <a href="../../versions/19.7/">19.7</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104023</th>
+		<td class="description">Listbox scrolls unexpectedly to the end of the selection on drag operation.</td>
+		<td class="version"><a href="../../versions/20.2_HF1/">20.2 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104025</th>
+		<td class="description">Tab Control which is highlighted looses the text display in &quot;Light&quot; mode under Sonoma</td>
+		<td class="version"><a href="../../versions/20.1_HF1/">20.1 HF1</a> <a href="../../versions/19.7_HF1/">19.7 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104046</th>
+		<td class="description">In a listbox, incorrect redrawing of cell contents when scrolling if the text in the cell contains more lines than the max line height</td>
+		<td class="version"><a href="../../versions/20.2_HF1/">20.2 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104047</th>
+		<td class="description">After modifying the maximum line height via the command &#39;LISTBOX SET AUTO ROW HEIGHT&#39; , if you scroll via the command &#39;OBJECT SET SCROLL POSITION&#39;, the scroll does not take place at the correct position </td>
+		<td class="version"><a href="../../versions/20.2_HF1/">20.2 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104050</th>
+		<td class="description">Unexpected error message can happen when opening application and when CEF (Chromium Embedded Framework) has not the correct path (&quot;The entry point .... is not find in the Dynamic Link Library ...&quot;)</td>
+		<td class="version"><a href="../../versions/20/">20</a> <a href="../../versions/19.7/">19.7</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104081</th>
+		<td class="description">Slowness on &quot;Get system info&quot; due to network drives; Windows system only.</td>
+		<td class="version"><a href="../../versions/20.1/">20.1</a> <a href="../../versions/19.7/">19.7</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104085</th>
+		<td class="description">ORDA query returns Null or crashes when the &#39;IN&#39; collection is empty and the query includes OR with multiple INs</td>
+		<td class="version"><a href="../../versions/20.1/">20.1</a> <a href="../../versions/19.7/">19.7</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104088</th>
+		<td class="description">Dropping sleeping users running stored procedures will create duplicate user upon reconnection</td>
+		<td class="version"><a href="../../versions/20.1_HF1/">20.1 HF1</a> <a href="../../versions/19.7_HF1/">19.7 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104093</th>
+		<td class="description">4D Write Pro: some problems to edit expressions of formula in the 4D Write Pro object</td>
+		<td class="version"><a href="../../versions/20.1/">20.1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104111</th>
+		<td class="description">Operators &quot;+&quot; and &quot;-&quot; and anything following them are unexpectedly being concatened to the first process variable (operand) when the name starts with a digit. And so, the operation is not executed ; the variable is undefined.</td>
+		<td class="version"><a href="../../versions/20_R2_HF1/">20 R2 HF1</a> <a href="../../versions/20.2/">20.2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104129</th>
+		<td class="description">4D Write Pro: Unable to change the expression of an image in front of the text</td>
+		<td class="version"></td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104133</th>
+		<td class="description">Default User Setting is not always saved in 4D Server or 4D Standalone mode.</td>
+		<td class="version"><a href="../../versions/20.2/">20.2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104138</th>
+		<td class="description">4D View Pro: Memory saturated after using &#39;VP PASTE FROM OBJECT&#39; command in a loop</td>
+		<td class="version"><a href="../../versions/20_R2_HF1/">20 R2 HF1</a> <a href="../../versions/20.2/">20.2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104155</th>
+		<td class="description">In collection LISTBOX ,after selected Row with  command LISTBOX SELECT ROWS, arrow keys does not select the right rows, instead of selecting the next one after the row selected initially </td>
+		<td class="version"><a href="../../versions/20.1_HF1/">20.1 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104161</th>
+		<td class="description">HTTPRequest.headers accepting a collection value does not work properly with cookies headers</td>
+		<td class="version"><a href="../../versions/20.1_HF1/">20.1 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104180</th>
+		<td class="description">In Japanese environment, runtime error in &#39;On Web Connection&#39; database method will cause an XML parse error and a corrupted Japanes text.</td>
+		<td class="version"><a href="../../versions/20.2_HF1/">20.2 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104182</th>
+		<td class="description">4D Write Pro: in the side widget, in the &quot;Pictures and text boxes&quot; tab, an error is thrown when we click the &quot;Insert image formula&quot; menu item</td>
+		<td class="version"><a href="../../versions/20.1_HF1/">20.1 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104187</th>
+		<td class="description">A crash may happen on calling the 4D command &#39;Get process activity&#39;.</td>
+		<td class="version"><a href="../../versions/20.1_HF1/">20.1 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104204</th>
+		<td class="description">4D.FileHandle offset starts at 1 instead of zero</td>
+		<td class="version"><a href="../../versions/20_R2/">20 R2</a> <a href="../../versions/20.1_HF1/">20.1 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104205</th>
+		<td class="description">4D.FileHandle.readText() reads at file start instead of current offset</td>
+		<td class="version"><a href="../../versions/20_R2/">20 R2</a> <a href="../../versions/20.1_HF1/">20.1 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104206</th>
+		<td class="description">4D.FileHandle.readBlob() throws an error when reading beyond the end of the file</td>
+		<td class="version"><a href="../../versions/20_R2/">20 R2</a> <a href="../../versions/20.1_HF1/">20.1 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104207</th>
+		<td class="description">4D.FileHandle.readBlob() returns undefined when reading at invalid offset</td>
+		<td class="version"><a href="../../versions/20_R2/">20 R2</a> <a href="../../versions/20.1_HF1/">20.1 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104208</th>
+		<td class="description">4D.FileHandle.readText() returns undefined when reading beyond end of file</td>
+		<td class="version"><a href="../../versions/20_R2/">20 R2</a> <a href="../../versions/20.1_HF1/">20.1 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104210</th>
+		<td class="description">&#39;Get application info&#39; does not return always the correct remote debugger session ID</td>
+		<td class="version"><a href="../../versions/20_R2_HF1/">20 R2 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104211</th>
+		<td class="description">Accessing a picture array from 4D Plugin SDK might lead the application to quit</td>
+		<td class="version"><a href="../../versions/20_R2_HF1/">20 R2 HF1</a> <a href="../../versions/20.2/">20.2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104228</th>
+		<td class="description">By renaming a variable (not local) there is an unexpected label (&quot;-- set by C code --&quot; instead of &quot;rename variable in all the database&quot;) for the checkbox that appears</td>
+		<td class="version"><a href="../../versions/20_R2_HF1/">20 R2 HF1</a> <a href="../../versions/20.2/">20.2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104250</th>
+		<td class="description">TLS is displayed unexpectedly as inactive in the server administration window when using QUIC </td>
+		<td class="version"></td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104251</th>
+		<td class="description">&#39;HTTP Request&#39; takes about 2 min to finish when keep-alive option is enabled and response has status code 204 (No content/body) </td>
+		<td class="version"><a href="../../versions/20.1_HF1/">20.1 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104253</th>
+		<td class="description">In listbox with &quot;automatic rows height&quot; and with a large volume of data displayed, the scroll becomes unusable</td>
+		<td class="version"><a href="../../versions/20_R2_HF1/">20 R2 HF1</a> <a href="../../versions/20.2/">20.2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104257</th>
+		<td class="description">The blue background that shows the selected tab in the Toolbox dialog is not displayed.</td>
+		<td class="version"><a href="../../versions/20_R2/">20 R2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104270</th>
+		<td class="description">FileHandle .readLine() command skips the first line</td>
+		<td class="version"><a href="../../versions/20_R2/">20 R2</a> <a href="../../versions/20.1_HF1/">20.1 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104273</th>
+		<td class="description">Printing process is waiting for a another process. When a 4D process is aborted or stop from the debugger while a print job is started, 4D continues to consider the process to have an open printing job</td>
+		<td class="version"><a href="../../versions/20.1_HF1/">20.1 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104276</th>
+		<td class="description">The problem involves issues with accessing and editing code in the application C/S mode during development in 4D v20 on macOS. It can result in empty methods and/or frozen windows.</td>
+		<td class="version"><a href="../../versions/20.2_HF1/">20.2 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104278</th>
+		<td class="description">4D View Pro: The &#39;editChange&#39; action is not triggered when tabbing from one cell to another.</td>
+		<td class="version"><a href="../../versions/20.1_HF1/">20.1 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104279</th>
+		<td class="description">4D View Pro: Slow document import in zone 4D View Pro if it contains formatters with &quot;@&quot; character.</td>
+		<td class="version"><a href="../../versions/20.1_HF1/">20.1 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104284</th>
+		<td class="description">&#39;LOG FILE TO JSON&#39; with a an empty Logfile generate a not valid JSON (message &quot;[&quot; instead of &quot;[]&quot;)</td>
+		<td class="version"><a href="../../versions/20.2/">20.2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104285</th>
+		<td class="description">In method editor, an array type is displayed incorrectly in a Help Tip that appears when hover it.</td>
+		<td class="version"><a href="../../versions/20.2/">20.2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104287</th>
+		<td class="description">On Windows, 4D commands &#39;CONFIRM&#39; and &#39;ALERT&#39; may truncate a displayed text.</td>
+		<td class="version"><a href="../../versions/20.2/">20.2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104290</th>
+		<td class="description">Using debug log may crash on any plugin call</td>
+		<td class="version"><a href="../../versions/20_R5/">20 R5</a> <a href="../../versions/19.7_HF3/">19.7 HF3</a> <a href="../../versions/20.3_HF1/">20.3 HF1</a> <a href="../../versions/20_R4_HF1/">20 R4 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104295</th>
+		<td class="description">Filehandle.readLine() does not read to the end of the file if there is no breaks in the text</td>
+		<td class="version"><a href="../../versions/20.1_HF1/">20.1 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104300</th>
+		<td class="description">Changing value in the Shortcuts part of Preferences dialog leads to an unexpected error.</td>
+		<td class="version"></td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104302</th>
+		<td class="description">FileHandle eof is set to true with fopen(&quot;write&quot;). It should be false</td>
+		<td class="version"><a href="../../versions/20_R2/">20 R2</a> <a href="../../versions/20.1_HF1/">20.1 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104307</th>
+		<td class="description">User Class computed attribute returns error -10754 (Context language missing...) when the class is passed as parameter to 4D.SystemWorker.new()</td>
+		<td class="version"><a href="../../versions/20.2/">20.2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104310</th>
+		<td class="description">Window type &#39;Movable form dialog box&#39; has no close box on macOS only when the form has fixed width/height</td>
+		<td class="version"><a href="../../versions/20.1_HF1/">20.1 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104327</th>
+		<td class="description">Compilation error &#39;cannot make an assignment with those types&#39; when trying to assign a pointer to an entity-attribute</td>
+		<td class="version"></td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104329</th>
+		<td class="description">FileHandle readText() issue with a file with BOM, which causes JSON Parse failure</td>
+		<td class="version"><a href="../../versions/20_R2_HF1/">20 R2 HF1</a> <a href="../../versions/20.2/">20.2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104337</th>
+		<td class="description">In the method editor : when trying to type a Japanese text that contains a dakuten in Half Width Katakana, the position of the cursor is not consistent; when deleting a certain text, a different text is deleted. </td>
+		<td class="version"><a href="../../versions/19.7_HF1/">19.7 HF1</a> <a href="../../versions/20.2_HF1/">20.2 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104338</th>
+		<td class="description">Function parameters at the bottom of the code editor window is missing</td>
+		<td class="version"></td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104352</th>
+		<td class="description">Errors thrown when starting 4D</td>
+		<td class="version"></td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104360</th>
+		<td class="description">&#39;Compile Project&#39; command (with &quot;path to current file.project&quot; or &quot;external project file&quot;) doesn&#39;t compile successfully but returns a success and a wrong error message; if you have ORDA .save() in code but Compile Project() works fine.</td>
+		<td class="version"><a href="../../versions/20.2_HF1/">20.2 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104365</th>
+		<td class="description">&#39;PRINT LABEL&#39; command may print unexpectedly only 1 label per page in compiled mode (Windows system Only).</td>
+		<td class="version"><a href="../../versions/20_R2_HF2/">20 R2 HF2</a> <a href="../../versions/20.2_HF1/">20.2 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104366</th>
+		<td class="description">4D application quits unexpectedly when sorting by relation attribute and object attribute</td>
+		<td class="version"><a href="../../versions/20.2_HF1/">20.2 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104369</th>
+		<td class="description">4D View Pro: Assigning a format of type &quot;Currency&quot; using the format dialog manually in French and German language has a separator at the wrong position, e.g. &quot;495,00. €&quot;  (see the dot after the last &quot;0&quot;)</td>
+		<td class="version"><a href="../../versions/20_R2_HF1/">20 R2 HF1</a> <a href="../../versions/20.2/">20.2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104370</th>
+		<td class="description">When two 4Ds are launched on a same machine, automatic incrementation of WebAdmin ports are not taken into account when calling the &#39;DataExplorer&#39;; the URL retains the &#39; Default Settings&#39; port.</td>
+		<td class="version"><a href="../../versions/20_R2_HF1/">20 R2 HF1</a> <a href="../../versions/20.2/">20.2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104381</th>
+		<td class="description">Depending of the scale display (Windows system option), picture pop-up menus are too small on windows high dpi.</td>
+		<td class="version"><a href="../../versions/20_R2_HF2/">20 R2 HF2</a> <a href="../../versions/20.2_HF1/">20.2 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104384</th>
+		<td class="description">&#39;Create deployment license (mergedApp ; buildLicense ; oemLicense)&#39; works fine for built OEM server even if &quot;buildLicense&quot; isn&#39;t an OEM license.</td>
+		<td class="version"><a href="../../versions/20.2_HF1/">20.2 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104386</th>
+		<td class="description">Unexpected error #404 for QODLY web pages served by an engined server or a compiled database</td>
+		<td class="version"><a href="../../versions/20_R4/">20 R4</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104387</th>
+		<td class="description">4D Write Pro: Depending of HTML text, it may crash 4D Write Pro when opening it.</td>
+		<td class="version"><a href="../../versions/20.2_HF1/">20.2 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104388</th>
+		<td class="description">Listbox column bound to a list with multistyle will show &lt;span tags&gt; when entering and quit cell</td>
+		<td class="version"><a href="../../versions/19.7_HF1/">19.7 HF1</a> <a href="../../versions/20.2_HF1/">20.2 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104397</th>
+		<td class="description">Object literal syntax generates a syntax error at the property name level</td>
+		<td class="version"><a href="../../versions/20.2/">20.2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104400</th>
+		<td class="description">After exporting to Project mode, invisible button with automatic Splitter action may miss its &quot;Pusher&quot; property.</td>
+		<td class="version"><a href="../../versions/19.7_HF1/">19.7 HF1</a> <a href="../../versions/20_R2_HF2/">20 R2 HF2</a> <a href="../../versions/20.2_HF1/">20.2 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104404</th>
+		<td class="description">Unexpected duplicated fonts listed in the font list of the property list in Windows.</td>
+		<td class="version"></td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104409</th>
+		<td class="description">&#39;OBJECT SET ENTERABLE&#39; doesn&#39;t disable properly a check box form object.</td>
+		<td class="version"><a href="../../versions/20_R2_HF2/">20 R2 HF2</a> <a href="../../versions/20.2_HF1/">20.2 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104410</th>
+		<td class="description">Bad result on dataClass.query with null at the end of the criteria string</td>
+		<td class="version"><a href="../../versions/20_R2_HF1/">20 R2 HF1</a> <a href="../../versions/20.2/">20.2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104411</th>
+		<td class="description">Maximizing a window with a form containing a &#39;max width&#39; and a &#39;max height&#39; values may work with a wrong value of &#39;max width&#39;.</td>
+		<td class="version"><a href="../../versions/20.2_HF1/">20.2 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104415</th>
+		<td class="description">After Maximizing and Minimizing a window in SDI mode, the restoring button doesn&#39;t restore the window at its previous position.</td>
+		<td class="version"><a href="../../versions/20_R4/">20 R4</a> <a href="../../versions/20.2_HF1/">20.2 HF1</a> <a href="../../versions/20_R3_HF1/">20 R3 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104418</th>
+		<td class="description">Using &quot;ObjectTools&quot; v5.1r1 plugin, the command &#39;OT GetPointer&#39; fails when ran in compiled mode.</td>
+		<td class="version"><a href="../../versions/20_R2_HF2/">20 R2 HF2</a> <a href="../../versions/20.2_HF1/">20.2 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104419</th>
+		<td class="description">&#39;Create deployment license (mergedApp ; buildLicense ; oemLicense)&#39; works fine for built OEM server even if &quot;buildLicense&quot; is an OEM License with a &#39;timebomb&#39;.</td>
+		<td class="version"><a href="../../versions/20.2_HF1/">20.2 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104426</th>
+		<td class="description">A reference to pointer might be lost when passed to a component when this done in a process that has been created and killed several millions times</td>
+		<td class="version"><a href="../../versions/20.2_HF1/">20.2 HF1</a> <a href="../../versions/19.7_HF2/">19.7 HF2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104432</th>
+		<td class="description">The &#39;queryPath&#39; is invalid when performing joins with at least 3 level of &quot;AND&quot; and &quot;OR&quot; imbrications.</td>
+		<td class="version"><a href="../../versions/20_R2_HF2/">20 R2 HF2</a> <a href="../../versions/20.2_HF1/">20.2 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104434</th>
+		<td class="description">A compilation error is returned when assigning a path to a picture/blob field</td>
+		<td class="version"></td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104441</th>
+		<td class="description">4D quits unexpectedly after trying to display a listbox which properties are computed by a class object</td>
+		<td class="version"><a href="../../versions/20.2_HF1/">20.2 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104442</th>
+		<td class="description">Text of buttons are right-aligned after a conversion to project mode.</td>
+		<td class="version"><a href="../../versions/20.2_HF1/">20.2 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title Qodly_Server">ACI0104261</th>
+		<td class="description">4D Server crashes in the SSL layer when refreshing the Qodly Studio page</td>
+		<td class="version"></td>
+	</tr>
+
+</table>
+
+</div>
+</body>
+</html>

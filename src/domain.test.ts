@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 import {
   type BugDatabase,
+  dataFreshness,
   findFixHistory,
   normalizeAci,
   resolveFixStatus,
@@ -168,6 +169,20 @@ const database: BugDatabase = {
   ],
   sourcePages: [],
 };
+
+describe("dataFreshness", () => {
+  const now = Date.parse("2026-11-20T14:00:00Z");
+
+  it("allows a day of grace after a weekly refresh and then marks the data overdue", () => {
+    expect(dataFreshness("2026-11-12T14:00:01Z", now)).toBe("current");
+    expect(dataFreshness("2026-11-12T14:00:00Z", now)).toBe("overdue");
+  });
+
+  it("does not claim freshness for a missing or invalid refresh timestamp", () => {
+    expect(dataFreshness(null, now)).toBe("unavailable");
+    expect(dataFreshness("invalid", now)).toBe("unavailable");
+  });
+});
 
 describe("normalizeAci", () => {
   it.each(["ACI0106214", "aci0106214", "ACI 0106214", "ACI-0106214", "0106214"])(

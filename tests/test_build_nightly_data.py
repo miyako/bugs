@@ -1,5 +1,6 @@
 import json
 import unittest
+from datetime import datetime
 from pathlib import Path
 from tempfile import TemporaryDirectory
 from unittest.mock import patch
@@ -60,6 +61,8 @@ class BuildNightlyDataTests(unittest.TestCase):
             retained, new = json.loads(fresh_output.read_text())
             self.assertEqual(retained, saved_fix)
             self.assertEqual(new["aci"], "ACI0106800")
+            metadata = json.loads(fresh_output.with_name("nightly-refresh.json").read_text())
+            self.assertIsNotNone(datetime.fromisoformat(metadata["refreshedAt"]).utcoffset())
 
     @patch("scripts.build_nightly_data.BRANCHES", ("21",))
     @patch("scripts.build_nightly_data.request_page", return_value=(b"not a listing", {}))
@@ -67,6 +70,11 @@ class BuildNightlyDataTests(unittest.TestCase):
         with TemporaryDirectory() as directory:
             output = Path(directory) / "nightly-fixes.json"
             output.write_text("[]\n")
+            metadata = output.with_name("nightly-refresh.json")
+            metadata.write_text('{"refreshedAt": "2026-11-19T14:00:00+00:00"}\n')
             with self.assertRaisesRegex(ValueError, "No nightly build table"):
                 refresh_history(output)
             self.assertEqual(output.read_text(), "[]\n")
+            self.assertEqual(
+                json.loads(metadata.read_text())["refreshedAt"], "2026-11-19T14:00:00+00:00",
+            )

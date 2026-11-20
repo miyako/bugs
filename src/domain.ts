@@ -1,5 +1,11 @@
 export type Verdict = "YES" | "NO" | "UNKNOWN";
 
+export function dataFreshness(timestamp: string | null, now = Date.now()) {
+  const updated = timestamp ? Date.parse(timestamp) : NaN;
+  if (!Number.isFinite(updated)) return "unavailable";
+  return now - updated >= 8 * 24 * 60 * 60 * 1000 ? "overdue" : "current";
+}
+
 export interface ReleaseVersion {
   versionKey: string;
   displayName: string;

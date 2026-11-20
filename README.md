@@ -19,6 +19,8 @@ limit is 200 pages; previously indexed official version pages are also seeded
 so they are refreshed even when the current 21.2 link graph does not reach
 them. Increase `--max-pages` for larger graphs, or provide additional
 `--seed-url` arguments. Requests are sequential and rate-limited.
+The default crawl also starts from the official 4D 19 through 19.4 release
+lists, which were missing from the previously indexed release graph.
 The crawler stores content-addressed HTML under `data/raw/` and writes the
 browser dataset to `public/data/fixed-bugs.json`. Any page reached but failing
 to parse or any non-404 fetch failure aborts the refresh. Official version
@@ -61,8 +63,10 @@ Run `bash scripts/refresh_nightly_history.sh` to refresh locally using the
 remote archive without publishing. To recover the last archived snapshot,
 fetch `origin nightly-history` and read `git show FETCH_HEAD:nightly-fixes.json`.
 
-Every verdict includes its source page and fetch date. A failed refresh cannot
-replace the last deployed dataset.
+The footer shows when release and nightly listings were last checked
+successfully. A check is marked overdue after eight days (the weekly cadence
+plus one day of grace). A failed refresh cannot replace the last deployed
+dataset; the footer links to GitHub Actions for run details.
 
 ## Development
 

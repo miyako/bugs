@@ -103,6 +103,13 @@ def refresh_history(output: Path, archive: Path | None = None) -> None:
     temporary = output.with_suffix(".json.tmp")
     temporary.write_text(json.dumps(fixes, indent=2) + "\n", encoding="utf-8")
     temporary.replace(output)
+    metadata = output.with_name("nightly-refresh.json")
+    temporary_metadata = metadata.with_suffix(".json.tmp")
+    temporary_metadata.write_text(
+        json.dumps({"refreshedAt": datetime.now(timezone.utc).isoformat()}, indent=2) + "\n",
+        encoding="utf-8",
+    )
+    temporary_metadata.replace(metadata)
     print(f"Archived {len(fixes)} nightly fixes ({len(observed)} in the current listings)")
 
 

@@ -22,6 +22,7 @@ DATA_DIR = ROOT / "data"
 RAW_DIR = DATA_DIR / "raw" / "sha256"
 OUTPUT = ROOT / "public" / "data" / "fixed-bugs.json"
 DEFAULT_SEED = "https://developer.4d.com/FixedBugsList/versions/21.2/"
+HISTORICAL_RELEASE_SEEDS = ("19", "19.1", "19.2", "19.3", "19.4")
 DEFAULT_MAX_PAGES = 200
 HOST = "developer.4d.com"
 USER_AGENT = "4D-Fix-Finder/0.1 (+https://github.com/miyako/bugs)"
@@ -434,8 +435,13 @@ def main() -> int:
     args = parser.parse_args()
     if args.max_pages < 1:
         parser.error("--max-pages must be at least 1")
-    seeds = args.seed_url or list(dict.fromkeys([DEFAULT_SEED, *existing_version_seeds()]))
     try:
+        historical_seeds = version_seed_urls([
+            {"officialSlug": slug} for slug in HISTORICAL_RELEASE_SEEDS
+        ])
+        seeds = args.seed_url or list(dict.fromkeys([
+            DEFAULT_SEED, *historical_seeds, *existing_version_seeds(),
+        ]))
         database = crawl(seeds, args.max_pages)
         validate_database(database)
         OUTPUT.parent.mkdir(parents=True, exist_ok=True)

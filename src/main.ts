@@ -1,8 +1,10 @@
 import "./style.css";
 import nightlyFixes from "./data/nightly-fixes.json";
+import nightlyRefresh from "./data/nightly-refresh.json";
 import {
   type BugDatabase,
   type ResolverResult,
+  dataFreshness,
   findFixHistory,
   nightlyBranch,
   resolveFixStatus,
@@ -25,7 +27,8 @@ const verdictIcon = document.querySelector<HTMLElement>("#verdict-icon")!;
 const explanation = document.querySelector<HTMLParagraphElement>("#result-explanation")!;
 const resultEvidence = document.querySelector<HTMLDivElement>("#result-evidence")!;
 const buildResult = document.querySelector<HTMLDivElement>("#build-result")!;
-const freshness = document.querySelector<HTMLElement>("#data-freshness")!;
+const releaseFreshness = document.querySelector<HTMLElement>("#release-freshness")!;
+const nightlyFreshness = document.querySelector<HTMLElement>("#nightly-freshness")!;
 const copyButton = document.querySelector<HTMLButtonElement>("#copy-link")!;
 const nightlySource = document.querySelector<HTMLAnchorElement>("#nightly-source")!;
 const releaseSource = document.querySelector<HTMLAnchorElement>("#release-source")!;
@@ -429,7 +432,22 @@ copyButton.addEventListener("click", async () => {
   }
 });
 
+function renderFreshness(element: HTMLElement, label: string, timestamp: string | null): void {
+  const status = dataFreshness(timestamp);
+  element.dataset.stale = String(status === "overdue");
+  if (!timestamp || status === "unavailable") {
+    element.textContent = `${label}: refresh date unavailable`;
+    return;
+  }
+  const time = document.createElement("time");
+  time.dateTime = timestamp;
+  time.title = timestamp;
+  time.textContent = new Date(timestamp).toLocaleDateString();
+  element.replaceChildren(`${label} checked `, time, status === "overdue" ? " (overdue)" : "");
+}
+
 async function initialize(): Promise<void> {
+  renderFreshness(nightlyFreshness, "Nightly lists", nightlyRefresh.refreshedAt);
   try {
     const response = await fetch(`${import.meta.env.BASE_URL}data/fixed-bugs.json`);
     if (!response.ok) throw new Error(`Dataset request failed (${response.status})`);
@@ -464,14 +482,14 @@ async function initialize(): Promise<void> {
     loadStatus.textContent = versions.length
       ? `${completeVersions} releases fully indexed · ${versions.length - completeVersions} with partial evidence · ${database.bugs.length.toLocaleString()} bugs`
       : "No release data is available yet.";
-    freshness.textContent = `Data refreshed ${new Date(database.generatedAt).toLocaleDateString()}`;
+    renderFreshness(releaseFreshness, "Release lists", database.generatedAt);
     updateVersionContext();
 
     if (query.get("aci")) form.requestSubmit();
   } catch (error) {
     loadStatus.textContent =
       error instanceof Error ? `Could not load the bug dataset: ${error.message}` : "Could not load the bug dataset.";
-    freshness.textContent = "Data status unavailable";
+    renderFreshness(releaseFreshness, "Release lists", null);
   }
 }
 

@@ -51,10 +51,15 @@ enter a build number for that version's nightly branch.
   pages or the official nightly list's named release baseline. A later listing
   does not prove that earlier builds were unfixed.
 
-The Pages workflow refreshes the nightly and beta build snapshot from the
-official branch listings. To refresh it locally, run
-`python3 -m scripts.build_nightly_data`. These lists cover published fixes in
-the current listing window, not the entire build history.
+The Pages workflow merges current nightly and beta listings into the
+`nightly-history` branch before deploying. It keeps entries that roll off the
+official lists, with their source URL and earliest recorded UTC observation
+date. This is not a complete build history. The checked-in snapshot seeds the
+archive; records that predate observation tracking may lack a date.
+
+Run `bash scripts/refresh_nightly_history.sh` to refresh locally using the
+remote archive without publishing. To recover the last archived snapshot,
+fetch `origin nightly-history` and read `git show FETCH_HEAD:nightly-fixes.json`.
 
 Every verdict includes its source page and fetch date. A failed refresh cannot
 replace the last deployed dataset.

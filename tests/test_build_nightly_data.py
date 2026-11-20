@@ -1,6 +1,10 @@
+import json
 import unittest
+from pathlib import Path
+from tempfile import TemporaryDirectory
+from unittest.mock import patch
 
-from scripts.build_nightly_data import parse_nightly_page
+from scripts.build_nightly_data import nightly_url, parse_nightly_page, refresh_history
 
 
 class BuildNightlyDataTests(unittest.TestCase):
@@ -28,3 +32,41 @@ class BuildNightlyDataTests(unittest.TestCase):
         """
         with self.assertRaisesRegex(ValueError, "no valid ACI or build"):
             parse_nightly_page(html, "nightly/21/")
+
+    @patch("scripts.build_nightly_data.BRANCHES", ("21",))
+    @patch("scripts.build_nightly_data.request_page")
+    def test_fresh_checkout_keeps_first_observation_after_rollover(self, request_page):
+        table = (
+            '<table class="list"><tr><td>Build number</td><td>Reference</td></tr>'
+            '<tr><td>{}</td><td>{}</td></tr></table>'
+        )
+        request_page.side_effect = [
+            (table.format("100670", "ACI0106659").encode(), {}),
+            (table.format("100685", "ACI0106800").encode(), {}),
+            (table.format("100685", "ACI0106800").encode(), {}),
+        ]
+        with TemporaryDirectory() as directory:
+            archive = Path(directory) / "previous.json"
+            fresh_output = Path(directory) / "next.json"
+            refresh_history(archive)
+            saved_fix, = json.loads(archive.read_text())
+            self.assertEqual(saved_fix["aci"], "ACI0106659")
+            self.assertEqual(saved_fix["buildNumber"], 100670)
+            self.assertEqual(saved_fix["sourceUrl"], nightly_url("21"))
+            self.assertRegex(saved_fix["firstObservedOn"], r"^\d{4}-\d{2}-\d{2}$")
+
+            refresh_history(fresh_output, archive)
+            refresh_history(fresh_output, archive)
+            retained, new = json.loads(fresh_output.read_text())
+            self.assertEqual(retained, saved_fix)
+            self.assertEqual(new["aci"], "ACI0106800")
+
+    @patch("scripts.build_nightly_data.BRANCHES", ("21",))
+    @patch("scripts.build_nightly_data.request_page", return_value=(b"not a listing", {}))
+    def test_invalid_fetch_does_not_replace_the_snapshot(self, _request_page):
+        with TemporaryDirectory() as directory:
+            output = Path(directory) / "nightly-fixes.json"
+            output.write_text("[]\n")
+            with self.assertRaisesRegex(ValueError, "No nightly build table"):
+                refresh_history(output)
+            self.assertEqual(output.read_text(), "[]\n")

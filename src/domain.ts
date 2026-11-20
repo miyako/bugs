@@ -49,6 +49,25 @@ export interface BugDatabase {
   sourcePages: SourcePage[];
 }
 
+export interface NightlyFix {
+  aci: string;
+  branch: string;
+  buildNumber: number;
+  sourceUrl: string;
+}
+
+const RELEASE_BUILDS: Readonly<Partial<Record<string, { number: string; sourceUrl: string }>>> = {
+  "21.2": { number: "100579", sourceUrl: "https://eu-en.4d.com/4d-212-lts-full-installer" },
+};
+
+type BuildResult = {
+  buildNumber: string;
+} & (
+  | { verdict: "YES"; reasonCode: "NIGHTLY_FIX"; evidence: NightlyFix }
+  | { verdict: "UNKNOWN"; reasonCode: "FIX_LISTED_LATER"; evidence: NightlyFix; releaseBuildSource?: string }
+  | { verdict: "UNKNOWN"; reasonCode: "BUILD_DATA_UNAVAILABLE" }
+);
+
 export interface ResolverResult {
   verdict: Verdict;
   reasonCode:
@@ -65,11 +84,11 @@ export interface ResolverResult {
   queriedVersion: ReleaseVersion | null;
   evidence: FixEvidence[];
   otherKnownFixes: ReleaseVersion[];
-  build: {
-    verdict: "UNKNOWN";
-    reasonCode: "BUILD_DATA_UNAVAILABLE";
-    buildNumber: string;
-  } | null;
+  build: BuildResult | null;
+}
+
+export function nightlyBranch(version: ReleaseVersion): string {
+  return version.line === "R" ? `${version.major}_R${version.minor}` : `${version.major}`;
 }
 
 export function normalizeAci(value: string): string | null {
@@ -83,17 +102,34 @@ export function resolveFixStatus(
   aciInput: string,
   versionKey: string,
   buildInput = "",
+  nightlyFixes: readonly NightlyFix[] = [],
 ): ResolverResult {
   const aci = normalizeAci(aciInput);
   const version = database.versions.find((entry) => entry.versionKey === versionKey);
-  const buildNumber = buildInput.trim();
-  const build = buildNumber
-    ? {
-        verdict: "UNKNOWN" as const,
-        reasonCode: "BUILD_DATA_UNAVAILABLE" as const,
-        buildNumber,
-      }
-    : null;
+  const requestedBuild = buildInput.trim();
+  const releaseBuild = version && !requestedBuild ? RELEASE_BUILDS[version.versionKey] : undefined;
+  const buildNumber = requestedBuild || releaseBuild?.number || "";
+  const branch = version && nightlyBranch(version);
+  const firstFix = aci && branch && /^[1-9][0-9]{0,8}$/.test(buildNumber)
+    ? nightlyFixes.reduce<NightlyFix | undefined>((earliest, fix) =>
+        fix.aci === aci && fix.branch === branch
+          && (!earliest || fix.buildNumber < earliest.buildNumber) ? fix : earliest,
+      undefined)
+    : undefined;
+  let build: BuildResult | null = null;
+  if (firstFix && firstFix.buildNumber > Number(buildNumber)) {
+    build = {
+      verdict: "UNKNOWN",
+      reasonCode: "FIX_LISTED_LATER",
+      buildNumber,
+      evidence: firstFix,
+      releaseBuildSource: releaseBuild?.sourceUrl,
+    };
+  } else if (requestedBuild) {
+    build = firstFix
+      ? { verdict: "YES", reasonCode: "NIGHTLY_FIX", buildNumber, evidence: firstFix }
+      : { verdict: "UNKNOWN", reasonCode: "BUILD_DATA_UNAVAILABLE", buildNumber };
+  }
 
   if (!aci) {
     return {
@@ -149,7 +185,7 @@ export function resolveFixStatus(
       queriedVersion: version,
       evidence,
       otherKnownFixes,
-      build,
+      build: requestedBuild ? build : null,
     };
   }
 
@@ -171,7 +207,7 @@ export function resolveFixStatus(
       queriedVersion: version,
       evidence: carriedEvidence,
       otherKnownFixes,
-      build,
+      build: requestedBuild ? build : null,
     };
   }
 

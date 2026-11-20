@@ -1,0 +1,386 @@
+[
+  {
+    "aci": "ACI0106616",
+    "buildNumber": 102099,
+    "branch": "20",
+    "sourceUrl": "https://developer.4d.com/FixedBugsList/nightly/20/"
+  },
+  {
+    "aci": "ACI0106576",
+    "buildNumber": 102097,
+    "branch": "20",
+    "sourceUrl": "https://developer.4d.com/FixedBugsList/nightly/20/"
+  },
+  {
+    "aci": "ACI0106421",
+    "buildNumber": 102094,
+    "branch": "20",
+    "sourceUrl": "https://developer.4d.com/FixedBugsList/nightly/20/"
+  },
+  {
+    "aci": "ACI0106399",
+    "buildNumber": 100684,
+    "branch": "21",
+    "sourceUrl": "https://developer.4d.com/FixedBugsList/nightly/21/"
+  },
+  {
+    "aci": "ACI0106678",
+    "buildNumber": 100677,
+    "branch": "21",
+    "sourceUrl": "https://developer.4d.com/FixedBugsList/nightly/21/"
+  },
+  {
+    "aci": "ACI0106646",
+    "buildNumber": 100677,
+    "branch": "21",
+    "sourceUrl": "https://developer.4d.com/FixedBugsList/nightly/21/"
+  },
+  {
+    "aci": "ACI0105945",
+    "buildNumber": 100677,
+    "branch": "21",
+    "sourceUrl": "https://developer.4d.com/FixedBugsList/nightly/21/"
+  },
+  {
+    "aci": "ACI0106521",
+    "buildNumber": 100672,
+    "branch": "21",
+    "sourceUrl": "https://developer.4d.com/FixedBugsList/nightly/21/"
+  },
+  {
+    "aci": "ACI0106664",
+    "buildNumber": 100670,
+    "branch": "21",
+    "sourceUrl": "https://developer.4d.com/FixedBugsList/nightly/21/"
+  },
+  {
+    "aci": "ACI0106659",
+    "buildNumber": 100670,
+    "branch": "21",
+    "sourceUrl": "https://developer.4d.com/FixedBugsList/nightly/21/"
+  },
+  {
+    "aci": "ACI0106612",
+    "buildNumber": 100670,
+    "branch": "21",
+    "sourceUrl": "https://developer.4d.com/FixedBugsList/nightly/21/"
+  },
+  {
+    "aci": "ACI0106662",
+    "buildNumber": 100667,
+    "branch": "21",
+    "sourceUrl": "https://developer.4d.com/FixedBugsList/nightly/21/"
+  },
+  {
+    "aci": "ACI0106653",
+    "buildNumber": 100667,
+    "branch": "21",
+    "sourceUrl": "https://developer.4d.com/FixedBugsList/nightly/21/"
+  },
+  {
+    "aci": "ACI0106532",
+    "buildNumber": 100667,
+    "branch": "21",
+    "sourceUrl": "https://developer.4d.com/FixedBugsList/nightly/21/"
+  },
+  {
+    "aci": "ACI0106518",
+    "buildNumber": 100667,
+    "branch": "21",
+    "sourceUrl": "https://developer.4d.com/FixedBugsList/nightly/21/"
+  },
+  {
+    "aci": "ACI0106454",
+    "buildNumber": 100667,
+    "branch": "21",
+    "sourceUrl": "https://developer.4d.com/FixedBugsList/nightly/21/"
+  },
+  {
+    "aci": "ACI0106654",
+    "buildNumber": 100657,
+    "branch": "21",
+    "sourceUrl": "https://developer.4d.com/FixedBugsList/nightly/21/"
+  },
+  {
+    "aci": "ACI0106523",
+    "buildNumber": 100657,
+    "branch": "21",
+    "sourceUrl": "https://developer.4d.com/FixedBugsList/nightly/21/"
+  },
+  {
+    "aci": "ACI0106514",
+    "buildNumber": 100657,
+    "branch": "21",
+    "sourceUrl": "https://developer.4d.com/FixedBugsList/nightly/21/"
+  },
+  {
+    "aci": "ACI0105945",
+    "buildNumber": 100233,
+    "branch": "21_R4",
+    "sourceUrl": "https://developer.4d.com/FixedBugsList/nightly/21_R4/"
+  },
+  {
+    "aci": "ACI0106689",
+    "buildNumber": 100231,
+    "branch": "21_R4",
+    "sourceUrl": "https://developer.4d.com/FixedBugsList/nightly/21_R4/"
+  },
+  {
+    "aci": "ACI0106664",
+    "buildNumber": 100229,
+    "branch": "21_R4",
+    "sourceUrl": "https://developer.4d.com/FixedBugsList/nightly/21_R4/"
+  },
+  {
+    "aci": "ACI0106639",
+    "buildNumber": 100228,
+    "branch": "21_R4",
+    "sourceUrl": "https://developer.4d.com/FixedBugsList/nightly/21_R4/"
+  },
+  {
+    "aci": "ACI0106651",
+    "buildNumber": 100226,
+    "branch": "21_R4",
+    "sourceUrl": "https://developer.4d.com/FixedBugsList/nightly/21_R4/"
+  },
+  {
+    "aci": "ACI0106632",
+    "buildNumber": 100226,
+    "branch": "21_R4",
+    "sourceUrl": "https://developer.4d.com/FixedBugsList/nightly/21_R4/"
+  },
+  {
+    "aci": "ACI0106532",
+    "buildNumber": 100226,
+    "branch": "21_R4",
+    "sourceUrl": "https://developer.4d.com/FixedBugsList/nightly/21_R4/"
+  },
+  {
+    "aci": "ACI0106678",
+    "buildNumber": 100166,
+    "branch": "21_R5",
+    "sourceUrl": "https://developer.4d.com/FixedBugsList/nightly/21_R5/"
+  },
+  {
+    "aci": "ACI0106689",
+    "buildNumber": 100164,
+    "branch": "21_R5",
+    "sourceUrl": "https://developer.4d.com/FixedBugsList/nightly/21_R5/"
+  },
+  {
+    "aci": "ACI0106688",
+    "buildNumber": 100164,
+    "branch": "21_R5",
+    "sourceUrl": "https://developer.4d.com/FixedBugsList/nightly/21_R5/"
+  },
+  {
+    "aci": "ACI0106521",
+    "buildNumber": 100164,
+    "branch": "21_R5",
+    "sourceUrl": "https://developer.4d.com/FixedBugsList/nightly/21_R5/"
+  },
+  {
+    "aci": "ACI0106670",
+    "buildNumber": 100159,
+    "branch": "21_R5",
+    "sourceUrl": "https://developer.4d.com/FixedBugsList/nightly/21_R5/"
+  },
+  {
+    "aci": "ACI0106664",
+    "buildNumber": 100159,
+    "branch": "21_R5",
+    "sourceUrl": "https://developer.4d.com/FixedBugsList/nightly/21_R5/"
+  },
+  {
+    "aci": "ACI0106659",
+    "buildNumber": 100159,
+    "branch": "21_R5",
+    "sourceUrl": "https://developer.4d.com/FixedBugsList/nightly/21_R5/"
+  },
+  {
+    "aci": "ACI0106646",
+    "buildNumber": 100159,
+    "branch": "21_R5",
+    "sourceUrl": "https://developer.4d.com/FixedBugsList/nightly/21_R5/"
+  },
+  {
+    "aci": "ACI0106612",
+    "buildNumber": 100159,
+    "branch": "21_R5",
+    "sourceUrl": "https://developer.4d.com/FixedBugsList/nightly/21_R5/"
+  },
+  {
+    "aci": "ACI0106651",
+    "buildNumber": 100156,
+    "branch": "21_R5",
+    "sourceUrl": "https://developer.4d.com/FixedBugsList/nightly/21_R5/"
+  },
+  {
+    "aci": "ACI0106639",
+    "buildNumber": 100156,
+    "branch": "21_R5",
+    "sourceUrl": "https://developer.4d.com/FixedBugsList/nightly/21_R5/"
+  },
+  {
+    "aci": "ACI0106632",
+    "buildNumber": 100156,
+    "branch": "21_R5",
+    "sourceUrl": "https://developer.4d.com/FixedBugsList/nightly/21_R5/"
+  },
+  {
+    "aci": "ACI0106554",
+    "buildNumber": 100156,
+    "branch": "21_R5",
+    "sourceUrl": "https://developer.4d.com/FixedBugsList/nightly/21_R5/"
+  },
+  {
+    "aci": "ACI0106532",
+    "buildNumber": 100156,
+    "branch": "21_R5",
+    "sourceUrl": "https://developer.4d.com/FixedBugsList/nightly/21_R5/"
+  },
+  {
+    "aci": "ACI0106454",
+    "buildNumber": 100156,
+    "branch": "21_R5",
+    "sourceUrl": "https://developer.4d.com/FixedBugsList/nightly/21_R5/"
+  },
+  {
+    "aci": "ACI0106443",
+    "buildNumber": 100156,
+    "branch": "21_R5",
+    "sourceUrl": "https://developer.4d.com/FixedBugsList/nightly/21_R5/"
+  },
+  {
+    "aci": "ACI0106653",
+    "buildNumber": 100151,
+    "branch": "21_R5",
+    "sourceUrl": "https://developer.4d.com/FixedBugsList/nightly/21_R5/"
+  },
+  {
+    "aci": "ACI0106654",
+    "buildNumber": 100147,
+    "branch": "21_R5",
+    "sourceUrl": "https://developer.4d.com/FixedBugsList/nightly/21_R5/"
+  },
+  {
+    "aci": "ACI0106514",
+    "buildNumber": 100147,
+    "branch": "21_R5",
+    "sourceUrl": "https://developer.4d.com/FixedBugsList/nightly/21_R5/"
+  },
+  {
+    "aci": "ACI0106216",
+    "buildNumber": 100144,
+    "branch": "21_R5",
+    "sourceUrl": "https://developer.4d.com/FixedBugsList/nightly/21_R5/"
+  },
+  {
+    "aci": "ACI0106636",
+    "buildNumber": 100132,
+    "branch": "21_R5",
+    "sourceUrl": "https://developer.4d.com/FixedBugsList/nightly/21_R5/"
+  },
+  {
+    "aci": "ACI0106628",
+    "buildNumber": 100131,
+    "branch": "21_R5",
+    "sourceUrl": "https://developer.4d.com/FixedBugsList/nightly/21_R5/"
+  },
+  {
+    "aci": "ACI0106620",
+    "buildNumber": 100131,
+    "branch": "21_R5",
+    "sourceUrl": "https://developer.4d.com/FixedBugsList/nightly/21_R5/"
+  },
+  {
+    "aci": "ACI0106610",
+    "buildNumber": 100127,
+    "branch": "21_R5",
+    "sourceUrl": "https://developer.4d.com/FixedBugsList/nightly/21_R5/"
+  },
+  {
+    "aci": "ACI0106613",
+    "buildNumber": 100123,
+    "branch": "21_R5",
+    "sourceUrl": "https://developer.4d.com/FixedBugsList/nightly/21_R5/"
+  },
+  {
+    "aci": "ACI0106606",
+    "buildNumber": 100123,
+    "branch": "21_R5",
+    "sourceUrl": "https://developer.4d.com/FixedBugsList/nightly/21_R5/"
+  },
+  {
+    "aci": "ACI0106590",
+    "buildNumber": 100123,
+    "branch": "21_R5",
+    "sourceUrl": "https://developer.4d.com/FixedBugsList/nightly/21_R5/"
+  },
+  {
+    "aci": "ACI0106558",
+    "buildNumber": 100114,
+    "branch": "21_R5",
+    "sourceUrl": "https://developer.4d.com/FixedBugsList/nightly/21_R5/"
+  },
+  {
+    "aci": "ACI0106604",
+    "buildNumber": 100113,
+    "branch": "21_R5",
+    "sourceUrl": "https://developer.4d.com/FixedBugsList/nightly/21_R5/"
+  },
+  {
+    "aci": "ACI0106581",
+    "buildNumber": 100113,
+    "branch": "21_R5",
+    "sourceUrl": "https://developer.4d.com/FixedBugsList/nightly/21_R5/"
+  },
+  {
+    "aci": "ACI0106576",
+    "buildNumber": 100099,
+    "branch": "21_R5",
+    "sourceUrl": "https://developer.4d.com/FixedBugsList/nightly/21_R5/"
+  },
+  {
+    "aci": "ACI0106596",
+    "buildNumber": 100097,
+    "branch": "21_R5",
+    "sourceUrl": "https://developer.4d.com/FixedBugsList/nightly/21_R5/"
+  },
+  {
+    "aci": "ACI0106567",
+    "buildNumber": 100085,
+    "branch": "21_R5",
+    "sourceUrl": "https://developer.4d.com/FixedBugsList/nightly/21_R5/"
+  },
+  {
+    "aci": "ACI0106566",
+    "buildNumber": 100066,
+    "branch": "21_R5",
+    "sourceUrl": "https://developer.4d.com/FixedBugsList/nightly/21_R5/"
+  },
+  {
+    "aci": "ACI0106545",
+    "buildNumber": 100066,
+    "branch": "21_R5",
+    "sourceUrl": "https://developer.4d.com/FixedBugsList/nightly/21_R5/"
+  },
+  {
+    "aci": "ACI0106506",
+    "buildNumber": 100066,
+    "branch": "21_R5",
+    "sourceUrl": "https://developer.4d.com/FixedBugsList/nightly/21_R5/"
+  },
+  {
+    "aci": "ACI0106542",
+    "buildNumber": 100047,
+    "branch": "21_R5",
+    "sourceUrl": "https://developer.4d.com/FixedBugsList/nightly/21_R5/"
+  },
+  {
+    "aci": "ACI0106546",
+    "buildNumber": 100027,
+    "branch": "21_R5",
+    "sourceUrl": "https://developer.4d.com/FixedBugsList/nightly/21_R5/"
+  }
+]

@@ -84,8 +84,10 @@
               type="text"
               inputmode="numeric"
               pattern="[0-9]*"
-              placeholder="e.g. 100667"
+              placeholder="e.g. 100672"
+              aria-describedby="build-hint"
             />
+            <p id="build-hint" class="field-hint">Use a build number from the selected version’s nightly branch.</p>
           </div>
         </div>
         <button id="submit" type="submit" disabled>Check status <span aria-hidden="true">→</span></button>

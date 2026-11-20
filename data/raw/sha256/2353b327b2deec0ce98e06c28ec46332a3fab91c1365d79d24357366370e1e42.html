@@ -1,0 +1,153 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>4D - Bug Fixes</title>
+  <link rel="canonical" href="../../versions/20.5_HF2/">
+  <link rel="stylesheet" href="../../css/fixedbugs.css" type="text/css">
+  <script src="../../javascript/fixedbugs.js"></script>
+  <meta name="viewport" content="width=device-width, user-scalable=no">
+</head>
+<body>
+<div class="contain">
+<h1>All Products 20.5 HF2 <span class="superadmin">- Fixed bugs</span></h1>
+<a href="#top" title="Scroll top" class="scrollTop"></a>
+
+<table class="list">
+	<tr>
+		<td class="title">Reference</td>
+		<td class="description">Summary</td>
+		<td class="version">Fixed also with</td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0101678</th>
+		<td class="description">In a built Server, the &quot;default HTML Root&quot; path contains non-existent sub-folder &quot;Database&quot;, instead of &quot;Server Database&quot; sub-folder.</td>
+		<td class="version"><a href="../../versions/20_R7/">20 R7</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104274</th>
+		<td class="description">Explorer window geometry broken after maximizing and restarting</td>
+		<td class="version"><a href="../../versions/20_R7/">20 R7</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104864</th>
+		<td class="description">The 4D command &#39;OB Copy&#39; may go in an &quot;infinite&quot; recursion when it is used with a class that refer itself; this could lead to a crash.</td>
+		<td class="version"><a href="../../versions/20_R7/">20 R7</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104888</th>
+		<td class="description">Possible freezes or crashes while or after restoring, depending of &#39;Backup &amp; Restore&#39; settings (&#39;Comrpession date&#39;, &#39;Interlacing rate&#39;, and &#39;Redundancy rate&#39;).</td>
+		<td class="version"><a href="../../versions/20_R6/">20 R6</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0105008</th>
+		<td class="description">When DirectWrite is enabled, text alignment is different than when DirectWrite is not enabled: some texts can get truncated.</td>
+		<td class="version"><a href="../../versions/20_R7/">20 R7</a> <a href="../../versions/20_R6_HF2/">20 R6 HF2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0105106</th>
+		<td class="description">Despite localized in English, a 4D can make appear some French words (&quot;Vrai&quot; instead of &quot;True&quot;, &quot;Faux&quot; instead of &quot;False&quot; ...).</td>
+		<td class="version"><a href="../../versions/20_R7/">20 R7</a> <a href="../../versions/20_R6_HF2/">20 R6 HF2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0105200</th>
+		<td class="description">&#39;QUERY BY ATTRIBUTE&#39; doesn&#39;t return the records when querying indexed object field</td>
+		<td class="version"><a href="../../versions/20_R7/">20 R7</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0105226</th>
+		<td class="description">4D quits unexpectedly after saving an entity inside a transaction when the data table already contains 1024 entities</td>
+		<td class="version"><a href="../../versions/20_R7/">20 R7</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0105227</th>
+		<td class="description">When compiling, 4D may crash while generating operation codes.</td>
+		<td class="version"><a href="../../versions/20_R6_HF2/">20 R6 HF2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0105233</th>
+		<td class="description">Using the //&#37;D comment can cause 4D to crash in compiled mode</td>
+		<td class="version"><a href="../../versions/20_R7/">20 R7</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0105234</th>
+		<td class="description">Changing current language with the command &#39;SET DATABASE LOCALIZATION&#39; while using commands &#39;Time&#39; or &#39;Date&#39; may lead to a crash.</td>
+		<td class="version"></td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0105236</th>
+		<td class="description">When converting Binary database to Project, Boolean field represented as Yes/No Radio button may get title corrupted and non-readable</td>
+		<td class="version"><a href="../../versions/20_R7/">20 R7</a> <a href="../../versions/20_R6_HF2/">20 R6 HF2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0105244</th>
+		<td class="description">Japanese text inappropriately taken away when deleting invalidated Japanese text</td>
+		<td class="version"><a href="../../versions/20_R7/">20 R7</a> <a href="../../versions/20_R6_HF2/">20 R6 HF2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0105245</th>
+		<td class="description">MSC button in the tool bar is shown instead of Administration button (4D Remote only).</td>
+		<td class="version"><a href="../../versions/20_R7/">20 R7</a> <a href="../../versions/20_R6_HF2/">20 R6 HF2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0105249</th>
+		<td class="description">4D Write Pro: &#39;WP EXPORT DOCUMENT&#39; overwrite a Read-Only &quot;.4wp&quot; document; on macOS only.</td>
+		<td class="version"><a href="../../versions/20_R7/">20 R7</a> <a href="../../versions/20_R6_HF2/">20 R6 HF2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0105250</th>
+		<td class="description">Unexpected execution error when clicking on the &quot;Database&quot; tab from the database settings.</td>
+		<td class="version"><a href="../../versions/20_R7/">20 R7</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0105268</th>
+		<td class="description">Current selection of listbox footer auto calculation is not working after modify field via detail form.</td>
+		<td class="version"><a href="../../versions/20_R7/">20 R7</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0105279</th>
+		<td class="description">Scrolling with trackpad is sluggish or erratic on mac OS; a very small movement of the two fingers on the trackpad can make a very large scroll.</td>
+		<td class="version"><a href="../../versions/20_R7/">20 R7</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0105286</th>
+		<td class="description">Composite indexes is unexpectedly used always after single field indexes; to use the fix, you need to rebuild the index at least once.</td>
+		<td class="version"><a href="../../versions/20_R7/">20 R7</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0105296</th>
+		<td class="description">The section &quot;Overview &amp; Details&quot; of the server administration window is not displayed correctly: no value appears; it may freeze afterwards.</td>
+		<td class="version"><a href="../../versions/20_R7/">20 R7</a> <a href="../../versions/20_R6_HF2/">20 R6 HF2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0105302</th>
+		<td class="description">HTTPClient doesn&#39;t not take &#39;readwriteTimeout&#39; into account</td>
+		<td class="version"><a href="../../versions/20_R7/">20 R7</a> <a href="../../versions/20_R6_HF2/">20 R6 HF2</a> </td>
+	</tr>
+
+</table>
+
+</div>
+</body>
+</html>

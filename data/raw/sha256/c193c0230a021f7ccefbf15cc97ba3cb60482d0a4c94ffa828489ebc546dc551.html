@@ -1,0 +1,381 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>4D - Bug Fixes</title>
+  <link rel="canonical" href="../../versions/21.2/">
+  <link rel="stylesheet" href="../../css/fixedbugs.css" type="text/css">
+  <script src="../../javascript/fixedbugs.js"></script>
+  <meta name="viewport" content="width=device-width, user-scalable=no">
+</head>
+<body>
+<div class="contain">
+<h1>All Products 21.2 <span class="superadmin">- Fixed bugs</span></h1>
+<a href="#top" title="Scroll top" class="scrollTop"></a>
+
+<table class="list">
+	<tr>
+		<td class="title">Reference</td>
+		<td class="description">Summary</td>
+		<td class="version">Fixed also with</td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0106214</th>
+		<td class="description">Find highlights in the method editor overrides selection highlight; you can&#39;t distinguish properly what has been found. On Windows system only.</td>
+		<td class="version"><a href="../../versions/21.1_HF1/">21.1 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0106220</th>
+		<td class="description">Bad display of &#39;user and groups&#39; editor when not an administrator.</td>
+		<td class="version"><a href="../../versions/21_R4/">21 R4</a> <a href="../../versions/21.1_HF2/">21.1 HF2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0106262</th>
+		<td class="description">Unexpected invalid index error (#1088) using several times &#39;SAVE RECORD&#39;, &#39;FLUSH CACHE&#39;, and &#39;DELETE SELECTION&#39;.</td>
+		<td class="version"><a href="../../versions/21_R3/">21 R3</a> <a href="../../versions/21.1_HF1/">21.1 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0106269</th>
+		<td class="description">An update of EDGE (start to &quot;146 ...&quot;) makes 4D crashing when displaying a web area. The control &#39;WebView2&#39; is not initialized correctly, so internal settings may bring instability in some cases: runtime options, Chromium upgrade, security update, etc ...</td>
+		<td class="version"><a href="../../versions/21.1_HF1/">21.1 HF1</a> <a href="../../versions/20.8_HF4/">20.8 HF4</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0106270</th>
+		<td class="description">Print Settings window does not display modal/popup windows; on macOS 26 only</td>
+		<td class="version"><a href="../../versions/21.1_HF2/">21.1 HF2</a> <a href="../../versions/20.8_HF4/">20.8 HF4</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0106290</th>
+		<td class="description">Possible crashes when using pop-up dropdown objects in list form on old databases, created with 19.x, or before the 19 R3 (using the compatibility option &#39;Use DirectWrite for text&#39; may prevent the bug).</td>
+		<td class="version"><a href="../../versions/21.1_HF1/">21.1 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0106291</th>
+		<td class="description">4D Write Pro: Images in 4D Write Pro document get lost when that document title contains special characters (&quot;?&quot;, &quot;/&quot;, etc ...).</td>
+		<td class="version"><a href="../../versions/20.8_HF3/">20.8 HF3</a> <a href="../../versions/21.1_HF1/">21.1 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0106296</th>
+		<td class="description">Corrupted memory occurs in TLS handshake of a client-server connection using OpenSSL</td>
+		<td class="version"><a href="../../versions/21_R4/">21 R4</a> <a href="../../versions/21.1_HF2/">21.1 HF2</a> <a href="../../versions/20.8_HF4/">20.8 HF4</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0106301</th>
+		<td class="description">When scroll left or right with touchpad on Windows system, direction is reversed.</td>
+		<td class="version"><a href="../../versions/21_R3/">21 R3</a> <a href="../../versions/21.1_HF1/">21.1 HF1</a> <a href="../../versions/20.8_HF4/">20.8 HF4</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0106308</th>
+		<td class="description">4D Viewx Pro: Executing the keyboard shortcut Ctrl+Shift+&quot;W&quot; in a 4D View Pro area causes a black screen and forces 4D to quit.</td>
+		<td class="version"><a href="../../versions/21_R4/">21 R4</a> <a href="../../versions/21.1_HF2/">21.1 HF2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0106318</th>
+		<td class="description">4D Write Pro: it shows empty/white output when clipPath child uses transform (works when transform is flattened)</td>
+		<td class="version"><a href="../../versions/21.1_HF1/">21.1 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0106319</th>
+		<td class="description">Entering data in a multi-style listbox cell saves unwanted standard style Tags; in Dark mode, it injects White text color (going back to Light mode, you can&#39;t see the text; white on white).</td>
+		<td class="version"><a href="../../versions/21_R3/">21 R3</a> <a href="../../versions/21.1_HF1/">21.1 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0106326</th>
+		<td class="description">MSC: when compacting a database with the option &#39;Force update all records&#39;, object fields with pointer are getting corrupted. After compaction, objects are empty.</td>
+		<td class="version"><a href="../../versions/21_R3/">21 R3</a> <a href="../../versions/21.1_HF1/">21.1 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0106330</th>
+		<td class="description">Quick Report: incorrect column sorting in crosstab reports.</td>
+		<td class="version"><a href="../../versions/21_R4/">21 R4</a> <a href="../../versions/21.1_HF2/">21.1 HF2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0106333</th>
+		<td class="description">Main process cpu usage: Process activity.processes[0].cpuUsage returns inflated value on Windows compared to macOS</td>
+		<td class="version"><a href="../../versions/21_R3/">21 R3</a> <a href="../../versions/21.1_HF1/">21.1 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0106334</th>
+		<td class="description">Unexpected error &quot;Cannot read data from stream&quot; in 4D Remote when multiple processes perform database requests; with network component QUIC only. No problem with ServerNet.</td>
+		<td class="version"><a href="../../versions/21.1_HF1/">21.1 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0106338</th>
+		<td class="description">Listbox is set back to its minimum column widths whenever the selection requires vertical scroll bars to be displayed</td>
+		<td class="version"><a href="../../versions/21_R4/">21 R4</a> <a href="../../versions/21_R3_HF1/">21 R3 HF1</a> <a href="../../versions/21.1_HF2/">21.1 HF2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0106339</th>
+		<td class="description">Session.info.IPAddress returns empty string in ds.authentify() </td>
+		<td class="version"><a href="../../versions/21_R3/">21 R3</a> <a href="../../versions/21.1_HF1/">21.1 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0106341</th>
+		<td class="description">Issue in username display in the 4D toolbox: username seems to be duplicated (whereas it is not).</td>
+		<td class="version"><a href="../../versions/21_R4/">21 R4</a> <a href="../../versions/21.1_HF2/">21.1 HF2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0106345</th>
+		<td class="description">4D Write Pro: the command &quot;WP New&quot; clones the whole document instead of just the table element that was passed</td>
+		<td class="version"><a href="../../versions/21_R3/">21 R3</a> <a href="../../versions/21.1_HF1/">21.1 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0106346</th>
+		<td class="description">4D application quits unexpectedly when calling &quot;License info&quot; from two processes in compiled mode</td>
+		<td class="version"><a href="../../versions/21_R3/">21 R3</a> <a href="../../versions/21.1_HF1/">21.1 HF1</a> <a href="../../versions/20.8_HF4/">20.8 HF4</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0106347</th>
+		<td class="description">Tool4D throws compilation errors on 4D.WebSocketServer and 4D.WebSocketConnection classes</td>
+		<td class="version"><a href="../../versions/21.1_HF1/">21.1 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0106349</th>
+		<td class="description">4D Qodly Pro - With the studio, the start page is not rendered when running the http://localhost/$lib/renderer/ URL</td>
+		<td class="version"><a href="../../versions/21_R3/">21 R3</a> <a href="../../versions/21_R2_HF2/">21 R2 HF2</a> <a href="../../versions/21.1_HF1/">21.1 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0106351</th>
+		<td class="description">Keyboard shortcut to run method doesn&#39;t work</td>
+		<td class="version"><a href="../../versions/21.1_HF2/">21.1 HF2</a> <a href="../../versions/21_R3_HF2/">21 R3 HF2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0106353</th>
+		<td class="description">Pasting field name into Query Editor no longer changes the box to enter value</td>
+		<td class="version"><a href="../../versions/21.1_HF1/">21.1 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0106355</th>
+		<td class="description">Compiler does not raise warning/error when assigning 0 to a UUID field through ORDA</td>
+		<td class="version"><a href="../../versions/21_R3/">21 R3</a> <a href="../../versions/21.1_HF1/">21.1 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0106361</th>
+		<td class="description">Using QUIC, 4D Server could crash when closing the application.</td>
+		<td class="version"><a href="../../versions/21.1_HF1/">21.1 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0106362</th>
+		<td class="description">4D crashes while modifying a class after renaming it if it has been duplicated; when editing the name, an incorrect class name is displayed.</td>
+		<td class="version"><a href="../../versions/21_R3/">21 R3</a> <a href="../../versions/21.1_HF1/">21.1 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0106365</th>
+		<td class="description">The function &#39;.getCount()&#39; returns 0 when no query is applied and the table class contains a restrict event function. Example: &#39;ds.Table.getCount()&#39;.</td>
+		<td class="version"><a href="../../versions/21_R4/">21 R4</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0106367</th>
+		<td class="description">Display issue with Time type object properties: when an object property is of type Time, 4D does not display it correctly in a form if the property is only defined through default properties. </td>
+		<td class="version"><a href="../../versions/21_R4/">21 R4</a> <a href="../../versions/21_R3_HF1/">21 R3 HF1</a> <a href="../../versions/21.1_HF2/">21.1 HF2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0106370</th>
+		<td class="description">Some 4D commands may not be logged in the debug log.</td>
+		<td class="version"><a href="../../versions/21_R3/">21 R3</a> <a href="../../versions/21.1_HF1/">21.1 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0106379</th>
+		<td class="description">Input form no longer input after renaming</td>
+		<td class="version"><a href="../../versions/21_R4/">21 R4</a> <a href="../../versions/21.1_HF2/">21.1 HF2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0106384</th>
+		<td class="description">After converting the binary database to a project database, the &quot;flat&quot; style may not be applied to objects that had the &quot;printing&quot; style.</td>
+		<td class="version"><a href="../../versions/21.1_HF1/">21.1 HF1</a> <a href="../../versions/21_R3_HF1/">21 R3 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0106385</th>
+		<td class="description">Enter key with no effect when going back to Explorer windows using keyboard shortcuts</td>
+		<td class="version"><a href="../../versions/21.1_HF2/">21.1 HF2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0106391</th>
+		<td class="description">Unexpected quit when clicking &#39;Esc&#39; key while in debugger window.</td>
+		<td class="version"><a href="../../versions/21.1_HF1/">21.1 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0106395</th>
+		<td class="description">Incorrect &#39;endingDate&#39; and &#39;scheduledDate&#39; in &#39;backupHistory&#39; file.</td>
+		<td class="version"><a href="../../versions/21_R4/">21 R4</a> <a href="../../versions/21.1_HF2/">21.1 HF2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0106412</th>
+		<td class="description">Calling the &#39;DISPLAY NOTIFICATION&#39; command causes the application to crash in the Windows session while switching the light/dark mode.</td>
+		<td class="version"><a href="../../versions/21_R4/">21 R4</a> <a href="../../versions/21.1_HF2/">21.1 HF2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0106416</th>
+		<td class="description">When editing a method that already contains a case of statement, inserting a new &#39;Case of&#39; at the beginning of the method or inside a &#39;if&#39; statement above existing &#39;Case of&#39; statement can cause a crash. </td>
+		<td class="version"><a href="../../versions/21.1_HF1/">21.1 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0106424</th>
+		<td class="description">Incorrect MIME encoding in emails with attachments that have long file names</td>
+		<td class="version"><a href="../../versions/21_R4/">21 R4</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0106430</th>
+		<td class="description">In compiled mode, 4D Remote on Apple silicon processor (Mac-ARM) doesn&#39;t execute component method defined to run on 4D Server.</td>
+		<td class="version"><a href="../../versions/21_R4/">21 R4</a> <a href="../../versions/20.9/">20.9</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0106436</th>
+		<td class="description">Possible crash when closing 4D client if using QUIC network component.</td>
+		<td class="version"><a href="../../versions/21_R4/">21 R4</a> <a href="../../versions/21_R3_HF1/">21 R3 HF1</a> <a href="../../versions/21.1_HF2/">21.1 HF2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0106447</th>
+		<td class="description">When a new list is added to an existing enumeration, it is automatically inserted at the top of the list.</td>
+		<td class="version"><a href="../../versions/21_R4/">21 R4</a> <a href="../../versions/21.1_HF2/">21.1 HF2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0106448</th>
+		<td class="description">&quot;Modifiable Element&quot; checkbox is not checked by default when creating a new list element</td>
+		<td class="version"><a href="../../versions/21_R4/">21 R4</a> <a href="../../versions/21.1_HF2/">21.1 HF2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0106450</th>
+		<td class="description">4D Write Pro: Font changes when applying Bold/Italic via &quot;Invoke Action&quot; and &quot;WP SET ATTRIBUTES&quot;.</td>
+		<td class="version"><a href="../../versions/21_R4/">21 R4</a> <a href="../../versions/21.1_HF2/">21.1 HF2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0106452</th>
+		<td class="description">The &#39;Total HTTP Hits&#39; number is not reset after restarting the web server.</td>
+		<td class="version"><a href="../../versions/21_R4/">21 R4</a> <a href="../../versions/21_R3_HF2/">21 R3 HF2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0106453</th>
+		<td class="description">Plugins: &#39;PA_CreateNativePictureForPrinting&#39; creates unexpected enlarged and clipped pictures.</td>
+		<td class="version"><a href="../../versions/21_R4/">21 R4</a> <a href="../../versions/21.1_HF2/">21.1 HF2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0106460</th>
+		<td class="description">Toolbox Editor: the right panel of the &#39;List&#39; tab may be hidden or bad displayed after switching between 4D and other applications.</td>
+		<td class="version"><a href="../../versions/21_R4/">21 R4</a> <a href="../../versions/21.1_HF2/">21.1 HF2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0106466</th>
+		<td class="description">Two lines remain in the right-hand list after clicking the empty area.</td>
+		<td class="version"><a href="../../versions/21_R4/">21 R4</a> <a href="../../versions/21.1_HF2/">21.1 HF2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0106467</th>
+		<td class="description">The right separator line of the enumerations list is not displayed.</td>
+		<td class="version"><a href="../../versions/21.1_HF2/">21.1 HF2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0106470</th>
+		<td class="description">Password is not remembered even when &quot;Remember Password&quot; is checked; client-server mode only.</td>
+		<td class="version"><a href="../../versions/21_R4/">21 R4</a> <a href="../../versions/21_R3_HF1/">21 R3 HF1</a> <a href="../../versions/21.1_HF2/">21.1 HF2</a> <a href="../../versions/20.8_HF4/">20.8 HF4</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0106472</th>
+		<td class="description">QUIC network layer sends fixed UDP packets without Path MTU Discovery because the DF (Don&#39;t Fragment) value is wrong.</td>
+		<td class="version"><a href="../../versions/21_R4/">21 R4</a> <a href="../../versions/21.1_HF2/">21.1 HF2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0106482</th>
+		<td class="description">Incorrect Formula Migration from 4D View to 4D View Pro Causing Calculation Errors Due to Missing Parentheses</td>
+		<td class="version"></td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0106483</th>
+		<td class="description">The command &#39;SET WINDOW RECT&#39; on a maximized window make appear unexpectedly another little window (without any close/minimize/maximize button).</td>
+		<td class="version"><a href="../../versions/21_R4/">21 R4</a> <a href="../../versions/21.1_HF2/">21.1 HF2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0106489</th>
+		<td class="description">4D Desktop should automatically try to refresh, similar as other licenses.</td>
+		<td class="version"><a href="../../versions/21_R4/">21 R4</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0106494</th>
+		<td class="description">Executing &#39;MAIL Convert to MIME&#39; after pushing twice (or more) values in headers may lead to unexpected folds in the mime text.</td>
+		<td class="version"><a href="../../versions/21_R4/">21 R4</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0106499</th>
+		<td class="description">Wrong value type for time arrays referenced via pointers (compiled only)</td>
+		<td class="version"><a href="../../versions/21_R4/">21 R4</a> <a href="../../versions/20.9/">20.9</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0106500</th>
+		<td class="description">Possible QUIC connection failure through VPN; since 21.1 HF2</td>
+		<td class="version"><a href="../../versions/21_R4/">21 R4</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0106504</th>
+		<td class="description">The &#39;Total HTTP hits&#39; number may increase unexpectedly on Administration window (see &#39;HTTP Server&#39; tab) with some non-http actions; yet nothing is reported in the http log.</td>
+		<td class="version"><a href="../../versions/21_R4/">21 R4</a> <a href="../../versions/21_R3_HF2/">21 R3 HF2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0106510</th>
+		<td class="description">Erratic behaviour regarding the width of list box columns in development mode when ‘Automatic Column Width’ is selected</td>
+		<td class="version"><a href="../../versions/21_R4/">21 R4</a> <a href="../../versions/21_R3_HF2/">21 R3 HF2</a> </td>
+	</tr>
+
+</table>
+
+</div>
+</body>
+</html>

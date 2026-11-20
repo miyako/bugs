@@ -1,0 +1,609 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>4D - Bug Fixes</title>
+  <link rel="canonical" href="../../versions/20_R7/">
+  <link rel="stylesheet" href="../../css/fixedbugs.css" type="text/css">
+  <script src="../../javascript/fixedbugs.js"></script>
+  <meta name="viewport" content="width=device-width, user-scalable=no">
+</head>
+<body>
+<div class="contain">
+<h1>All Products 20 R7 <span class="superadmin">- Fixed bugs</span></h1>
+<a href="#top" title="Scroll top" class="scrollTop"></a>
+
+<table class="list">
+	<tr>
+		<td class="title">Reference</td>
+		<td class="description">Summary</td>
+		<td class="version">Fixed also with</td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0101678</th>
+		<td class="description">In a built Server, the &quot;default HTML Root&quot; path contains non-existent sub-folder &quot;Database&quot;, instead of &quot;Server Database&quot; sub-folder.</td>
+		<td class="version"><a href="../../versions/20.5_HF2/">20.5 HF2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103375</th>
+		<td class="description">When commenting lines of code containing &quot;\&quot;+return sequences, with &quot;//&quot; or the block sequence &quot;/*...*/&quot;, and this comment is in the depth of nested &quot;case of...&quot; and &quot;if...&quot; statements, when the method is closed and reopened, the indentation is changed.</td>
+		<td class="version"><a href="../../versions/20.5/">20.5</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103752</th>
+		<td class="description">4D View Pro: after a conversion from 4D View to 4D View Pro, the formatting of percentage numbers is incorrect.</td>
+		<td class="version"><a href="../../versions/20.5_HF1/">20.5 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104220</th>
+		<td class="description">Listbox Column with default width are not WYSIWYG in Project mode</td>
+		<td class="version"></td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104256</th>
+		<td class="description">A crash occurs when several processes complete a web request while another uses &#39;Get process activity&#39; 4D command.</td>
+		<td class="version"></td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104274</th>
+		<td class="description">Explorer window geometry broken after maximizing and restarting</td>
+		<td class="version"><a href="../../versions/20.5_HF2/">20.5 HF2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104346</th>
+		<td class="description">With a listbox in subform, selected elements property is not updated after reloading the listbox.</td>
+		<td class="version"><a href="../../versions/20.5_HF1/">20.5 HF1</a> <a href="../../versions/20_R6_HF1/">20 R6 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104443</th>
+		<td class="description">The code &#39;FILTER KEYSTROKE (&quot;&quot;)&#39; deletes cell content in listboxes.</td>
+		<td class="version"><a href="../../versions/20.5_HF1/">20.5 HF1</a> <a href="../../versions/20_R6_HF1/">20 R6 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104819</th>
+		<td class="description">Qodly Studio: the Shared folder is not created for new projects</td>
+		<td class="version"><a href="../../versions/20_R6_HF1/">20 R6 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104864</th>
+		<td class="description">The 4D command &#39;OB Copy&#39; may go in an &quot;infinite&quot; recursion when it is used with a class that refer itself; this could lead to a crash.</td>
+		<td class="version"><a href="../../versions/20.5_HF2/">20.5 HF2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104870</th>
+		<td class="description">Retina display: the bold font used for checkbox labels differs from the bold font used for standard text labels.</td>
+		<td class="version"><a href="../../versions/20_R5_HF1/">20 R5 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104872</th>
+		<td class="description">Qodly Studio: New entity not properly linked to related table on Save.</td>
+		<td class="version"><a href="../../versions/20_R5/">20 R5</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104876</th>
+		<td class="description">Qodly Studio: the LSP doesn&#39;t recognize the DataClass functions ex: .new()</td>
+		<td class="version"></td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104879</th>
+		<td class="description">4D Write Pro: Copy/Paste an Excel table embedded in a Word document to 4D Write Pro may not work properly.</td>
+		<td class="version"><a href="../../versions/20.4_HF1/">20.4 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104919</th>
+		<td class="description">Diagnostic Logs seems to not log entries during Startup process</td>
+		<td class="version"><a href="../../versions/20.6/">20.6</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104951</th>
+		<td class="description">The scrolling is not working when &quot;multiline&quot; is set to &quot;1&quot; by command on a one line text input</td>
+		<td class="version"></td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104952</th>
+		<td class="description">The text is not justified in a text input when the aligment is changed to justify using the 4D commands.</td>
+		<td class="version"></td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104985</th>
+		<td class="description">Power Query used from Excel or any Office Desktop application, returns incorrect numerical values from 4D (no problem with MS Query).</td>
+		<td class="version"><a href="../../versions/20.5_HF1/">20.5 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104992</th>
+		<td class="description">&#39;QR REPORT&#39; wrongly mixes virtual structure and real structure in the dialogs</td>
+		<td class="version"><a href="../../versions/20.5_HF1/">20.5 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0105008</th>
+		<td class="description">When DirectWrite is enabled, text alignment is different than when DirectWrite is not enabled: some texts can get truncated.</td>
+		<td class="version"><a href="../../versions/20.5_HF2/">20.5 HF2</a> <a href="../../versions/20_R6_HF2/">20 R6 HF2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0105009</th>
+		<td class="description">Qodly Studio: Related entity data is not returned using a singleton</td>
+		<td class="version"></td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0105022</th>
+		<td class="description">ORDA query on a Data class using a collection that contains empty string and UUID data, may leads to a wrong result.</td>
+		<td class="version"><a href="../../versions/20.5_HF1/">20.5 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0105027</th>
+		<td class="description">When you select multiple form objects by &#39;Select similar objects&#39; menu, the Align button and Distribute button stays disabled</td>
+		<td class="version"><a href="../../versions/20.5_HF1/">20.5 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0105031</th>
+		<td class="description">4D Write Pro: setting a method link through the side widget does not work</td>
+		<td class="version"></td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0105038</th>
+		<td class="description">Bad scrolling performance in listbox arrays if using an array for the row heights.</td>
+		<td class="version"><a href="../../versions/20.5_HF1/">20.5 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0105054</th>
+		<td class="description">Negative time values not correctly computed using unary minus operator in interpreted mode</td>
+		<td class="version"></td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0105057</th>
+		<td class="description">Unexpected crash with &#39;HTTP Request&#39; when using an &#39;HTTP POST&#39; method.</td>
+		<td class="version"><a href="../../versions/20_R6_HF1/">20 R6 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0105061</th>
+		<td class="description">Wrong query result with arrays under particular conditions (the entity contains data, the query does not use the index and the attribute has the &quot;map NULL...&quot; property checked)</td>
+		<td class="version"><a href="../../versions/20_R6/">20 R6</a> <a href="../../versions/20.5_HF1/">20.5 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0105068</th>
+		<td class="description">Qodly Studio: Singleton functions does not return the same information as the datastore functions</td>
+		<td class="version"><a href="../../versions/20_R6_HF1/">20 R6 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0105072</th>
+		<td class="description">Message shown upon activating 4D without network is not localized</td>
+		<td class="version"><a href="../../versions/20.5_HF1/">20.5 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0105074</th>
+		<td class="description">Using a Windows shared folder (not a subfolder) with SMB on macOS raises an unexpected error (&quot;-43) if the folder name contains a special character such as an umlaut (ä, ü, ...).</td>
+		<td class="version"><a href="../../versions/20_R6_HF1/">20 R6 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0105081</th>
+		<td class="description">ORDA: Privileges - The Session.hasPrivilege() function does not return True for promoted privileges</td>
+		<td class="version"><a href="../../versions/20_R6_HF1/">20 R6 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0105084</th>
+		<td class="description">Memory leak when retrieving mail with POP3 Transporter, especially when connection failed.</td>
+		<td class="version"><a href="../../versions/20.5_HF1/">20.5 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0105091</th>
+		<td class="description">Qodly Studio: Logout standard action doesn&#39;t clear privileges</td>
+		<td class="version"></td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0105097</th>
+		<td class="description">Toolbar is wrongly resized if the macOS dock is placed on left or right side of the screen</td>
+		<td class="version"><a href="../../versions/20.5_HF1/">20.5 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0105100</th>
+		<td class="description">ORDA query that uses relations can return wrong result</td>
+		<td class="version"><a href="../../versions/20.5_HF1/">20.5 HF1</a> <a href="../../versions/20_R6_HF1/">20 R6 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0105105</th>
+		<td class="description">REST Server: Singleton exposed functions return an error when the function has no parameter</td>
+		<td class="version"><a href="../../versions/20_R6_HF1/">20 R6 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0105106</th>
+		<td class="description">Despite localized in English, a 4D can make appear some French words (&quot;Vrai&quot; instead of &quot;True&quot;, &quot;Faux&quot; instead of &quot;False&quot; ...).</td>
+		<td class="version"><a href="../../versions/20.5_HF2/">20.5 HF2</a> <a href="../../versions/20_R6_HF2/">20 R6 HF2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0105108</th>
+		<td class="description">Some entries with &#39;Get Monitored Activity&#39; returns nothing in the &#39;message &#39;entry</td>
+		<td class="version"><a href="../../versions/20.5/">20.5</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0105116</th>
+		<td class="description">In the Administration window dialog, the page/tab &#39;Maintenance&#39; is not compatible with the Dark mode of macOS; some wrong displays.</td>
+		<td class="version"><a href="../../versions/20.5_HF1/">20.5 HF1</a> <a href="../../versions/20_R6_HF1/">20 R6 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0105118</th>
+		<td class="description">ORDA: &#39;selection.clean&#39; does not work correctly when record addresses are greater than 2 Gb.</td>
+		<td class="version"><a href="../../versions/20_R6/">20 R6</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0105123</th>
+		<td class="description">4D may crash when using the new &#39;PDF Get attachments&#39; command.</td>
+		<td class="version"><a href="../../versions/20_R6_HF1/">20 R6 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0105125</th>
+		<td class="description">4D Write Pro: the layout of a 4D Write Pro document is not correct when it contains subsections, each with a different number of columns.</td>
+		<td class="version"></td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0105128</th>
+		<td class="description">Blind Carbon Copy list (&#39;Bcc&#39;) of recipients of an email sent with the smtp.send() command is visible to all recipients of the email</td>
+		<td class="version"><a href="../../versions/20.5_HF1/">20.5 HF1</a> <a href="../../versions/20_R6_HF1/">20 R6 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0105130</th>
+		<td class="description">Some characters, like &quot;;&quot; used in tags &quot;//TODO:&quot;, &quot;//MARK:&quot;, and &quot;//FIXME:&quot; can lead to some mess-up in the tags dropdown list, under the window&#39;s title.</td>
+		<td class="version"><a href="../../versions/20.5_HF1/">20.5 HF1</a> <a href="../../versions/20_R6_HF1/">20 R6 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0105132</th>
+		<td class="description">4D Write Pro: incomplete loading of a document in an embedded web area</td>
+		<td class="version"><a href="../../versions/20_R6_HF1/">20 R6 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0105136</th>
+		<td class="description">Unexpected crash (or runtime error) on opening 4D Preferences dialog.</td>
+		<td class="version"><a href="../../versions/20_R6_HF1/">20 R6 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0105137</th>
+		<td class="description">ORDA: &#39;EntitySel.clean()&#39; does not update the selection correctly when this one has been sorted.</td>
+		<td class="version"><a href="../../versions/20_R6/">20 R6</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0105140</th>
+		<td class="description">Randomly, on Windows 11 24H2, an error may unexpectedly happen when generating a pdf by opening a printing job. (no problem with 23H2).</td>
+		<td class="version"><a href="../../versions/20_R6/">20 R6</a> <a href="../../versions/20.5_HF1/">20.5 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0105153</th>
+		<td class="description">Text on default button not visible when focus is on another window of type palette</td>
+		<td class="version"><a href="../../versions/20_R6/">20 R6</a> <a href="../../versions/20.5_HF1/">20.5 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0105161</th>
+		<td class="description">In the Toolbox dialog, double-clicking on a user group name (or long-clicking) doesn&#39;t allow to modify the name correctly.</td>
+		<td class="version"><a href="../../versions/20.5_HF1/">20.5 HF1</a> <a href="../../versions/20_R6_HF1/">20 R6 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0105163</th>
+		<td class="description">The list of warnings that can be suppressed is not correct; it includes errors as well.</td>
+		<td class="version"><a href="../../versions/20_R6_HF1/">20 R6 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0105167</th>
+		<td class="description">When the radio button (or a checkbox) label contains only one letter, a colon &quot;:&quot; is unexpectedly placed before it.</td>
+		<td class="version"><a href="../../versions/20_R6_HF1/">20 R6 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0105171</th>
+		<td class="description">The 4D command &#39;OBJECT SET HORIZONTAL ALIGNMENT&#39; doesn&#39;t change the horizontal alignment of the static text when its orientation is different form the default value (0°); on Windows system only.</td>
+		<td class="version"></td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0105172</th>
+		<td class="description">Possible crash when opening a database in a shared folder.</td>
+		<td class="version"><a href="../../versions/20_R6_HF1/">20 R6 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0105174</th>
+		<td class="description">4D Write Pro: values returned by “Get action info” are unsynchronized </td>
+		<td class="version"><a href="../../versions/20.5_HF1/">20.5 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0105175</th>
+		<td class="description">4D Write Pro: the object returned by &quot;Get action info&quot; contains the margin value of the paragraph where the selection began, and the &quot;status&quot; returned is not set to &quot;mixed&quot;</td>
+		<td class="version"><a href="../../versions/20.5_HF1/">20.5 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0105176</th>
+		<td class="description">4D Write Pro: &quot;On Selection Change” event on a 4D Write pro area may not always trigger.</td>
+		<td class="version"><a href="../../versions/20.5_HF1/">20.5 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0105179</th>
+		<td class="description">Random crash when an entity modified in transaction has been release from memory.</td>
+		<td class="version"><a href="../../versions/20.5_HF1/">20.5 HF1</a> <a href="../../versions/20_R6_HF1/">20 R6 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0105183</th>
+		<td class="description">4D Server is unexpectedly freezing when printing a large report</td>
+		<td class="version"><a href="../../versions/20.5_HF1/">20.5 HF1</a> <a href="../../versions/20_R6_HF1/">20 R6 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0105189</th>
+		<td class="description">4D Write Pro: crash when inserting a table in the header and applying &#39;WP Get Position&#39; to the table object.</td>
+		<td class="version"><a href="../../versions/20_R6_HF2/">20 R6 HF2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0105191</th>
+		<td class="description">In compiled mode DIALOG($FormPath) opens the About page before the form and doesn&#39;t execute Form code if the form.4Dform description file is in the resources folder and if the ‘method’ property is not empty (: ‘method.4dm’).</td>
+		<td class="version"></td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0105192</th>
+		<td class="description">Incorrect date display in a listbox column and footer after changing the display format; binary mode only.</td>
+		<td class="version"><a href="../../versions/20_R6_HF1/">20 R6 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0105193</th>
+		<td class="description">Nested Try-catch throws syntax error #10756.</td>
+		<td class="version"><a href="../../versions/20_R6_HF1/">20 R6 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0105200</th>
+		<td class="description">&#39;QUERY BY ATTRIBUTE&#39; doesn&#39;t return the records when querying indexed object field</td>
+		<td class="version"><a href="../../versions/20.5_HF2/">20.5 HF2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0105201</th>
+		<td class="description">Chained entitySelection-&gt;Collection.orderBy() unexpectedly brings a warning &quot;a function or property orderBy is unexpected (550.3)&quot;.</td>
+		<td class="version"></td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0105203</th>
+		<td class="description">When you try to import data using &#39;IMPORT DATA&#39; and an xml project, a Japanese text longer than 170 characters will cause the data to be incorrectly imported. </td>
+		<td class="version"><a href="../../versions/20_R6_HF1/">20 R6 HF1</a> <a href="../../versions/20.8_HF3/">20.8 HF3</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0105204</th>
+		<td class="description">When the radio button (or a checkbox) label contains only one Japanese letter, it is broken in runtime mode.</td>
+		<td class="version"><a href="../../versions/20_R6_HF1/">20 R6 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0105208</th>
+		<td class="description">4D Server does not detect REST session when RDS connection is authenticated with .authentify()</td>
+		<td class="version"></td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0105213</th>
+		<td class="description">In client-server mode, the entity.fromObject method doesn&#39;t work depending of the dataclass attributes order; with macOS only.</td>
+		<td class="version"><a href="../../versions/20_R6_HF2/">20 R6 HF2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0105214</th>
+		<td class="description">For listbox selection or entity selection with  ‘hide selection highlight&quot; properties checked , form event &quot;on display detail &quot; is not called after select line</td>
+		<td class="version"><a href="../../versions/20_R6_HF1/">20 R6 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0105222</th>
+		<td class="description">Display format of Reals shows in Hour format in a form.</td>
+		<td class="version"><a href="../../versions/20_R6_HF1/">20 R6 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0105226</th>
+		<td class="description">4D quits unexpectedly after saving an entity inside a transaction when the data table already contains 1024 entities</td>
+		<td class="version"><a href="../../versions/20.5_HF2/">20.5 HF2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0105232</th>
+		<td class="description">Possible &#39;Web Process&#39; settings inconsistency with the option &#39;Legacy sessions&#39; between &#39;Structure settings&#39; and &#39;User settings&#39;.</td>
+		<td class="version"></td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0105233</th>
+		<td class="description">Using the //&#37;D comment can cause 4D to crash in compiled mode</td>
+		<td class="version"><a href="../../versions/20.5_HF2/">20.5 HF2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0105236</th>
+		<td class="description">When converting Binary database to Project, Boolean field represented as Yes/No Radio button may get title corrupted and non-readable</td>
+		<td class="version"><a href="../../versions/20.5_HF2/">20.5 HF2</a> <a href="../../versions/20_R6_HF2/">20 R6 HF2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0105237</th>
+		<td class="description">Certificate in HTTP Request returns error 401, instead of 200.</td>
+		<td class="version"><a href="../../versions/20_R6_HF2/">20 R6 HF2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0105243</th>
+		<td class="description">After changing ports in the the Web Administration settings window and validating the dialog, changes are not saved</td>
+		<td class="version"></td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0105244</th>
+		<td class="description">Japanese text inappropriately taken away when deleting invalidated Japanese text</td>
+		<td class="version"><a href="../../versions/20.5_HF2/">20.5 HF2</a> <a href="../../versions/20_R6_HF2/">20 R6 HF2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0105245</th>
+		<td class="description">MSC button in the tool bar is shown instead of Administration button (4D Remote only).</td>
+		<td class="version"><a href="../../versions/20.5_HF2/">20.5 HF2</a> <a href="../../versions/20_R6_HF2/">20 R6 HF2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0105249</th>
+		<td class="description">4D Write Pro: &#39;WP EXPORT DOCUMENT&#39; overwrite a Read-Only &quot;.4wp&quot; document; on macOS only.</td>
+		<td class="version"><a href="../../versions/20.5_HF2/">20.5 HF2</a> <a href="../../versions/20_R6_HF2/">20 R6 HF2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0105250</th>
+		<td class="description">Unexpected execution error when clicking on the &quot;Database&quot; tab from the database settings.</td>
+		<td class="version"><a href="../../versions/20.5_HF2/">20.5 HF2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0105265</th>
+		<td class="description">Cannot compile code where a &#39;While&#39;, &#39;For&#39; or &#39;For each&#39; loop is placed inside a &#39;Try/End try&#39; block on macOS with ARM processor.</td>
+		<td class="version"><a href="../../versions/20_R6_HF2/">20 R6 HF2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0105268</th>
+		<td class="description">Current selection of listbox footer auto calculation is not working after modify field via detail form.</td>
+		<td class="version"><a href="../../versions/20.5_HF2/">20.5 HF2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0105279</th>
+		<td class="description">Scrolling with trackpad is sluggish or erratic on mac OS; a very small movement of the two fingers on the trackpad can make a very large scroll.</td>
+		<td class="version"><a href="../../versions/20.5_HF2/">20.5 HF2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0105286</th>
+		<td class="description">Composite indexes is unexpectedly used always after single field indexes; to use the fix, you need to rebuild the index at least once.</td>
+		<td class="version"><a href="../../versions/20.5_HF2/">20.5 HF2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0105287</th>
+		<td class="description">Using &#39;SET WINDOW RECT&#39; in a multi-screen configuration may unexpectedly lost the focus on the concerned window.</td>
+		<td class="version"><a href="../../versions/20_R6_HF2/">20 R6 HF2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0105293</th>
+		<td class="description">When connecting a 4D to a 4D Server, the text of the administration icon in the toolbar is incomplete</td>
+		<td class="version"><a href="../../versions/20_R8/">20 R8</a> <a href="../../versions/20.6/">20.6</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0105294</th>
+		<td class="description">Qodly Studio: issue when trying to debug a method twice in a row with Qodly studio: the &#39;Play&#39; button may not work.</td>
+		<td class="version"></td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0105296</th>
+		<td class="description">The section &quot;Overview &amp; Details&quot; of the server administration window is not displayed correctly: no value appears; it may freeze afterwards.</td>
+		<td class="version"><a href="../../versions/20.5_HF2/">20.5 HF2</a> <a href="../../versions/20_R6_HF2/">20 R6 HF2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0105302</th>
+		<td class="description">HTTPClient doesn&#39;t not take &#39;readwriteTimeout&#39; into account</td>
+		<td class="version"><a href="../../versions/20.5_HF2/">20.5 HF2</a> <a href="../../versions/20_R6_HF2/">20 R6 HF2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0105309</th>
+		<td class="description">Privileges can&#39;t be set in a web session after a 4DACTION web request is done to the web server </td>
+		<td class="version"><a href="../../versions/20_R8/">20 R8</a> <a href="../../versions/20.6/">20.6</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0105318</th>
+		<td class="description">4D View Pro: unexpected error &quot;the class cs.TableColumns is unknown&quot;</td>
+		<td class="version"><a href="../../versions/20_R8/">20 R8</a> <a href="../../versions/20_R6_HF2/">20 R6 HF2</a> <a href="../../versions/20.6/">20.6</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0105325</th>
+		<td class="description">When attempting to compile, unexpected error &quot;Can&#39;t find form &#39;Compilation&#39; ...&quot; may happen using 4D in Turkish System Regional Settings.</td>
+		<td class="version"><a href="../../versions/20_R8/">20 R8</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0105329</th>
+		<td class="description">4D View Pro: The command &quot;VP PRINT&quot; with the parameter &quot;vk workbook or -2&quot; not working since 20R7</td>
+		<td class="version"><a href="../../versions/20_R8/">20 R8</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0105389</th>
+		<td class="description">The Backup log file location is bad when a log file is integrated during the database opening; it is just not found whereas it should be close to the data file.</td>
+		<td class="version"><a href="../../versions/20_R8/">20 R8</a> <a href="../../versions/20.6/">20.6</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0105620</th>
+		<td class="description">If you build a self-executable application via the dialog, you may get the message &quot;4D volume desktop license has not been found&quot;.</td>
+		<td class="version"><a href="../../versions/20_R9/">20 R9</a> <a href="../../versions/20.7_HF1/">20.7 HF1</a> <a href="../../versions/20_R8_HF2/">20 R8 HF2</a> </td>
+	</tr>
+
+</table>
+
+</div>
+</body>
+</html>

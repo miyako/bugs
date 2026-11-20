@@ -1,0 +1,123 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>4D - Bug Fixes</title>
+  <link rel="canonical" href="../../versions/20_R10_HF2/">
+  <link rel="stylesheet" href="../../css/fixedbugs.css" type="text/css">
+  <script src="../../javascript/fixedbugs.js"></script>
+  <meta name="viewport" content="width=device-width, user-scalable=no">
+</head>
+<body>
+<div class="contain">
+<h1>All Products 20 R10 HF2 <span class="superadmin">- Fixed bugs</span></h1>
+<a href="#top" title="Scroll top" class="scrollTop"></a>
+
+<table class="list">
+	<tr>
+		<td class="title">Reference</td>
+		<td class="description">Summary</td>
+		<td class="version">Fixed also with</td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0105906</th>
+		<td class="description">4D WebSocket server not forwarding messages to worker reliably</td>
+		<td class="version"><a href="../../versions/21/">21</a> <a href="../../versions/20.8_HF1/">20.8 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0105969</th>
+		<td class="description">4D Server may crash with network component QUIC when closing client connections.</td>
+		<td class="version"><a href="../../versions/21/">21</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0105994</th>
+		<td class="description">In combo box, &#39;On After Edit&#39; event is not fired when typing Japanese text and validating it with Return key.</td>
+		<td class="version"><a href="../../versions/21/">21</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0106020</th>
+		<td class="description">The command &#39;License info&#39; executed from a Web process, and another process accessing the menu bar may crash the application because of a bug of missing mutual exclusion (menu bar updated twice at the same time)</td>
+		<td class="version"><a href="../../versions/20.8_HF1/">20.8 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0106026</th>
+		<td class="description">License problem when building a server headless using build4D component and toold4D</td>
+		<td class="version"><a href="../../versions/21/">21</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0106038</th>
+		<td class="description">Windows introduced a feature that smooths image edges on buttons by adding lighter pixels. However, when using PNGs with multiple states, this edge-smoothing can bleed into adjacent states, causing visible lines above or below the button image.</td>
+		<td class="version"><a href="../../versions/21/">21</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0106039</th>
+		<td class="description">A synchronization problem within a listbox object can cause the application to quit unexpectedly. This can occur with simultaneous actions such as adding/removing rows, entering data into a cell, and executing the command &#39;OBJECT SET SCROLL POSITION&#39;</td>
+		<td class="version"><a href="../../versions/21/">21</a> <a href="../../versions/20.8_HF1/">20.8 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0106040</th>
+		<td class="description">4D Write Pro: It may crash when simulated keyboard input is performed in a Write Pro document; since minor version macOS 26.1 (no problem with 26.0.1).</td>
+		<td class="version"><a href="../../versions/21/">21</a> <a href="../../versions/20.8_HF1/">20.8 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0106042</th>
+		<td class="description">Possible crash on client side while cloning a non-shared collection part of a shared graph </td>
+		<td class="version"><a href="../../versions/21/">21</a> <a href="../../versions/20.8_HF1/">20.8 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0106043</th>
+		<td class="description">The property &#39;urlQuery&#39; of IncomingMessage in HTTPHandler wrongly decoded when url query value contain &quot;&#37;3D&quot;.</td>
+		<td class="version"><a href="../../versions/21/">21</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0106054</th>
+		<td class="description">On macOS 26 (Tahoe), when you right-click 4D in the dock and choose “Show All Windows”, a ghost window appears. </td>
+		<td class="version"><a href="../../versions/21/">21</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0106058</th>
+		<td class="description">Inconsistency between ARRAY TO LIST / LIST TO ARRAY in Project mode compare to Binary mode. One is diacritic, the other one not.</td>
+		<td class="version"><a href="../../versions/21/">21</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0106061</th>
+		<td class="description">4D crashes when calling &#39;.getMails&#39; using the new IMAP transporter. The issue occurs when requesting a large amount of mails to load (for example 500).</td>
+		<td class="version"><a href="../../versions/21/">21</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0106066</th>
+		<td class="description">Potential crash when the server administration window shows some information about a &quot;dying&quot; process. Closing that window is a workaround.</td>
+		<td class="version"><a href="../../versions/21/">21</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0106085</th>
+		<td class="description">With a binary database, you can&#39;t generate a built component</td>
+		<td class="version"><a href="../../versions/21/">21</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0106090</th>
+		<td class="description">When you add a folder in the explorer the folder is created but the list isn&#39;t automatically deployed, and  the new folder name isn&#39;t edited.</td>
+		<td class="version"><a href="../../versions/21/">21</a> </td>
+	</tr>
+
+</table>
+
+</div>
+</body>
+</html>

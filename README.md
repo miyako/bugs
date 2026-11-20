@@ -46,9 +46,10 @@ enter a build number for that version's nightly branch.
   **YES**; nightly evidence never changes a release-only verdict.
 - If the earliest indexed fix on the branch is later than the requested build,
   the checker shows that build as a note alongside the verdict. With no build
-  entered, the note uses the release's build number if verified (currently
-  `21.2`, build `100579`). A later listing does not prove that earlier builds
-  were unfixed.
+  entered, the note uses a verified release build when available (`19.8`,
+  `20.9`, `21.1`, `21.2`, or `21.2 HF2`). These mappings come from 4D installer
+  pages or the official nightly list's named release baseline. A later listing
+  does not prove that earlier builds were unfixed.
 
 The Pages workflow refreshes the nightly and beta build snapshot from the
 official branch listings. To refresh it locally, run

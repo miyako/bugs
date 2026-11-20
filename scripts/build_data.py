@@ -29,6 +29,12 @@ USER_AGENT = "4D-Fix-Finder/0.1 (+https://github.com/miyako/bugs)"
 ACI_PATTERN = re.compile(r"^ACI\d{7}$", re.IGNORECASE)
 VERSION_PATTERN = re.compile(r"^(?P<major>\d+)(?:\.(?P<minor>\d+))?(?:_R(?P<r>\d+))?(?:_HF(?P<hf>\d+))?$", re.IGNORECASE)
 LIFECYCLE_URL = "https://eu-en.4d.com/product-release-life-cycle"
+INSTALLER_CREATED_DATES = {
+    "19.1": "2021-11-30",
+    "19.2": "2022-03-04",
+    "19.3": "2022-05-23",
+    "19.4": "2022-09-09",
+}
 RELEASE_DATES = {
     "18.6": "2022-06-13",
     "19": "2021-07-12",
@@ -165,6 +171,12 @@ def version_from_url(url: str) -> dict[str, object]:
     date_source = RELEASE_DATE_SOURCES.get(key, LIFECYCLE_URL)
     version["releasedAt"] = release_date
     version["releaseDateSource"] = date_source if release_date else None
+    if key in INSTALLER_CREATED_DATES:
+        version["installerCreatedAt"] = INSTALLER_CREATED_DATES[key]
+        version["installerDateSource"] = (
+            "https://product-download.4d.com/"
+            f"?branch=19.x&flag=lts-release&type=installer&version_number={key}"
+        )
     return version
 
 

@@ -40,16 +40,21 @@ class BuildDataTests(unittest.TestCase):
         )
         self.assertEqual(older_hotfix["releasedAt"], "2026-06-05")
 
-    def test_4d_19_release_metadata_does_not_use_fix_note_publication_dates(self):
+    def test_4d_19_metadata_distinguishes_launch_and_installer_dates(self):
         prefix = "https://developer.4d.com/FixedBugsList/versions"
         release = version_from_url(f"{prefix}/19/")
         self.assertEqual(release["releasedAt"], "2021-07-12")
         self.assertEqual(release["releaseDateSource"], "https://blog.4d.com/4d-v19-is-here/")
-        for slug in ("19.1", "19.2", "19.3", "19.4"):
+        for slug, date in {
+            "19.1": "2021-11-30", "19.2": "2022-03-04",
+            "19.3": "2022-05-23", "19.4": "2022-09-09",
+        }.items():
             with self.subTest(slug=slug):
                 minor = version_from_url(f"{prefix}/{slug}/")
                 self.assertIsNone(minor["releasedAt"])
                 self.assertIsNone(minor["releaseDateSource"])
+                self.assertEqual(minor["installerCreatedAt"], date)
+                self.assertTrue(minor["installerDateSource"].endswith(f"version_number={slug}"))
 
     def test_existing_version_seeds_are_canonical_and_validated(self):
         seeds = version_seed_urls([

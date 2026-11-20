@@ -4,6 +4,7 @@ import nightlyRefresh from "./data/nightly-refresh.json";
 import {
   type BugDatabase,
   type ResolverResult,
+  chronologyDate,
   dataFreshness,
   findFixHistory,
   nightlyBranch,
@@ -47,12 +48,14 @@ function compareVersionsByDate(
   first: BugDatabase["versions"][number],
   second: BugDatabase["versions"][number],
 ): number {
-  if (first.releasedAt && second.releasedAt) {
-    const dateOrder = second.releasedAt.localeCompare(first.releasedAt);
+  const firstDate = chronologyDate(first);
+  const secondDate = chronologyDate(second);
+  if (firstDate && secondDate) {
+    const dateOrder = secondDate.localeCompare(firstDate);
     if (dateOrder !== 0) return dateOrder;
-  } else if (first.releasedAt) {
+  } else if (firstDate) {
     return -1;
-  } else if (second.releasedAt) {
+  } else if (secondDate) {
     return 1;
   }
   return second.displayName.localeCompare(first.displayName, undefined, { numeric: true });
@@ -75,7 +78,13 @@ function describeResult(result: ResolverResult): string {
       const fixedVersion = database.versions.find(
         (version) => version.versionKey === result.evidence[0].versionKey,
       );
-      return `The official ${result.evidence[0].sourcePage} Fixed Bugs List records this ACI as fixed in ${fixedVersion?.displayName ?? result.evidence[0].versionKey}. Its release date (${fixedVersion?.releasedAt}) is earlier than ${result.queriedVersion?.displayName}, so the fix carries forward.`;
+      const target = result.queriedVersion;
+      const listing = `The official ${result.evidence[0].sourcePage} Fixed Bugs List records this ACI as fixed in ${fixedVersion?.displayName ?? result.evidence[0].versionKey}.`;
+      if ((!fixedVersion?.releasedAt && fixedVersion?.installerCreatedAt)
+        || (!target?.releasedAt && target?.installerCreatedAt)) {
+        return `${listing} Using 4D installer creation dates where release dates are unknown, ${chronologyDate(fixedVersion)} is earlier than ${target?.displayName} (${chronologyDate(target)}), so the fix carries forward.`;
+      }
+      return `${listing} Its release date (${fixedVersion?.releasedAt}) is earlier than ${target?.displayName}, so the fix carries forward.`;
     }
     case "NOT_LISTED_IN_VERSION":
       return `This ACI is not listed in the indexed release history through ${result.queriedVersion?.displayName}.`;
@@ -164,7 +173,17 @@ function renderResult(result: ResolverResult): void {
         `Verify ${fixedVersion.displayName} release date ↗`,
         fixedVersion.releaseDateSource,
       );
+    } else if (result.reasonCode === "FIXED_CARRIED_FORWARD" && fixedVersion?.installerDateSource) {
+      addEvidenceLink(row, `View ${fixedVersion.displayName} installer date ↗`, fixedVersion.installerDateSource);
     }
+    resultEvidence.append(row);
+  }
+
+  const target = result.queriedVersion;
+  if (result.reasonCode === "FIXED_CARRIED_FORWARD" && target?.installerDateSource && !target.releasedAt) {
+    const row = document.createElement("p");
+    row.className = "evidence-row";
+    addEvidenceLink(row, `View ${target.displayName} installer date ↗`, target.installerDateSource);
     resultEvidence.append(row);
   }
 

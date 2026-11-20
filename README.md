@@ -1,7 +1,7 @@
 # 4D Fix Finder
 
 A static, evidence-based checker for whether an ACI is fixed in a 4D release.
-The checker uses official fix listings and verified release chronology to carry
+The checker uses official fix listings and source-backed chronology to carry
 older fixes forward across release lines.
 
 ## Run locally
@@ -23,8 +23,10 @@ The default crawl also starts from the official 4D 19 through 19.4 release
 lists, which were missing from the previously indexed release graph.
 The [4D 19 launch announcement](https://blog.4d.com/4d-v19-is-here/) dates
 the base release to July 12, 2021. Dates on the 19.1 through 19.4 fix notes
-are not used as release dates: they date the notes, not necessarily the
-release itself.
+are not used for chronology. Instead, the checker uses the **Created** dates
+on the [official LTS installers](https://product-download.4d.com/?branch=19.x&flag=lts-release&type=installer)
+as proxies for ordering 19.1 through 19.4, not as confirmed launch dates. When
+platform dates differ (19.4), it uses the later installer date.
 The crawler stores content-addressed HTML under `data/raw/` and writes the
 browser dataset to `public/data/fixed-bugs.json`. Any page reached but failing
 to parse or any non-404 fetch failure aborts the refresh. Official version
@@ -39,7 +41,8 @@ if neither index contains the ACI. Select a version to check its status or
 enter a build number for that version's nightly branch.
 
 - **YES** means the official source lists the ACI on that version or on an
-  earlier release with a verified release date.
+  earlier release based on a verified release date or the installer-date
+  proxies documented above.
 - **NO** means the complete historical dataset shows no fix on or before the
   requested release. A fix from a later release is never applied backward.
 - **UNKNOWN** means the ACI, version, release chronology, or historical

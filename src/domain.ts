@@ -97,6 +97,33 @@ export function normalizeAci(value: string): string | null {
   return match ? `ACI${match[1]}` : null;
 }
 
+export function findFixHistory(
+  database: BugDatabase,
+  aciInput: string,
+  nightlyFixes: readonly NightlyFix[] = [],
+) {
+  const aci = normalizeAci(aciInput);
+  const releases = new Map<string, FixEvidence>();
+  const nightlies = new Map<string, NightlyFix>();
+  if (aci) {
+    for (const fix of database.evidence) {
+      if (fix.aci === aci && (!releases.has(fix.versionKey) || fix.evidenceType === "listed_on_version_page")) {
+        releases.set(fix.versionKey, fix);
+      }
+    }
+    for (const fix of nightlyFixes) {
+      if (fix.aci !== aci) continue;
+      const current = nightlies.get(fix.branch);
+      if (!current || fix.buildNumber < current.buildNumber) nightlies.set(fix.branch, fix);
+    }
+  }
+  return {
+    aci,
+    releases: [...releases.values()],
+    nightlies: [...nightlies.values()],
+  };
+}
+
 export function resolveFixStatus(
   database: BugDatabase,
   aciInput: string,

@@ -3,6 +3,7 @@ import nightlyFixes from "./data/nightly-fixes.json";
 import {
   type BugDatabase,
   type ResolverResult,
+  findFixHistory,
   nightlyBranch,
   resolveFixStatus,
 } from "./domain";
@@ -90,17 +91,55 @@ function describeResult(result: ResolverResult): string {
   }
 }
 
+function showBugSummary(aci: string | null): void {
+  const bug = database.bugs.find((entry) => entry.aci === aci);
+  bugSummary.textContent = bug?.summary ?? "";
+  bugSummary.hidden = !bug;
+}
+
+function renderHistory(aciInputValue: string): void {
+  const { aci, releases, nightlies } = findFixHistory(database, aciInputValue, nightlyFixes);
+  const found = releases.length > 0 || nightlies.length > 0;
+  resultSection.hidden = false;
+  resultSection.className = `result-card verdict-${found ? "yes" : "unknown"}`;
+  resultTitle.textContent = aci ?? aciInputValue.trim();
+  verdictLabel.textContent = found ? "FIXES FOUND" : aci ? "NO DATA" : "INVALID ACI";
+  verdictIcon.textContent = found ? "✓" : "?";
+  showBugSummary(aci);
+  explanation.textContent = found
+    ? "Official listings report fixes in the releases or builds below."
+    : aci
+      ? "No fix is listed for this ACI in the indexed release or nightly data."
+      : "Enter a seven-digit ACI number, with or without “ACI”.";
+  buildResult.hidden = true;
+  buildResult.replaceChildren();
+  resultEvidence.replaceChildren();
+
+  const versions = new Map(database.versions.map((version) => [version.versionKey, version.displayName]));
+  for (const fix of releases) {
+    const row = document.createElement("p");
+    row.className = "evidence-row";
+    row.textContent = `Release: ${versions.get(fix.versionKey) ?? fix.versionKey}. `;
+    addEvidenceLink(row, `View official ${fix.sourcePage} source ↗`, fix.sourceUrl);
+    resultEvidence.append(row);
+  }
+  for (const fix of nightlies) {
+    const row = document.createElement("p");
+    row.className = "evidence-row";
+    row.textContent = `4D ${fix.branch.replace("_", " ")} nightly branch: first indexed fix in build ${fix.buildNumber}. `;
+    addEvidenceLink(row, "View official build list ↗", fix.sourceUrl);
+    resultEvidence.append(row);
+  }
+  updateUrl();
+}
+
 function renderResult(result: ResolverResult): void {
   resultSection.hidden = false;
   resultSection.className = `result-card verdict-${result.verdict.toLowerCase()}`;
   verdictLabel.textContent =
     result.verdict === "YES" ? "FIXED" : result.verdict === "NO" ? "NOT LISTED AS FIXED" : "UNKNOWN";
   resultTitle.textContent = `${result.aci ?? aciInput.value.trim()} · ${result.queriedVersion?.displayName ?? (versionSelect.value || "Release unavailable")}`;
-  const bug = result.aci
-    ? database.bugs.find((entry) => entry.aci === result.aci)
-    : undefined;
-  bugSummary.textContent = bug?.summary ?? "";
-  bugSummary.hidden = !bug;
+  showBugSummary(result.aci);
   verdictIcon.textContent = result.verdict === "YES" ? "✓" : result.verdict === "NO" ? "–" : "?";
   explanation.textContent = describeResult(result);
   resultEvidence.replaceChildren();
@@ -174,8 +213,12 @@ function renderResult(result: ResolverResult): void {
 function updateUrl(): void {
   const url = new URL(window.location.href);
   url.searchParams.set("aci", aciInput.value.trim());
-  url.searchParams.set("version", versionSelect.value);
-  if (buildInput.value.trim()) {
+  if (versionSelect.value) {
+    url.searchParams.set("version", versionSelect.value);
+  } else {
+    url.searchParams.delete("version");
+  }
+  if (versionSelect.value && buildInput.value.trim()) {
     url.searchParams.set("build", buildInput.value.trim());
   } else {
     url.searchParams.delete("build");
@@ -204,6 +247,12 @@ function updateSourceLinks(): void {
   if (releaseName) releaseName.textContent = version.officialSlug;
 }
 
+function updateVersionContext(): void {
+  buildInput.disabled = !versionSelect.value;
+  if (buildInput.disabled) buildInput.value = "";
+  updateSourceLinks();
+}
+
 function closeVersionOptions(): void {
   versionOptions.hidden = true;
   versionSearchInput.setAttribute("aria-expanded", "false");
@@ -226,11 +275,20 @@ function setActiveVersion(index: number): void {
 }
 
 function selectVersion(version: BugDatabase["versions"][number]): void {
+  if (versionSelect.value !== version.versionKey) buildInput.value = "";
   versionSelect.value = version.versionKey;
   versionSearchInput.value = versionLabel(version);
-  submitButton.disabled = false;
+  versionSearchInput.setCustomValidity("");
   closeVersionOptions();
   versionSelect.dispatchEvent(new Event("change", { bubbles: true }));
+}
+
+function exactVersionMatch() {
+  const query = versionSearchInput.value.trim().toLowerCase();
+  return database.versions.find((version) =>
+    [version.displayName, version.versionKey, version.officialSlug, versionLabel(version)]
+      .some((value) => value.toLowerCase() === query),
+  );
 }
 
 function renderVersionOptions(query = versionSearchInput.value): void {
@@ -244,6 +302,7 @@ function renderVersionOptions(query = versionSearchInput.value): void {
     .sort(compareVersionsByDate);
   visibleVersions = matches.slice(0, MAX_VERSION_RESULTS);
   activeVersionIndex = -1;
+  versionSearchInput.removeAttribute("aria-activedescendant");
   versionOptions.replaceChildren();
 
   visibleVersions.forEach((version, index) => {
@@ -289,8 +348,8 @@ versionSearchInput.addEventListener("focus", () => {
 });
 versionSearchInput.addEventListener("input", () => {
   versionSelect.value = "";
-  submitButton.disabled = true;
-  updateSourceLinks();
+  versionSearchInput.setCustomValidity("");
+  updateVersionContext();
   renderVersionOptions();
 });
 versionSearchInput.addEventListener("keydown", (event) => {
@@ -315,36 +374,49 @@ versionSearchInput.addEventListener("keydown", (event) => {
       );
     }
   } else if (event.key === "Enter" && !versionOptions.hidden) {
-    event.preventDefault();
-    const query = versionSearchInput.value.trim().toLowerCase();
-    const exactMatch = database.versions.find((version) =>
-      [version.displayName, version.versionKey, version.officialSlug, versionLabel(version)]
-        .some((value) => value.toLowerCase() === query),
-    );
     const selected = visibleVersions[activeVersionIndex]
-      ?? exactMatch
+      ?? exactVersionMatch()
       ?? (visibleVersions.length === 1 ? visibleVersions[0] : undefined);
-    if (selected) selectVersion(selected);
+    if (selected) {
+      event.preventDefault();
+      selectVersion(selected);
+    }
   } else if (event.key === "Escape" && !versionOptions.hidden) {
     event.preventDefault();
     closeVersionOptions();
   }
 });
-versionSearchInput.addEventListener("blur", () => {
+versionSearchInput.addEventListener("blur", (event) => {
+  if (event.relatedTarget === submitButton) return;
   window.setTimeout(() => {
     if (document.activeElement !== versionSearchInput) closeVersionOptions();
   }, 100);
 });
+submitButton.addEventListener("blur", closeVersionOptions);
 
 form.addEventListener("submit", (event) => {
   event.preventDefault();
-  if (!database || !versionSelect.value) return;
+  if (!database) return;
+  if (!versionSelect.value && versionSearchInput.value.trim()) {
+    const version = exactVersionMatch();
+    if (!version) {
+      versionSearchInput.setCustomValidity("Select a matching version or leave this field blank.");
+      versionSearchInput.reportValidity();
+      return;
+    }
+    selectVersion(version);
+  }
+  closeVersionOptions();
+  if (!versionSelect.value) {
+    renderHistory(aciInput.value);
+    return;
+  }
   renderResult(
     resolveFixStatus(database, aciInput.value, versionSelect.value, buildInput.value, nightlyFixes),
   );
 });
 
-versionSelect.addEventListener("change", updateSourceLinks);
+versionSelect.addEventListener("change", updateVersionContext);
 
 copyButton.addEventListener("click", async () => {
   try {
@@ -383,25 +455,19 @@ async function initialize(): Promise<void> {
       versionSelect.add(new Option(`${requestedVersion} · not indexed`, requestedVersion));
       versionSelect.value = requestedVersion;
       versionSearchInput.value = `${requestedVersion} · not indexed`;
-    } else {
-      const defaultVersion = versions.find((version) => version.complete) ?? versions[0];
-      if (defaultVersion) {
-        versionSelect.value = defaultVersion.versionKey;
-        versionSearchInput.value = versionLabel(defaultVersion);
-      }
     }
 
     versionSelect.disabled = versions.length === 0;
     versionSearchInput.disabled = versions.length === 0;
-    submitButton.disabled = !versionSelect.value;
+    submitButton.disabled = false;
     const completeVersions = versions.filter((version) => version.complete).length;
     loadStatus.textContent = versions.length
       ? `${completeVersions} releases fully indexed · ${versions.length - completeVersions} with partial evidence · ${database.bugs.length.toLocaleString()} bugs`
       : "No release data is available yet.";
     freshness.textContent = `Data refreshed ${new Date(database.generatedAt).toLocaleDateString()}`;
-    updateSourceLinks();
+    updateVersionContext();
 
-    if (query.get("aci") && query.get("version")) form.requestSubmit();
+    if (query.get("aci")) form.requestSubmit();
   } catch (error) {
     loadStatus.textContent =
       error instanceof Error ? `Could not load the bug dataset: ${error.message}` : "Could not load the bug dataset.";

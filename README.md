@@ -27,6 +27,11 @@ the page limit also remain incomplete and cannot produce a negative verdict.
 
 ## Data and verdict semantics
 
+With just an ACI, the checker lists releases with explicit fix evidence and
+the first indexed fix build on each nightly branch, or reports **NO DATA**
+if neither index contains the ACI. Select a version to check its status or
+enter a build number for that version's nightly branch.
+
 - **YES** means the official source lists the ACI on that version or on an
   earlier release with a verified release date.
 - **NO** means the complete historical dataset shows no fix on or before the

@@ -1,0 +1,369 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>4D - Bug Fixes</title>
+  <link rel="canonical" href="../../versions/20.4/">
+  <link rel="stylesheet" href="../../css/fixedbugs.css" type="text/css">
+  <script src="../../javascript/fixedbugs.js"></script>
+  <meta name="viewport" content="width=device-width, user-scalable=no">
+</head>
+<body>
+<div class="contain">
+<h1>All Products 20.4 <span class="superadmin">- Fixed bugs</span></h1>
+<a href="#top" title="Scroll top" class="scrollTop"></a>
+
+<table class="list">
+	<tr>
+		<td class="title">Reference</td>
+		<td class="description">Summary</td>
+		<td class="version">Fixed also with</td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0102583</th>
+		<td class="description">4D Write Pro: in toolbar, help tips are not translated in french Localization (Orthographe / Correction grammaticale)</td>
+		<td class="version"></td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104188</th>
+		<td class="description">The display of Data Explorer rows is broken if the data contains specific characters, like &quot;&lt;&quot; or &quot;&gt;&quot;.</td>
+		<td class="version"><a href="../../versions/20_R5/">20 R5</a> <a href="../../versions/20_R4_HF1/">20 R4 HF1</a> <a href="../../versions/20.3_HF2/">20.3 HF2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104290</th>
+		<td class="description">Using debug log may crash on any plugin call</td>
+		<td class="version"><a href="../../versions/20_R3/">20 R3</a> <a href="../../versions/20_R5/">20 R5</a> <a href="../../versions/19.7_HF3/">19.7 HF3</a> <a href="../../versions/20.3_HF1/">20.3 HF1</a> <a href="../../versions/20_R4_HF1/">20 R4 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104342</th>
+		<td class="description">The command &#39;SET HELP MENU&#39; use with the action &quot;ak msc&quot;, doesn&#39;t work with 4D Server in compiled mode.</td>
+		<td class="version"><a href="../../versions/20_R5/">20 R5</a> <a href="../../versions/20.3_HF2/">20.3 HF2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104406</th>
+		<td class="description">4D may freeze when a query (with a composite index) is running after executing the 4D command &#39;QUIT 4D&#39;.</td>
+		<td class="version"><a href="../../versions/20_R5/">20 R5</a> <a href="../../versions/20.3_HF2/">20.3 HF2</a> <a href="../../versions/19.8/">19.8</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104438</th>
+		<td class="description">Unexpected HTTP error #409 on multi-cards network configuration; only in &#39;http&#39; mode, no problem on &#39;https&#39;.</td>
+		<td class="version"><a href="../../versions/20_R4/">20 R4</a> <a href="../../versions/20.3_HF1/">20.3 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104447</th>
+		<td class="description">After using the CREATE INDEX command, theSQL system tables are only updated when the application is restarted</td>
+		<td class="version"><a href="../../versions/20_R5/">20 R5</a> <a href="../../versions/20.3_HF2/">20.3 HF2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104453</th>
+		<td class="description">Issue on manipulating shared objects from different processes; this could lead to a crash in compiled mode.</td>
+		<td class="version"><a href="../../versions/20_R5/">20 R5</a> <a href="../../versions/20.3_HF2/">20.3 HF2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104473</th>
+		<td class="description">4D Write Pro: when a document contains (at least) one anchored picture and a text box, the selection of the image is lost when the textbox is moved by programming</td>
+		<td class="version"><a href="../../versions/20.3_HF1/">20.3 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104522</th>
+		<td class="description">In the structure editor, a chosen Wildcard field is not saved as Wildcard in link-inspector after unselect the link.</td>
+		<td class="version"><a href="../../versions/20_R4/">20 R4</a> <a href="../../versions/20.3_HF1/">20.3 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104536</th>
+		<td class="description">A perfectible management of internal connection processes (workers) can cause the 4D Server to crash during new connection attempts.</td>
+		<td class="version"><a href="../../versions/20_R4/">20 R4</a> <a href="../../versions/19.7_HF3/">19.7 HF3</a> <a href="../../versions/20.3_HF1/">20.3 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104542</th>
+		<td class="description">An entity attribute with a relation attribute doesn&#39;t accept NULL value</td>
+		<td class="version"><a href="../../versions/20_R5/">20 R5</a> <a href="../../versions/20.3_HF1/">20.3 HF1</a> <a href="../../versions/20_R4_HF1/">20 R4 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104548</th>
+		<td class="description">A Qodly Studio user no longer creates a REST session; so no visible in the &#39;User&#39; tab of the Administration window.</td>
+		<td class="version"><a href="../../versions/20_R5/">20 R5</a> <a href="../../versions/20.3_HF1/">20.3 HF1</a> <a href="../../versions/20_R4_HF1/">20 R4 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104562</th>
+		<td class="description">Renaming local variables via the method editor&#39;s contextual menu does not work if the declaration statement spans multiple lines.</td>
+		<td class="version"><a href="../../versions/20_R4/">20 R4</a> <a href="../../versions/20_R3_HF2/">20 R3 HF2</a> <a href="../../versions/20.3_HF1/">20.3 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104564</th>
+		<td class="description">Error when executing &#39;ORDER BY FORMULA&#39; in a database compiled with the command &quot;Compile projet (projectFile)&quot; in another database</td>
+		<td class="version"><a href="../../versions/20_R5/">20 R5</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104596</th>
+		<td class="description">When generating ORDA server log; the &quot;ipAddress&quot; field is missing in the &quot;ordaRequests_1.json&quot; log file information list.</td>
+		<td class="version"><a href="../../versions/20_R5/">20 R5</a> <a href="../../versions/20.3_HF2/">20.3 HF2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104597</th>
+		<td class="description">The command &#39;OPEN ADMINISTRATION WINDOW&#39; does not work on server when called in a new process.</td>
+		<td class="version"><a href="../../versions/20_R5/">20 R5</a> <a href="../../versions/20_R4_HF1/">20 R4 HF1</a> <a href="../../versions/20.3_HF2/">20.3 HF2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104603</th>
+		<td class="description">Associated Menu Bar in properties list shows error when &#39;none&#39; selected</td>
+		<td class="version"><a href="../../versions/20_R5/">20 R5</a> <a href="../../versions/20.3_HF2/">20.3 HF2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104608</th>
+		<td class="description">When sending an email in NETKIT with a .bcc defined, it doesn&#39;t send an email to the target</td>
+		<td class="version"><a href="../../versions/20_R4/">20 R4</a> <a href="../../versions/20.3_HF1/">20.3 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104625</th>
+		<td class="description">HTTPRequest class does not support a collection as body of a request</td>
+		<td class="version"><a href="../../versions/20.3_HF1/">20.3 HF1</a> <a href="../../versions/20_R4_HF1/">20 R4 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104628</th>
+		<td class="description">In client-server, the &quot;Current user&quot; command returns incorrect results in ORDA class functions; it may always return the result &#39;Designer&#39;.</td>
+		<td class="version"><a href="../../versions/20_R4/">20 R4</a> <a href="../../versions/20.3_HF1/">20.3 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104632</th>
+		<td class="description">Shift clicking processes in server administration window causes a &quot;MONI_PROCESS_SetInterface&quot; error</td>
+		<td class="version"><a href="../../versions/20.3_HF1/">20.3 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104639</th>
+		<td class="description">Unexpected error #-43, &quot;file not found&quot;, when closing the Quick Report editor and click on the “Do not save” button.</td>
+		<td class="version"><a href="../../versions/20_R4/">20 R4</a> <a href="../../versions/20.3_HF1/">20.3 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104646</th>
+		<td class="description">The closed button of the 4D Preferences dialog window may not work at all (doing nothing).</td>
+		<td class="version"><a href="../../versions/20_R4/">20 R4</a> <a href="../../versions/20.3_HF1/">20.3 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104652</th>
+		<td class="description">On Windows only, a popup window opened over a web area does not close when clicking outside of it</td>
+		<td class="version"><a href="../../versions/20_R4/">20 R4</a> <a href="../../versions/20.3_HF1/">20.3 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104669</th>
+		<td class="description">Cut and Undo a &#39;case-of&#39; block cause the code in the method editor to be broken.</td>
+		<td class="version"><a href="../../versions/20_R4_HF1/">20 R4 HF1</a> <a href="../../versions/20.3_HF2/">20.3 HF2</a> <a href="../../versions/19.8/">19.8</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104675</th>
+		<td class="description">&#39;.equal&#39; function on a collection makes 4D quit unexpectedly if it contains objects with circular references.</td>
+		<td class="version"><a href="../../versions/20_R4/">20 R4</a> <a href="../../versions/20.3_HF1/">20.3 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104685</th>
+		<td class="description">Calling the command &quot;getBoxList&quot; (ex: &quot;$boxlist:&#61;$mail.getBoxList($option)&quot;) returns an unexpected error #13 with IMAP.</td>
+		<td class="version"><a href="../../versions/20.3_HF1/">20.3 HF1</a> <a href="../../versions/20_R4_HF1/">20 R4 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104686</th>
+		<td class="description">verticalAlign attribute in CSS file does not work properly in Form editor preview</td>
+		<td class="version"><a href="../../versions/20_R5/">20 R5</a> <a href="../../versions/20.3_HF2/">20.3 HF2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104688</th>
+		<td class="description">Unexpected error #126 is raised when catalog collation_locale is &quot;ja&quot; on a non-Japanese system and --create-data is passed.</td>
+		<td class="version"><a href="../../versions/20_R4/">20 R4</a> <a href="../../versions/20.3_HF1/">20.3 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104689</th>
+		<td class="description">Can&#39;t compile for silicon if Form name is Japanese and system language is not.</td>
+		<td class="version"><a href="../../versions/20_R4/">20 R4</a> <a href="../../versions/20.3_HF1/">20.3 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104698</th>
+		<td class="description">Entering numbers in a text field is not possible if it is in a pop up form window opened from a movable form dialog box (mac OS only).</td>
+		<td class="version"><a href="../../versions/20_R5/">20 R5</a> <a href="../../versions/20.3_HF2/">20.3 HF2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104702</th>
+		<td class="description">4D Helper Tool fails to install because its internal name has changed</td>
+		<td class="version"><a href="../../versions/20_R4/">20 R4</a> <a href="../../versions/20.3_HF1/">20.3 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104703</th>
+		<td class="description">The catalog file may not match the Structure Unique key setting if you open the structure with an old data file.</td>
+		<td class="version"><a href="../../versions/20_R5/">20 R5</a> <a href="../../versions/20.3_HF1/">20.3 HF1</a> <a href="../../versions/20_R4_HF1/">20 R4 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104710</th>
+		<td class="description">4D Write Pro: decimal tabs won&#39;t align at last digit of number if no decimal separator.</td>
+		<td class="version"><a href="../../versions/20_R4/">20 R4</a> <a href="../../versions/20.3_HF1/">20.3 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104718</th>
+		<td class="description">When building an application with the &quot;Intel only&quot; option, the generated executable contains 2 architectures: ARM is added.</td>
+		<td class="version"><a href="../../versions/20.3_HF1/">20.3 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104719</th>
+		<td class="description">Picture field lost with these 2 conditions: registered outside data file + smaller than the &#39;Internal storage max size&#39;</td>
+		<td class="version"><a href="../../versions/20.3_HF1/">20.3 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104730</th>
+		<td class="description">Data Explorer: javascript code can be executed from the form detail when editing an entity</td>
+		<td class="version"><a href="../../versions/20_R5/">20 R5</a> <a href="../../versions/20_R4_HF1/">20 R4 HF1</a> <a href="../../versions/20.3_HF2/">20.3 HF2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104733</th>
+		<td class="description">The 4D command &#39;Count users&#39; returns an extra user when a stored procedure is running</td>
+		<td class="version"><a href="../../versions/20_R4/">20 R4</a> <a href="../../versions/20.3_HF1/">20.3 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104738</th>
+		<td class="description">Graph duration is no more adjustable in the graphic area of the Administration Window.</td>
+		<td class="version"><a href="../../versions/20_R5/">20 R5</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104746</th>
+		<td class="description">4D Remote may unexpectedly quit after restarting several time the database project, alternating compiled and interpreted mode.</td>
+		<td class="version"><a href="../../versions/20_R5/">20 R5</a> <a href="../../versions/20.3_HF1/">20.3 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104752</th>
+		<td class="description">4D Write Pro: decimal tab marker can&#39;t align on trailing spaces if they are any because these are unexpectedly truncated.</td>
+		<td class="version"><a href="../../versions/20_R5/">20 R5</a> <a href="../../versions/20_R4_HF1/">20 R4 HF1</a> <a href="../../versions/20.3_HF2/">20.3 HF2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104753</th>
+		<td class="description">Content-length is no more reset when HTTP Get is called in a loop </td>
+		<td class="version"><a href="../../versions/20_R5/">20 R5</a> <a href="../../versions/20_R4_HF1/">20 R4 HF1</a> <a href="../../versions/20.3_HF2/">20.3 HF2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104754</th>
+		<td class="description">By clicking on the &quot;enter&quot; key located at the bottom right of the numeric keypad, the data explorer closes.</td>
+		<td class="version"><a href="../../versions/20_R5/">20 R5</a> <a href="../../versions/20.3_HF1/">20.3 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104759</th>
+		<td class="description">&#39;SET AUTOMATIC RELATIONS(True; False)&#39; doesn&#39;t work anymore; in client-server mode only</td>
+		<td class="version"><a href="../../versions/20_R5/">20 R5</a> <a href="../../versions/20.3_HF1/">20.3 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104764</th>
+		<td class="description">4D Write Pro: Umlaut displaced when creating PDF from 4D Write Pro (Windows only).</td>
+		<td class="version"><a href="../../versions/20_R5/">20 R5</a> <a href="../../versions/20.3_HF2/">20.3 HF2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104768</th>
+		<td class="description">A crash can occurred due to a related Field on Input Form; in client-server mode only.</td>
+		<td class="version"><a href="../../versions/20_R5/">20 R5</a> <a href="../../versions/20.3_HF1/">20.3 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104771</th>
+		<td class="description">The deleteSubrecord standard action not working if you don&#39;t have Highlight Set linked to the listbox.</td>
+		<td class="version"><a href="../../versions/20_R5/">20 R5</a> <a href="../../versions/20.3_HF2/">20.3 HF2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104775</th>
+		<td class="description">4D SMTP Transporter: If we specify a messageId attribute to the email object, the value in the header of the mail is not correct. </td>
+		<td class="version"><a href="../../versions/20_R5/">20 R5</a> <a href="../../versions/20_R4_HF1/">20 R4 HF1</a> <a href="../../versions/20.3_HF2/">20.3 HF2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104789</th>
+		<td class="description">&#39;QR RUN&#39; outputs don&#39;t preserve editing orientations for the pages which are in Portrait mode.</td>
+		<td class="version"><a href="../../versions/20_R5/">20 R5</a> <a href="../../versions/20_R4_HF1/">20 R4 HF1</a> <a href="../../versions/20.3_HF2/">20.3 HF2</a> <a href="../../versions/19.8/">19.8</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104797</th>
+		<td class="description">&#39;GET SERIAL PORT MAPPING&#39; can&#39;t return port numbers higher than 9 on Windows</td>
+		<td class="version"><a href="../../versions/20_R5/">20 R5</a> <a href="../../versions/20.3_HF2/">20.3 HF2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104798</th>
+		<td class="description">4D Write Pro: Error after entering a text on 4D Write Pro Area and openning/closing another dialog: &quot; Error WP_Toolbar (4D WritePro Interface)” in line 143 &quot;.</td>
+		<td class="version"><a href="../../versions/20_R5/">20 R5</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104805</th>
+		<td class="description">A stand-alone built application could crash at startup if &#39;Launch Web Server at Startup&#39; is checked, or the command &#39;WEB START SERVER&#39; is executed.</td>
+		<td class="version"><a href="../../versions/20_R5/">20 R5</a> <a href="../../versions/20_R4_HF1/">20 R4 HF1</a> <a href="../../versions/20.3_HF2/">20.3 HF2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104813</th>
+		<td class="description">The foreign key of an Entity is not correctly saved in Client/Server if the related entity do not exist</td>
+		<td class="version"><a href="../../versions/20_R5/">20 R5</a> <a href="../../versions/20.3_HF2/">20.3 HF2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104820</th>
+		<td class="description">Virtual Return key does not work in Windows OS</td>
+		<td class="version"><a href="../../versions/20_R5/">20 R5</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104822</th>
+		<td class="description">Strange behaviour in CPU when changing a dialog which is waiting for the focus change to be processed</td>
+		<td class="version"><a href="../../versions/20_R5/">20 R5</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104862</th>
+		<td class="description">ORDA: _ EntitySelection.refresh() does not invalidate the cache correctly in Client-Server mode.</td>
+		<td class="version"><a href="../../versions/20_R5/">20 R5</a> </td>
+	</tr>
+
+</table>
+
+</div>
+</body>
+</html>

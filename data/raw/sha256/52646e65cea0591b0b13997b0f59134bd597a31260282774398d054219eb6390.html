@@ -1,0 +1,129 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>4D - Bug Fixes</title>
+  <link rel="canonical" href="../../versions/20_R4_HF1/">
+  <link rel="stylesheet" href="../../css/fixedbugs.css" type="text/css">
+  <script src="../../javascript/fixedbugs.js"></script>
+  <meta name="viewport" content="width=device-width, user-scalable=no">
+</head>
+<body>
+<div class="contain">
+<h1>All Products 20 R4 HF1 <span class="superadmin">- Fixed bugs</span></h1>
+<a href="#top" title="Scroll top" class="scrollTop"></a>
+
+<table class="list">
+	<tr>
+		<td class="title">Reference</td>
+		<td class="description">Summary</td>
+		<td class="version">Fixed also with</td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104188</th>
+		<td class="description">The display of Data Explorer rows is broken if the data contains specific characters, like &quot;&lt;&quot; or &quot;&gt;&quot;.</td>
+		<td class="version"><a href="../../versions/20_R5/">20 R5</a> <a href="../../versions/20.3_HF2/">20.3 HF2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104290</th>
+		<td class="description">Using debug log may crash on any plugin call</td>
+		<td class="version"><a href="../../versions/20_R3/">20 R3</a> <a href="../../versions/20_R5/">20 R5</a> <a href="../../versions/19.7_HF3/">19.7 HF3</a> <a href="../../versions/20.3_HF1/">20.3 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104542</th>
+		<td class="description">An entity attribute with a relation attribute doesn&#39;t accept NULL value</td>
+		<td class="version"><a href="../../versions/20_R5/">20 R5</a> <a href="../../versions/20.3_HF1/">20.3 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104548</th>
+		<td class="description">A Qodly Studio user no longer creates a REST session; so no visible in the &#39;User&#39; tab of the Administration window.</td>
+		<td class="version"><a href="../../versions/20_R5/">20 R5</a> <a href="../../versions/20.3_HF1/">20.3 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104597</th>
+		<td class="description">The command &#39;OPEN ADMINISTRATION WINDOW&#39; does not work on server when called in a new process.</td>
+		<td class="version"><a href="../../versions/20_R5/">20 R5</a> <a href="../../versions/20.3_HF2/">20.3 HF2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104607</th>
+		<td class="description">A new local resource cache folder is created when a 4D Remote try to reconnect after a crash.</td>
+		<td class="version"></td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104625</th>
+		<td class="description">HTTPRequest class does not support a collection as body of a request</td>
+		<td class="version"><a href="../../versions/20.3_HF1/">20.3 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104669</th>
+		<td class="description">Cut and Undo a &#39;case-of&#39; block cause the code in the method editor to be broken.</td>
+		<td class="version"><a href="../../versions/20.3_HF2/">20.3 HF2</a> <a href="../../versions/19.8/">19.8</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104685</th>
+		<td class="description">Calling the command &quot;getBoxList&quot; (ex: &quot;$boxlist:&#61;$mail.getBoxList($option)&quot;) returns an unexpected error #13 with IMAP.</td>
+		<td class="version"><a href="../../versions/20.3_HF1/">20.3 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104703</th>
+		<td class="description">The catalog file may not match the Structure Unique key setting if you open the structure with an old data file.</td>
+		<td class="version"><a href="../../versions/20_R5/">20 R5</a> <a href="../../versions/20.3_HF1/">20.3 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104729</th>
+		<td class="description">&#39;OBJECT SET THREE STATES CHECKBOX&#39; doen&#39;t set the attribute properly</td>
+		<td class="version"><a href="../../versions/20_R5/">20 R5</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104730</th>
+		<td class="description">Data Explorer: javascript code can be executed from the form detail when editing an entity</td>
+		<td class="version"><a href="../../versions/20_R5/">20 R5</a> <a href="../../versions/20.3_HF2/">20.3 HF2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104752</th>
+		<td class="description">4D Write Pro: decimal tab marker can&#39;t align on trailing spaces if they are any because these are unexpectedly truncated.</td>
+		<td class="version"><a href="../../versions/20_R5/">20 R5</a> <a href="../../versions/20.3_HF2/">20.3 HF2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104753</th>
+		<td class="description">Content-length is no more reset when HTTP Get is called in a loop </td>
+		<td class="version"><a href="../../versions/20_R5/">20 R5</a> <a href="../../versions/20.3_HF2/">20.3 HF2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104775</th>
+		<td class="description">4D SMTP Transporter: If we specify a messageId attribute to the email object, the value in the header of the mail is not correct. </td>
+		<td class="version"><a href="../../versions/20_R5/">20 R5</a> <a href="../../versions/20.3_HF2/">20.3 HF2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104789</th>
+		<td class="description">&#39;QR RUN&#39; outputs don&#39;t preserve editing orientations for the pages which are in Portrait mode.</td>
+		<td class="version"><a href="../../versions/20_R5/">20 R5</a> <a href="../../versions/20.3_HF2/">20.3 HF2</a> <a href="../../versions/19.8/">19.8</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104805</th>
+		<td class="description">A stand-alone built application could crash at startup if &#39;Launch Web Server at Startup&#39; is checked, or the command &#39;WEB START SERVER&#39; is executed.</td>
+		<td class="version"><a href="../../versions/20_R5/">20 R5</a> <a href="../../versions/20.3_HF2/">20.3 HF2</a> </td>
+	</tr>
+
+</table>
+
+</div>
+</body>
+</html>

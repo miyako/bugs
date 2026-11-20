@@ -1,0 +1,141 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>4D - Bug Fixes</title>
+  <link rel="canonical" href="../../versions/20.6_HF2/">
+  <link rel="stylesheet" href="../../css/fixedbugs.css" type="text/css">
+  <script src="../../javascript/fixedbugs.js"></script>
+  <meta name="viewport" content="width=device-width, user-scalable=no">
+</head>
+<body>
+<div class="contain">
+<h1>All Products 20.6 HF2 <span class="superadmin">- Fixed bugs</span></h1>
+<a href="#top" title="Scroll top" class="scrollTop"></a>
+
+<table class="list">
+	<tr>
+		<td class="title">Reference</td>
+		<td class="description">Summary</td>
+		<td class="version">Fixed also with</td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104382</th>
+		<td class="description">An existing WebSocket server is reset after several reset attempts. It should not.</td>
+		<td class="version"><a href="../../versions/20_R8/">20 R8</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0105300</th>
+		<td class="description">automatic update breaks client exe signature under Windows</td>
+		<td class="version"><a href="../../versions/20_R8/">20 R8</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0105411</th>
+		<td class="description">When using 4D command &#39;OBJECT SET LIST BY REFERENCE&#39; with a deleted list, 4D may quit unexpectedly.</td>
+		<td class="version"><a href="../../versions/20_R8/">20 R8</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0105427</th>
+		<td class="description">Let a mandatory property for a binary object-field of a form. As expected that property is not preserved at conversion to Project mode, yet, that change is not listed in conversion log (not expected).</td>
+		<td class="version"><a href="../../versions/20_R8/">20 R8</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0105434</th>
+		<td class="description">In the Quick Report editor, a field linked (many to one) to another table is displayed twice in the status editor.</td>
+		<td class="version"><a href="../../versions/20_R8/">20 R8</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0105435</th>
+		<td class="description">Unexpected syntax error when passing an unassigned Variant variable to a 4D command.</td>
+		<td class="version"><a href="../../versions/20_R8/">20 R8</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0105452</th>
+		<td class="description">Problem remembering saved user properties for data files backup configuration; need to validate the dialog &#39;User settings&#39; twice.</td>
+		<td class="version"><a href="../../versions/20_R8/">20 R8</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0105459</th>
+		<td class="description">Default button appears white instead of blue; macOS 14.x only (Sonoma).</td>
+		<td class="version"><a href="../../versions/20_R8/">20 R8</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0105463</th>
+		<td class="description">In the Administration window, information about Hard drive are not displayed when closing and re-opening that administration window.</td>
+		<td class="version"><a href="../../versions/20_R8/">20 R8</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0105467</th>
+		<td class="description">4D View Pro: removing borders using the toolbar or ribbon&#39;s borders function &quot;no border&quot; does not remove the borders.</td>
+		<td class="version"></td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0105476</th>
+		<td class="description">4D may unexpectedly stop working on creating records outside data with Picture and/or Blob type.</td>
+		<td class="version"><a href="../../versions/20_R8/">20 R8</a> <a href="../../versions/20_R7_HF2/">20 R7 HF2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0105481</th>
+		<td class="description">4D View Pro: &#39;VP Convert to picture&#39; does not consider the &quot;no color&quot; selected via the ribbon.</td>
+		<td class="version"><a href="../../versions/20_R8/">20 R8</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0105482</th>
+		<td class="description">4D View Pro: &#39;Convert to picture&#39; doesn&#39;t consider the removal of the underline style via the ribbon.</td>
+		<td class="version"><a href="../../versions/20_R8/">20 R8</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0105486</th>
+		<td class="description">When a class has 2 attributes or functions whose names differ only in case, during the typeahead (predictive input) only one occurrence is proposed.</td>
+		<td class="version"><a href="../../versions/20_R8/">20 R8</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0105491</th>
+		<td class="description">Crash in code editor when selecting a &quot;/*&quot; line and right-clicking to select “collapse current level”.  </td>
+		<td class="version"><a href="../../versions/20_R8/">20 R8</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0105493</th>
+		<td class="description">4D Write Pro: Custom properties added to 4D Write Pro objects are not updated when re-saving the document</td>
+		<td class="version"><a href="../../versions/20_R8/">20 R8</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0105495</th>
+		<td class="description">HTTPRequest.new keeps Accept-Encoding header unchanged</td>
+		<td class="version"><a href="../../versions/20_R8/">20 R8</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0105496</th>
+		<td class="description">Incorrect color for a combo box embedded in a listbox when hovering over a selected row</td>
+		<td class="version"></td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0105507</th>
+		<td class="description">Splitter positions and resizes in a Maximized and/or Restored window is wrong (start to 20.6 Hotfix 1): some form objects may not be accessible anymore (out of the window).</td>
+		<td class="version"><a href="../../versions/20_R8/">20 R8</a> </td>
+	</tr>
+
+</table>
+
+</div>
+</body>
+</html>

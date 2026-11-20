@@ -1,0 +1,399 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>4D - Bug Fixes</title>
+  <link rel="canonical" href="../../versions/19.5/">
+  <link rel="stylesheet" href="../../css/fixedbugs.css" type="text/css">
+  <script src="../../javascript/fixedbugs.js"></script>
+  <meta name="viewport" content="width=device-width, user-scalable=no">
+</head>
+<body>
+<div class="contain">
+<h1>All Products 19.5 <span class="superadmin">- Fixed bugs</span></h1>
+<a href="#top" title="Scroll top" class="scrollTop"></a>
+
+<table class="list">
+	<tr>
+		<td class="title">Reference</td>
+		<td class="description">Summary</td>
+		<td class="version">Fixed also with</td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0100533</th>
+		<td class="description">4D Write Pro: &#39;WP SET TEXT&#39; 4D command stops working if a NULL ASCII character has been inserted into a 4D Write Pro document</td>
+		<td class="version"></td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0101670</th>
+		<td class="description">Using formula.call() or formula.apply() on a Formula that should return a time value, returns incorrect Real-type value instead</td>
+		<td class="version"><a href="../../versions/19.4_HF1/">19.4 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0102095</th>
+		<td class="description">When using JSON Validate on a schema that contains an object array, it will only validate the 1st item rather than all items</td>
+		<td class="version"></td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0102661</th>
+		<td class="description">4D Write Pro: Runtime error while switching between forms with a 4D Write pro widget in it</td>
+		<td class="version"></td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0102840</th>
+		<td class="description">When specifying a default menu item to be selected using the command &#39;Dynamic pop up menu&#39;, a wrong menu item will be selected if the menu contains hidden standard actions. </td>
+		<td class="version"><a href="../../versions/19.4_HF1/">19.4 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0102894</th>
+		<td class="description">Standard action &#39;Quit&#39; executes the object method then displays the confirmation dialog, whereas it should display the dialog first.</td>
+		<td class="version"><a href="../../versions/19_R7/">19 R7</a> <a href="../../versions/19.4_HF1/">19.4 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0102914</th>
+		<td class="description">Button with standard action &quot;addSubrecord&quot; must be disabled if listbox is an entity selection listbox. This could lead to a crash.</td>
+		<td class="version"><a href="../../versions/19.4_HF1/">19.4 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0102947</th>
+		<td class="description">When the cursor is in a Listbox cell, and you press any key with the command modifier (for example &#39;CMD&#39;+&quot;d&quot; on Mac  or &#39;CTRL&#39;+&quot;d&quot; on Windows) the form event &quot;On before Keystroke&quot; fires twice. </td>
+		<td class="version"><a href="../../versions/19.4_HF1/">19.4 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0102974</th>
+		<td class="description">&#39;_O_Gestalt&#39; may crash 4D ; for instance : &quot;$errCode:&#61;_O_Gestalt(&quot;sync&quot;; $v) &quot; ; note that 4D command is an obsolete command.</td>
+		<td class="version"><a href="../../versions/19_R7/">19 R7</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103028</th>
+		<td class="description">Unexpected 10 seconds delay after running PHP Execute(&quot;&quot;; &quot;quit_4d_php&quot;; *)</td>
+		<td class="version"><a href="../../versions/19_R6/">19 R6</a> <a href="../../versions/19.4_HF1/">19.4 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103080</th>
+		<td class="description">When trying to use &#39;SET CURRENT PRINTER&#39; on PDFCreator, PDFCreator is unable to become the current printer.</td>
+		<td class="version"><a href="../../versions/19.4_HF1/">19.4 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103081</th>
+		<td class="description">IMAP transporter&#39; .getMails()&#39; may freeze while retrieving emails</td>
+		<td class="version"><a href="../../versions/19.4_HF1/">19.4 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103086</th>
+		<td class="description">4D View Pro: Multipleline cells in 4D View document are converted to one line cells in 4D View Pro.</td>
+		<td class="version"><a href="../../versions/19_R7/">19 R7</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103097</th>
+		<td class="description">Unexpected duplicated automatic actions in Menu editor (toolbox dialog)</td>
+		<td class="version"><a href="../../versions/19_R6/">19 R6</a> <a href="../../versions/19.4_HF1/">19.4 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103108</th>
+		<td class="description">When having two tables related, the quick report shows unusual result in the search window for fields (some fields missing).</td>
+		<td class="version"><a href="../../versions/19_R6/">19 R6</a> <a href="../../versions/19.4_HF1/">19.4 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103109</th>
+		<td class="description">SET MENU ITEM SHORTCUT &quot;0&quot; does not display right character on macOS 12.x (Monterey)</td>
+		<td class="version"><a href="../../versions/19.4_HF1/">19.4 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103124</th>
+		<td class="description">Regression in Output form appearance: unexpectedly, there are no more separator lines.</td>
+		<td class="version"><a href="../../versions/19_R6/">19 R6</a> <a href="../../versions/19.4_HF1/">19.4 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103135</th>
+		<td class="description">Picture button in Project mode does not have Drag/Drop property</td>
+		<td class="version"><a href="../../versions/19_R6/">19 R6</a> <a href="../../versions/19.4_HF1/">19.4 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103150</th>
+		<td class="description">In a project converted to v19, the web session management is &#39;none&#39; although database settings show &#39;legacy&#39;</td>
+		<td class="version"><a href="../../versions/19_R7/">19 R7</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103154</th>
+		<td class="description">The &#39;OK&#39; button on interface tab of User Settings for &#39;Data file&#39; becomes unexpectedly enabled when you come back to the first tab.</td>
+		<td class="version"><a href="../../versions/19.4_HF1/">19.4 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103176</th>
+		<td class="description">4D View Pro: Importing an excel file may return wrong numbers.</td>
+		<td class="version"><a href="../../versions/19_R7/">19 R7</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103179</th>
+		<td class="description">When using &#39;FILTER KEYSTROKE&#39; in the &#39;On Before Keystroke&#39; event, the cursor will jump to the start of the field value.</td>
+		<td class="version"><a href="../../versions/19.4_HF1/">19.4 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103197</th>
+		<td class="description">When you click a not initialized Popup that displays an array without any elements, input fields are disabled and can no longer be entered (while you can select text).</td>
+		<td class="version"><a href="../../versions/19_R7/">19 R7</a> <a href="../../versions/19.4_HF1/">19.4 HF1</a> <a href="../../versions/19_R6_HF1/">19 R6 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103200</th>
+		<td class="description">Impossible to type Japanese: in HiDPI mode, the front end processor (IME) may be displayed over the text input, hiding text then.</td>
+		<td class="version"><a href="../../versions/19_R6/">19 R6</a> <a href="../../versions/19.4_HF1/">19.4 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103204</th>
+		<td class="description">A REST session in &#39;legacy&#39; mode is not released after one hour of inactivity.</td>
+		<td class="version"><a href="../../versions/19.4_HF1/">19.4 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103215</th>
+		<td class="description">Client looses connection while executing some code during the timeout before server restart.</td>
+		<td class="version"><a href="../../versions/19_R7/">19 R7</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103217</th>
+		<td class="description">After changing the size of a line (form object), the coordinates are not saved after reopening the form.</td>
+		<td class="version"><a href="../../versions/19_R6/">19 R6</a> <a href="../../versions/19.4_HF1/">19.4 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103219</th>
+		<td class="description">On Windows, in the structure editor, the search in editor area carries out the search only for the first entered character</td>
+		<td class="version"><a href="../../versions/19_R7/">19 R7</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103221</th>
+		<td class="description">ORDA operations for sets (such as .and(), .or(), .minus(), etc ...) don&#39;t work on client server mode with some special caracters (&quot;?&quot;, &quot;/&quot;, etc ...).</td>
+		<td class="version"><a href="../../versions/19.4_HF1/">19.4 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103226</th>
+		<td class="description">4D Write Pro: Printing via 4D Write Pro doesn&#39;t display the name of the document on the printer queue</td>
+		<td class="version"><a href="../../versions/19.4_HF1/">19.4 HF1</a> <a href="../../versions/19_R6_HF1/">19 R6 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103232</th>
+		<td class="description">4D View Pro: Corrupted cell (may not be enterable anymore) after formatting it.</td>
+		<td class="version"></td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103236</th>
+		<td class="description">Using the &quot;IMAP transporter .getMails()&quot; command to loop through a large number of emails to retrieve them, shows an &quot;Error 200&quot;</td>
+		<td class="version"><a href="../../versions/19_R7/">19 R7</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103238</th>
+		<td class="description">Project will always tell that the user needs another step for WebFolder by unexpected red letters in Database settings</td>
+		<td class="version"><a href="../../versions/19_R7/">19 R7</a> <a href="../../versions/19.4_HF1/">19.4 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103244</th>
+		<td class="description">&#39;Surrogate&#39; character at the end of an alpha field can caused invalid character because not truncated correctly</td>
+		<td class="version"><a href="../../versions/19_R7/">19 R7</a> <a href="../../versions/19.4_HF1/">19.4 HF1</a> <a href="../../versions/19_R6_HF1/">19 R6 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103245</th>
+		<td class="description">The preview pane in the explorer doesn’t respect the style sheets for subform</td>
+		<td class="version"><a href="../../versions/19_R7/">19 R7</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103335</th>
+		<td class="description">Running the command &quot;MAIL convert to MIME&quot; causes 4D to freeze.</td>
+		<td class="version"><a href="../../versions/19.4_HF1/">19.4 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103336</th>
+		<td class="description">The &quot;.getBox List()&quot; command doesn&#39;t correctly decode the name of the mailboxes as soon as there is a &quot;+&quot; sign</td>
+		<td class="version"><a href="../../versions/19.4_HF1/">19.4 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103345</th>
+		<td class="description">4D Write Pro: When executing &#39;WP COMPUTE FORMULAS&#39; the text ranges are getting messed up; then, the command &#39;WP Text range&#39; delivers wrong values.</td>
+		<td class="version"><a href="../../versions/19_R7/">19 R7</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103346</th>
+		<td class="description">After convertion to project mode, the css style is missing in the property list of listbox , header, column and footer</td>
+		<td class="version"><a href="../../versions/19_R7/">19 R7</a> <a href="../../versions/19.4_HF1/">19.4 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103355</th>
+		<td class="description">Performance issue appeared in v19.3 when using SQL pass-through to a 4D Server when several servers run SQL server.</td>
+		<td class="version"><a href="../../versions/19_R7/">19 R7</a> <a href="../../versions/19_R6_HF1/">19 R6 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103378</th>
+		<td class="description">The colorPicker doesn&#39;t always display on Windows system.</td>
+		<td class="version"><a href="../../versions/19.4_HF1/">19.4 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103395</th>
+		<td class="description">4D Write Pro: irrelevant constants appear in type-ahead pop-up for the 4D command &#39;WP SET ATTRIBUTES&#39;</td>
+		<td class="version"><a href="../../versions/19_R7/">19 R7</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103401</th>
+		<td class="description">In Method Editor, surrogate pairs such as emoji are not highlighted correctly, there are highlighted by code point (high, low):  when highlighting, half of surrogate character is highlighted. </td>
+		<td class="version"><a href="../../versions/19_R7/">19 R7</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103405</th>
+		<td class="description">Blank pdf files gets created when opening and closing print job</td>
+		<td class="version"></td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103412</th>
+		<td class="description">After converting a database from Binary mode to Project mode, due to the presence of a listbox with &#39;alt row BG color&#39;, others listboxes may have their color changed </td>
+		<td class="version"><a href="../../versions/19_R7/">19 R7</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103417</th>
+		<td class="description">The IMAP Transporter.&#39;checkconnection&#39; method returns a bad result on an open connexion when the email is updated (delete or receive mails)</td>
+		<td class="version"><a href="../../versions/19_R7/">19 R7</a> <a href="../../versions/19_R6_HF1/">19 R6 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103423</th>
+		<td class="description">4D commands manipulating &#39;Sets&#39; slow down when loading records from another client.</td>
+		<td class="version"><a href="../../versions/19_R7/">19 R7</a> <a href="../../versions/19_R6_HF1/">19 R6 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103427</th>
+		<td class="description">Sequential searches in ORDA are slower (up to 20 times) then using &#39;classic&#39; searches (with &#39;QUERY&#39; 4D command)</td>
+		<td class="version"><a href="../../versions/19_R7/">19 R7</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103434</th>
+		<td class="description">Engined application in SDI Mode does not exit as it should : The window will closed and the application icone will be removed from task bar, but a background task, named &quot;4D Volume Desktop&quot;, is still running (see in task manager).</td>
+		<td class="version"><a href="../../versions/19_R7/">19 R7</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103437</th>
+		<td class="description">&#39;OPEN URL&#39; command doesn’t work when special character like # is used in the url, along with &quot;appName&quot; parameter</td>
+		<td class="version"></td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103457</th>
+		<td class="description">On  macOS 13 (Ventura), the combo box focus is wrongly drawn when its height is less than 23</td>
+		<td class="version"><a href="../../versions/19_R7/">19 R7</a> <a href="../../versions/19_R6_HF2/">19 R6 HF2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103459</th>
+		<td class="description">Mounted network volume not recognized on macOS 13 (Ventura).</td>
+		<td class="version"><a href="../../versions/19_R7/">19 R7</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103463</th>
+		<td class="description">4D Write Pro: a project method associated with a link doesn&#39;t evaluate the expressions concerning the fields and tables even if the records are loaded.</td>
+		<td class="version"><a href="../../versions/19_R7/">19 R7</a> <a href="../../versions/19_R6_HF2/">19 R6 HF2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103465</th>
+		<td class="description">Formula capture of a boolean local variable doesn&#39;t work</td>
+		<td class="version"><a href="../../versions/19_R7/">19 R7</a> <a href="../../versions/19_R6_HF1/">19 R6 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103485</th>
+		<td class="description">Orphan blobs appear in the data file when assigning an empty object to an object field stored in the data file </td>
+		<td class="version"><a href="../../versions/19_R7/">19 R7</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103493</th>
+		<td class="description">Floating palette type windows opened while 4D is in the background are no longer displayed when 4D is brought back to the foreground; on macOS 13 only (Ventura).</td>
+		<td class="version"><a href="../../versions/19_R7/">19 R7</a> <a href="../../versions/19_R6_HF2/">19 R6 HF2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103496</th>
+		<td class="description">Text properties like &#39;fontStyle&#39; or &#39;fontSize&#39; are wrongly exported for a picture object when the database is converted into a project</td>
+		<td class="version"><a href="../../versions/19_R7/">19 R7</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103497</th>
+		<td class="description">The title of an object with picture datasource, when converted into project mode, should get automatic text style</td>
+		<td class="version"><a href="../../versions/19_R7/">19 R7</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103498</th>
+		<td class="description">Changing the datasource type of an object from text to picture does not reset text properties like &quot;stroke&quot; or font attributes.</td>
+		<td class="version"><a href="../../versions/19_R7/">19 R7</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103503</th>
+		<td class="description">4D Write Pro: Picture exported to PDF with 4D Write Pro results in poor quality</td>
+		<td class="version"><a href="../../versions/19_R7/">19 R7</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103526</th>
+		<td class="description">Since using Windows 11 22H2, the print dialog cannot be used.</td>
+		<td class="version"><a href="../../versions/19_R7/">19 R7</a> <a href="../../versions/19_R6_HF2/">19 R6 HF2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103661</th>
+		<td class="description">4D Write Pro: The value of &quot;WParea.modified&quot; is changed every time the cursor is put in the text even though nothing changes in the document</td>
+		<td class="version"><a href="../../versions/19_R8/">19 R8</a> </td>
+	</tr>
+
+</table>
+
+</div>
+</body>
+</html>

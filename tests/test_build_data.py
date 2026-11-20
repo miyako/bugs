@@ -1,6 +1,10 @@
+import tempfile
 import unittest
+from pathlib import Path
+from urllib.error import HTTPError
+from unittest.mock import patch
 
-from scripts.build_data import parse_page, version_from_url
+from scripts.build_data import crawl, parse_page, version_from_url, version_seed_urls
 
 
 class BuildDataTests(unittest.TestCase):
@@ -35,6 +39,45 @@ class BuildDataTests(unittest.TestCase):
             "https://developer.4d.com/FixedBugsList/versions/20.8_HF3/"
         )
         self.assertEqual(older_hotfix["releasedAt"], "2026-06-05")
+
+    def test_existing_version_seeds_are_canonical_and_validated(self):
+        seeds = version_seed_urls([
+            {"officialSlug": "21.2"},
+            {"officialSlug": "21_R4_HF1"},
+        ])
+
+        self.assertEqual(seeds, [
+            "https://developer.4d.com/FixedBugsList/versions/21.2/",
+            "https://developer.4d.com/FixedBugsList/versions/21_R4_HF1/",
+        ])
+        with self.assertRaisesRegex(ValueError, "Invalid official version slug"):
+            version_seed_urls([{"officialSlug": "../other"}])
+
+    def test_crawl_keeps_404_versions_incomplete_and_continues(self):
+        missing_url = "https://developer.4d.com/FixedBugsList/versions/15/"
+        available_url = "https://developer.4d.com/FixedBugsList/versions/21.2/"
+        page = b"""
+        <table class="list">
+          <tr><th>Reference</th><th>Summary</th></tr>
+          <tr><td>ACI0106214</td><td>Example summary</td></tr>
+        </table>
+        """
+
+        def request(url):
+            if url == missing_url:
+                raise HTTPError(url, 404, "Not Found", None, None)
+            return page, {}
+
+        with tempfile.TemporaryDirectory() as raw_dir:
+            with patch("scripts.build_data.RAW_DIR", Path(raw_dir)), \
+                    patch("scripts.build_data.request_page", side_effect=request), \
+                    patch("scripts.build_data.time.sleep"):
+                database = crawl([missing_url, available_url], max_pages=2)
+
+        versions = {version["versionKey"]: version for version in database["versions"]}
+        self.assertFalse(versions["15"]["complete"])
+        self.assertTrue(versions["21.2"]["complete"])
+        self.assertEqual([bug["aci"] for bug in database["bugs"]], ["ACI0106214"])
 
     def test_parser_keeps_direct_evidence_and_explicit_fix_links(self):
         html = """

@@ -1,0 +1,159 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>4D - Bug Fixes</title>
+  <link rel="canonical" href="../../versions/19.5_HF1/">
+  <link rel="stylesheet" href="../../css/fixedbugs.css" type="text/css">
+  <script src="../../javascript/fixedbugs.js"></script>
+  <meta name="viewport" content="width=device-width, user-scalable=no">
+</head>
+<body>
+<div class="contain">
+<h1>All Products 19.5 HF1 <span class="superadmin">- Fixed bugs</span></h1>
+<a href="#top" title="Scroll top" class="scrollTop"></a>
+
+<table class="list">
+	<tr>
+		<td class="title">Reference</td>
+		<td class="description">Summary</td>
+		<td class="version">Fixed also with</td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0092218</th>
+		<td class="description">Sometimes a crash occurred when you try to print a form with a PDF picture with &quot;Print form&quot; and &quot;PAGE SETUP&quot;.</td>
+		<td class="version"><a href="../../versions/15/">15.0</a> <a href="../../versions/19_R7/">19 R7</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0102704</th>
+		<td class="description">&#39;Is table number valid&#39; command: Help via &#39;F1&#39; key points to wrong page in documentation.</td>
+		<td class="version"></td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103360</th>
+		<td class="description">Quick report: only half of the line of the left frame is printed </td>
+		<td class="version"></td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103419</th>
+		<td class="description">Listbox: if automatic height has been set once, we can&#39;t set anymore a row height to a fixed value.</td>
+		<td class="version"></td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103436</th>
+		<td class="description">Text object with automatic colour appears disabled in Binary database</td>
+		<td class="version"><a href="../../versions/19_R7/">19 R7</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103447</th>
+		<td class="description">Rectangle object in subform may disappears on resizing the window.</td>
+		<td class="version"><a href="../../versions/19_R7/">19 R7</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103462</th>
+		<td class="description">Customized date formats (or official for some regional settings, like Netherlands) may not be correct in 4D; macOS 13.x only (Ventura). </td>
+		<td class="version"><a href="../../versions/19_R7/">19 R7</a> <a href="../../versions/19_R8/">19 R8</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103487</th>
+		<td class="description">ORDA: Unexpected Runtime Error (&quot;Try to read beyond end of the stream&quot;) in client/server mode when assigning a blob field to a variable </td>
+		<td class="version"><a href="../../versions/19_R7/">19 R7</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103492</th>
+		<td class="description">Unable to select and hold a static line drawn from right to left and bottom to top</td>
+		<td class="version"><a href="../../versions/19_R7/">19 R7</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103499</th>
+		<td class="description">Compiler option &quot;Type the variables&quot; incorrectly types parameter indirection in the symbols file</td>
+		<td class="version"><a href="../../versions/19_R7/">19 R7</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103507</th>
+		<td class="description">Bad optimization in queries while mixing indexed and sequential ; it brings slowness problem.</td>
+		<td class="version"><a href="../../versions/19_R7/">19 R7</a> <a href="../../versions/19_R6_HF2/">19 R6 HF2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103519</th>
+		<td class="description">Listbox: &#39;OBJECT Get format&#39; may return wrong value, depending of the format applied (Proportionnal, etc ...). In project mode only.</td>
+		<td class="version"></td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103524</th>
+		<td class="description">ORDA: Query with &#39;Not&#39; null on object, not working when indexed and query Not(# null) on object not working when sequential</td>
+		<td class="version"><a href="../../versions/19_R7/">19 R7</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103538</th>
+		<td class="description">REST server can return the error #401 after doing important number of requests</td>
+		<td class="version"><a href="../../versions/19_R7/">19 R7</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103542</th>
+		<td class="description">&#39;Execute on server&#39; method attribute not working in compiled component running in native mode</td>
+		<td class="version"><a href="../../versions/19_R7/">19 R7</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103555</th>
+		<td class="description">Product name in properties details tab on a 4D build application &#39;exe&#39; file shows &quot;4D Volume Desktop&quot; instead of application name.</td>
+		<td class="version"><a href="../../versions/19_R7/">19 R7</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103556</th>
+		<td class="description">Runtime error when attempting to assign NULL to an element of an array of objects</td>
+		<td class="version"><a href="../../versions/19_R7/">19 R7</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103560</th>
+		<td class="description">4D Write Pro: After inserting images on a 4D Write Pro page with attribute &quot;before the text&quot;, this one is displayed in background instead of foreground.</td>
+		<td class="version"><a href="../../versions/19_R7/">19 R7</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103562</th>
+		<td class="description">Changing type of Highlight button to 3D Button removes associated shortcut</td>
+		<td class="version"><a href="../../versions/19_R7/">19 R7</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103573</th>
+		<td class="description">Randomly 4D may quit unexpectedly when exiting the legacy printing setting dialog ; on Windows 11 22H2 only.</td>
+		<td class="version"><a href="../../versions/19_R7/">19 R7</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103575</th>
+		<td class="description">Calling a 4D dialog on old Windows 10 ( build &lt; 1703) can lead to a crash. </td>
+		<td class="version"><a href="../../versions/19_R7/">19 R7</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103578</th>
+		<td class="description">When connecting a client and a server on the same PC, and  you alternate several times between starting compiled and interpreted, it may lead the client to a freeze or a crash.</td>
+		<td class="version"><a href="../../versions/19_R7/">19 R7</a> </td>
+	</tr>
+
+</table>
+
+</div>
+</body>
+</html>

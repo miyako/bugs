@@ -1,0 +1,189 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>4D - Bug Fixes</title>
+  <link rel="canonical" href="../../versions/19.4_HF1/">
+  <link rel="stylesheet" href="../../css/fixedbugs.css" type="text/css">
+  <script src="../../javascript/fixedbugs.js"></script>
+  <meta name="viewport" content="width=device-width, user-scalable=no">
+</head>
+<body>
+<div class="contain">
+<h1>All Products 19.4 HF1 <span class="superadmin">- Fixed bugs</span></h1>
+<a href="#top" title="Scroll top" class="scrollTop"></a>
+
+<table class="list">
+	<tr>
+		<td class="title">Reference</td>
+		<td class="description">Summary</td>
+		<td class="version">Fixed also with</td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0101670</th>
+		<td class="description">Using formula.call() or formula.apply() on a Formula that should return a time value, returns incorrect Real-type value instead</td>
+		<td class="version"></td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0102840</th>
+		<td class="description">When specifying a default menu item to be selected using the command &#39;Dynamic pop up menu&#39;, a wrong menu item will be selected if the menu contains hidden standard actions. </td>
+		<td class="version"></td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0102894</th>
+		<td class="description">Standard action &#39;Quit&#39; executes the object method then displays the confirmation dialog, whereas it should display the dialog first.</td>
+		<td class="version"><a href="../../versions/19_R7/">19 R7</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0102914</th>
+		<td class="description">Button with standard action &quot;addSubrecord&quot; must be disabled if listbox is an entity selection listbox. This could lead to a crash.</td>
+		<td class="version"></td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0102947</th>
+		<td class="description">When the cursor is in a Listbox cell, and you press any key with the command modifier (for example &#39;CMD&#39;+&quot;d&quot; on Mac  or &#39;CTRL&#39;+&quot;d&quot; on Windows) the form event &quot;On before Keystroke&quot; fires twice. </td>
+		<td class="version"></td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103028</th>
+		<td class="description">Unexpected 10 seconds delay after running PHP Execute(&quot;&quot;; &quot;quit_4d_php&quot;; *)</td>
+		<td class="version"><a href="../../versions/19_R6/">19 R6</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103080</th>
+		<td class="description">When trying to use &#39;SET CURRENT PRINTER&#39; on PDFCreator, PDFCreator is unable to become the current printer.</td>
+		<td class="version"></td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103081</th>
+		<td class="description">IMAP transporter&#39; .getMails()&#39; may freeze while retrieving emails</td>
+		<td class="version"></td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103097</th>
+		<td class="description">Unexpected duplicated automatic actions in Menu editor (toolbox dialog)</td>
+		<td class="version"><a href="../../versions/19_R6/">19 R6</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103108</th>
+		<td class="description">When having two tables related, the quick report shows unusual result in the search window for fields (some fields missing).</td>
+		<td class="version"><a href="../../versions/19_R6/">19 R6</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103109</th>
+		<td class="description">SET MENU ITEM SHORTCUT &quot;0&quot; does not display right character on macOS 12.x (Monterey)</td>
+		<td class="version"></td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103124</th>
+		<td class="description">Regression in Output form appearance: unexpectedly, there are no more separator lines.</td>
+		<td class="version"><a href="../../versions/19_R6/">19 R6</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103135</th>
+		<td class="description">Picture button in Project mode does not have Drag/Drop property</td>
+		<td class="version"><a href="../../versions/19_R6/">19 R6</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103154</th>
+		<td class="description">The &#39;OK&#39; button on interface tab of User Settings for &#39;Data file&#39; becomes unexpectedly enabled when you come back to the first tab.</td>
+		<td class="version"></td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103179</th>
+		<td class="description">When using &#39;FILTER KEYSTROKE&#39; in the &#39;On Before Keystroke&#39; event, the cursor will jump to the start of the field value.</td>
+		<td class="version"></td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103197</th>
+		<td class="description">When you click a not initialized Popup that displays an array without any elements, input fields are disabled and can no longer be entered (while you can select text).</td>
+		<td class="version"><a href="../../versions/19_R7/">19 R7</a> <a href="../../versions/19_R6_HF1/">19 R6 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103200</th>
+		<td class="description">Impossible to type Japanese: in HiDPI mode, the front end processor (IME) may be displayed over the text input, hiding text then.</td>
+		<td class="version"><a href="../../versions/19_R6/">19 R6</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103204</th>
+		<td class="description">A REST session in &#39;legacy&#39; mode is not released after one hour of inactivity.</td>
+		<td class="version"></td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103217</th>
+		<td class="description">After changing the size of a line (form object), the coordinates are not saved after reopening the form.</td>
+		<td class="version"><a href="../../versions/19_R6/">19 R6</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103221</th>
+		<td class="description">ORDA operations for sets (such as .and(), .or(), .minus(), etc ...) don&#39;t work on client server mode with some special caracters (&quot;?&quot;, &quot;/&quot;, etc ...).</td>
+		<td class="version"></td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103226</th>
+		<td class="description">4D Write Pro: Printing via 4D Write Pro doesn&#39;t display the name of the document on the printer queue</td>
+		<td class="version"><a href="../../versions/19_R6_HF1/">19 R6 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103238</th>
+		<td class="description">Project will always tell that the user needs another step for WebFolder by unexpected red letters in Database settings</td>
+		<td class="version"><a href="../../versions/19_R7/">19 R7</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103244</th>
+		<td class="description">&#39;Surrogate&#39; character at the end of an alpha field can caused invalid character because not truncated correctly</td>
+		<td class="version"><a href="../../versions/19_R7/">19 R7</a> <a href="../../versions/19_R6_HF1/">19 R6 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103335</th>
+		<td class="description">Running the command &quot;MAIL convert to MIME&quot; causes 4D to freeze.</td>
+		<td class="version"></td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103336</th>
+		<td class="description">The &quot;.getBox List()&quot; command doesn&#39;t correctly decode the name of the mailboxes as soon as there is a &quot;+&quot; sign</td>
+		<td class="version"></td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103346</th>
+		<td class="description">After convertion to project mode, the css style is missing in the property list of listbox , header, column and footer</td>
+		<td class="version"><a href="../../versions/19_R7/">19 R7</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103378</th>
+		<td class="description">The colorPicker doesn&#39;t always display on Windows system.</td>
+		<td class="version"></td>
+	</tr>
+
+</table>
+
+</div>
+</body>
+</html>

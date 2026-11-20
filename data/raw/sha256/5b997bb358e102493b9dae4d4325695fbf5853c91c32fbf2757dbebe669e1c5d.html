@@ -1,0 +1,495 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>4D - Bug Fixes</title>
+  <link rel="canonical" href="../../versions/19_R8/">
+  <link rel="stylesheet" href="../../css/fixedbugs.css" type="text/css">
+  <script src="../../javascript/fixedbugs.js"></script>
+  <meta name="viewport" content="width=device-width, user-scalable=no">
+</head>
+<body>
+<div class="contain">
+<h1>All Products 19 R8 <span class="superadmin">- Fixed bugs</span></h1>
+<a href="#top" title="Scroll top" class="scrollTop"></a>
+
+<table class="list">
+	<tr>
+		<td class="title">Reference</td>
+		<td class="description">Summary</td>
+		<td class="version">Fixed also with</td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0100533</th>
+		<td class="description">4D Write Pro: &#39;WP SET TEXT&#39; 4D command stops working if a NULL ASCII character has been inserted into a 4D Write Pro document</td>
+		<td class="version"><a href="../../versions/19.5/">19.5</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0100575</th>
+		<td class="description">In listbox with Single-Click Edit property checked, when you edit cell in listbox the form event &quot;On Before Data Entry&quot; is call unexpectedly twice (for listbox and column)</td>
+		<td class="version"></td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0100987</th>
+		<td class="description">QR list report: the name of the related table is not correct in the selected field in the fields editor</td>
+		<td class="version"><a href="../../versions/19.7_HF2/">19.7 HF2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0102095</th>
+		<td class="description">When using JSON Validate on a schema that contains an object array, it will only validate the 1st item rather than all items</td>
+		<td class="version"><a href="../../versions/19.5/">19.5</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0102840</th>
+		<td class="description">When specifying a default menu item to be selected using the command &#39;Dynamic pop up menu&#39;, a wrong menu item will be selected if the menu contains hidden standard actions. </td>
+		<td class="version"><a href="../../versions/19.4_HF1/">19.4 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0102950</th>
+		<td class="description">Multi ViewPro &quot;On VP Ready&quot; does not run on Mac</td>
+		<td class="version"></td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103153</th>
+		<td class="description">Problem redrawing the selection area of ​​cells in a listbox after using  LISTBOX SET PROPERTY(*; &quot;List Box&quot;; lk cell vertical padding; 10)</td>
+		<td class="version"></td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103204</th>
+		<td class="description">A REST session in &#39;legacy&#39; mode is not released after one hour of inactivity.</td>
+		<td class="version"><a href="../../versions/19.4_HF1/">19.4 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103221</th>
+		<td class="description">ORDA operations for sets (such as .and(), .or(), .minus(), etc ...) don&#39;t work on client server mode with some special caracters (&quot;?&quot;, &quot;/&quot;, etc ...).</td>
+		<td class="version"><a href="../../versions/19.4_HF1/">19.4 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103225</th>
+		<td class="description">Built-in sql command &#39;SELECT&#39; doesn&#39;t convert automatically integer value into text value, while 4D ODBC Pro does</td>
+		<td class="version"><a href="../../versions/19.5_HF2/">19.5 HF2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103226</th>
+		<td class="description">4D Write Pro: Printing via 4D Write Pro doesn&#39;t display the name of the document on the printer queue</td>
+		<td class="version"><a href="../../versions/19.4_HF1/">19.4 HF1</a> <a href="../../versions/19_R6_HF1/">19 R6 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103360</th>
+		<td class="description">Quick report: only half of the line of the left frame is printed </td>
+		<td class="version"><a href="../../versions/19.5_HF1/">19.5 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103368</th>
+		<td class="description">Reloading entity twice will release lock dependency</td>
+		<td class="version"><a href="../../versions/19.6/">19.6</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103378</th>
+		<td class="description">The colorPicker doesn&#39;t always display on Windows system.</td>
+		<td class="version"><a href="../../versions/19.4_HF1/">19.4 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103405</th>
+		<td class="description">Blank pdf files gets created when opening and closing print job</td>
+		<td class="version"><a href="../../versions/19.5/">19.5</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103419</th>
+		<td class="description">Listbox: if automatic height has been set once, we can&#39;t set anymore a row height to a fixed value.</td>
+		<td class="version"><a href="../../versions/19.5_HF1/">19.5 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103437</th>
+		<td class="description">&#39;OPEN URL&#39; command doesn’t work when special character like # is used in the url, along with &quot;appName&quot; parameter</td>
+		<td class="version"><a href="../../versions/19.5/">19.5</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103446</th>
+		<td class="description">&quot;Go to Definition&quot; and &quot;Search References&quot; not available when right-clicking on comments</td>
+		<td class="version"></td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103452</th>
+		<td class="description">Quick Report: a formula that is too large in column 1 makes it impossible to view the other columns of the report.</td>
+		<td class="version"><a href="../../versions/19.5_HF2/">19.5 HF2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103462</th>
+		<td class="description">Customized date formats (or official for some regional settings, like Netherlands) may not be correct in 4D; macOS 13.x only (Ventura). </td>
+		<td class="version"><a href="../../versions/19_R7/">19 R7</a> <a href="../../versions/19.5_HF1/">19.5 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103519</th>
+		<td class="description">Listbox: &#39;OBJECT Get format&#39; may return wrong value, depending of the format applied (Proportionnal, etc ...). In project mode only.</td>
+		<td class="version"><a href="../../versions/19.5_HF1/">19.5 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103530</th>
+		<td class="description">4D command &#39;Equal pictures&#39; returns &quot;False&quot; if the 2 pictures are empty</td>
+		<td class="version"></td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103533</th>
+		<td class="description">Label editor: the text field in label editor has an unexpected grey background.</td>
+		<td class="version"><a href="../../versions/19_R7_HF1/">19 R7 HF1</a> <a href="../../versions/19.5_HF2/">19.5 HF2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103541</th>
+		<td class="description">Quick Report: Wrong break after dragging a column in place of another; the subtotal is on the other field.</td>
+		<td class="version"><a href="../../versions/19.5_HF2/">19.5 HF2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103567</th>
+		<td class="description">The image button icons are not visible in user mode when in client-server mode we are in development mode </td>
+		<td class="version"></td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103570</th>
+		<td class="description">When &quot;Scalable sessions&quot; option is used, 4D Compiler doesn&#39;t raise an error for non thread-safe code used in &quot;On Web Connection&quot; method</td>
+		<td class="version"><a href="../../versions/19.5_HF2/">19.5 HF2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103577</th>
+		<td class="description">A query transformation of index to sequential search may generate a crash on composite index</td>
+		<td class="version"><a href="../../versions/19_R7_HF1/">19 R7 HF1</a> <a href="../../versions/19.5_HF2/">19.5 HF2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103579</th>
+		<td class="description">Quick Report: if a table has invisible fields, added a field through the Quick Report dialog may select a wrong one</td>
+		<td class="version"><a href="../../versions/19_R7_HF1/">19 R7 HF1</a> <a href="../../versions/19.5_HF2/">19.5 HF2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103587</th>
+		<td class="description">Alt double clicking method in quotes will not open method. Windows only</td>
+		<td class="version"><a href="../../versions/19.6/">19.6</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103592</th>
+		<td class="description">Error 9850 displayed when clicking on intersection of lines in Quick report</td>
+		<td class="version"><a href="../../versions/19.6/">19.6</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103593</th>
+		<td class="description">Unexpected compilation errors for ARM processor when the database has a plugin changing the global c++ locale without restoring it</td>
+		<td class="version"><a href="../../versions/19.6/">19.6</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103594</th>
+		<td class="description">Several memory leaks with the 4D command &#39;LDAP SEARCH ALL&#39;.</td>
+		<td class="version"><a href="../../versions/19.5_HF2/">19.5 HF2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103608</th>
+		<td class="description">Break points are not saved in Client-server binary mode when the 4D command &#39;CHANGE CURRENT USER&#39; is called.</td>
+		<td class="version"><a href="../../versions/19.5_HF2/">19.5 HF2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103629</th>
+		<td class="description">&quot;automaticAlternate&quot; (for alternate background) generates a parsing error when used for the &quot;alternateFill&quot; key of a list box</td>
+		<td class="version"><a href="../../versions/19.5_HF2/">19.5 HF2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103632</th>
+		<td class="description">REST licenses is not always released correctly.</td>
+		<td class="version"><a href="../../versions/19.5_HF2/">19.5 HF2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103638</th>
+		<td class="description">4D Write Pro: After dragging the scrollbar thumb all the way down, it may happen that it unexpectedly goes all the way up (only for the first move).</td>
+		<td class="version"><a href="../../versions/19_R7_HF2/">19 R7 HF2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103639</th>
+		<td class="description">While compiling, unexpected &quot;Internal error while compiling with clang&quot; message may appear, even after clearing compiled code.</td>
+		<td class="version"><a href="../../versions/19_R7_HF1/">19 R7 HF1</a> <a href="../../versions/19.5_HF2/">19.5 HF2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103642</th>
+		<td class="description">&#39;HTTP Request&#39; command behaviour between v19R and v19: no XML response with v19R sometimes</td>
+		<td class="version"><a href="../../versions/19_R7_HF1/">19 R7 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103645</th>
+		<td class="description">On a form object tab, the baseline of the text is too low ; on macOS only</td>
+		<td class="version"><a href="../../versions/19.5_HF2/">19.5 HF2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103647</th>
+		<td class="description">Compiled application crashes at start on a M1 Mac; no problem on an Intel Mac.</td>
+		<td class="version"><a href="../../versions/19_R7_HF1/">19 R7 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103652</th>
+		<td class="description">Pop up menu keeps firing in the context of an &#39;On Getting Focus&#39; event</td>
+		<td class="version"><a href="../../versions/19.5_HF2/">19.5 HF2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103653</th>
+		<td class="description">Since 19.5 HF1, Multi Criteria Query on indexed fields can be 400 times slower if all the data are on the cache</td>
+		<td class="version"><a href="../../versions/19_R7_HF1/">19 R7 HF1</a> <a href="../../versions/19.5_HF2/">19.5 HF2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103657</th>
+		<td class="description">Input form objects with null value data source do not accept data entry on form</td>
+		<td class="version"></td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103658</th>
+		<td class="description">4D crashes when transforming the operator type of image scale with the &quot;TRANSFORM PICTURE&quot; command</td>
+		<td class="version"></td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103661</th>
+		<td class="description">4D Write Pro: The value of &quot;WParea.modified&quot; is changed every time the cursor is put in the text even though nothing changes in the document</td>
+		<td class="version"><a href="../../versions/19.5/">19.5</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103664</th>
+		<td class="description">The &#39;Stop&#39; button (a cross besides the progress bar) in the results window during a &#39;Find in Design&#39; is missing ; it happens with the final 4D v19 R7</td>
+		<td class="version"><a href="../../versions/19_R7_HF1/">19 R7 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103669</th>
+		<td class="description">Unexpected compilation error &quot;Couldn&#39;t find active developer tools&quot; on M1 Mac (arm) can happen.</td>
+		<td class="version"><a href="../../versions/19_R7_HF1/">19 R7 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103672</th>
+		<td class="description">No error returned when a component method, set to execute in a non-preemptive mode, is called in a class function in compiled mode; client/server only.</td>
+		<td class="version"><a href="../../versions/19_R7_HF1/">19 R7 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103673</th>
+		<td class="description">When you quit an autoexecutable application, the application crashes just after the sponsored dialog get closed.</td>
+		<td class="version"><a href="../../versions/19.5_HF2/">19.5 HF2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103679</th>
+		<td class="description">In entity selection LISTBOX ,after selected Row with  command LISTBOX SELECT ROWS, arrow keys does not select the right rows, instead of selecting the next one after the row selected initially </td>
+		<td class="version"><a href="../../versions/19.6/">19.6</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103681</th>
+		<td class="description">Dialog &quot;Failed to call xcode-select&quot; when Xcode path contains a space character</td>
+		<td class="version"><a href="../../versions/19_R7_HF1/">19 R7 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103683</th>
+		<td class="description">Displaying an image in a list box cell overflows the dividing line on the right</td>
+		<td class="version"><a href="../../versions/19.5_HF2/">19.5 HF2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103697</th>
+		<td class="description">Bad interpreter evaluation of lazy operators (short-circuits) with negative numeric literal type operand.</td>
+		<td class="version"><a href="../../versions/19_R7_HF2/">19 R7 HF2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103708</th>
+		<td class="description">Bad display of special characters, e.g.: accented characters (&quot;é&quot;), using the imap getBoxList() command</td>
+		<td class="version"><a href="../../versions/19.6/">19.6</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103710</th>
+		<td class="description">4D exits unexpectedly when launching project from CLI with “--dataless” argument</td>
+		<td class="version"><a href="../../versions/19.6/">19.6</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103711</th>
+		<td class="description">Border style ignored for picture inputs when the form is executed (no such problem in the form editor).</td>
+		<td class="version"><a href="../../versions/19_R7_HF2/">19 R7 HF2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103712</th>
+		<td class="description">If primary key contains a comma, 4D Client crashes on call to &quot;ds.table.get($key)&quot; where $key contains the comma</td>
+		<td class="version"></td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103713</th>
+		<td class="description">Automatic row height does not work for a dynamically added row without refreshing  the  listbox of type entitySelection</td>
+		<td class="version"></td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103717</th>
+		<td class="description">In an array based listbox with automatic row height, after changing then content of a cell, the listbox isn&#39;t correctly redrawn</td>
+		<td class="version"></td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103721</th>
+		<td class="description">The access rights aren&#39;t set properly for the camera and microphone in an embedded web area</td>
+		<td class="version"><a href="../../versions/19_R7_HF2/">19 R7 HF2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103723</th>
+		<td class="description">4D View Pro: memory problem when using the commands &#39;VP MOVE CELLS&#39;, &#39;VP Copy to object&#39; and &#39;VP PASTE FROM OBJECT&#39;.</td>
+		<td class="version"></td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103725</th>
+		<td class="description">A listbox is not redrawn when window is resized</td>
+		<td class="version"><a href="../../versions/20/">20</a> <a href="../../versions/19.6_HF1/">19.6 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103727</th>
+		<td class="description">When opening a locked method, already opened by another client, you don&#39;t get any warning except the displayed lock icon</td>
+		<td class="version"></td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103734</th>
+		<td class="description">REGRESSION: The &quot;.selectBox()&quot; command generates an error 11 (IMAP SELECT command failed)</td>
+		<td class="version"><a href="../../versions/19.6/">19.6</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103737</th>
+		<td class="description">BLOBs saved with .save(dk auto merge), have 0 bytes in Client/Server mode</td>
+		<td class="version"></td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103740</th>
+		<td class="description">From a method edited, &#39;Reveal in explorer&#39; can freeze 4D if the explorer is not open.</td>
+		<td class="version"><a href="../../versions/19_R7_HF2/">19 R7 HF2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103747</th>
+		<td class="description">Opening a trigger method with VScode may lead to a crash.</td>
+		<td class="version"></td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103749</th>
+		<td class="description">Since v19 R7, database doesn&#39;t publish after rejecting and then accepting new connections.</td>
+		<td class="version"><a href="../../versions/19_R7_HF2/">19 R7 HF2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103751</th>
+		<td class="description">Font &#39;Conduit ITC Pro Medium&#39; has a different name on macOS and Windows</td>
+		<td class="version"></td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103756</th>
+		<td class="description">Wrong font size applied on an input text after modifying it in the font dialog when using 4K resolution screen</td>
+		<td class="version"></td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103759</th>
+		<td class="description">4D Write Pro: Memory leak with &#39;WP Get sections&#39; that can lead to hang or crash</td>
+		<td class="version"><a href="../../versions/19.6/">19.6</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103768</th>
+		<td class="description">100 (CZip) Error Code When Compressing Blob of Size 0</td>
+		<td class="version"></td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103785</th>
+		<td class="description">If blobs have size greater than 0 and smaller than 100 bytes, there size is “undefined” when using entities ; Client/server mode only.</td>
+		<td class="version"></td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103795</th>
+		<td class="description">The license message about &quot;maximum concurrent users has been reached&quot; doesn&#39;t appear on Windows platform when the client/server applications are built </td>
+		<td class="version"></td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103814</th>
+		<td class="description">Resizing an existing BLOB field does not work in client/server mode if the BLOB gets smaller in size than the original was, if saved with dk auto merge</td>
+		<td class="version"><a href="../../versions/20/">20</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103825</th>
+		<td class="description">4D server could hangs during quit when many processes was in postponed</td>
+		<td class="version"><a href="../../versions/20/">20</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103827</th>
+		<td class="description">Connected Clients gets Disconnected after Rejecting New Connections on 4D Server. New Network Layer only (ServerNet)</td>
+		<td class="version"><a href="../../versions/20/">20</a> <a href="../../versions/19.6_HF1/">19.6 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103831</th>
+		<td class="description">Since v19 R8, the type-ahead for variables does not work anymore</td>
+		<td class="version"><a href="../../versions/20/">20</a> <a href="../../versions/19_R8_HF1/">19 R8 HF1</a> </td>
+	</tr>
+
+</table>
+
+</div>
+</body>
+</html>

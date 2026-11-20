@@ -1,0 +1,201 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>4D - Bug Fixes</title>
+  <link rel="canonical" href="../../versions/20.3_HF1/">
+  <link rel="stylesheet" href="../../css/fixedbugs.css" type="text/css">
+  <script src="../../javascript/fixedbugs.js"></script>
+  <meta name="viewport" content="width=device-width, user-scalable=no">
+</head>
+<body>
+<div class="contain">
+<h1>All Products 20.3 HF1 <span class="superadmin">- Fixed bugs</span></h1>
+<a href="#top" title="Scroll top" class="scrollTop"></a>
+
+<table class="list">
+	<tr>
+		<td class="title">Reference</td>
+		<td class="description">Summary</td>
+		<td class="version">Fixed also with</td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104290</th>
+		<td class="description">Using debug log may crash on any plugin call</td>
+		<td class="version"><a href="../../versions/20_R3/">20 R3</a> <a href="../../versions/20_R5/">20 R5</a> <a href="../../versions/19.7_HF3/">19.7 HF3</a> <a href="../../versions/20_R4_HF1/">20 R4 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104438</th>
+		<td class="description">Unexpected HTTP error #409 on multi-cards network configuration; only in &#39;http&#39; mode, no problem on &#39;https&#39;.</td>
+		<td class="version"><a href="../../versions/20_R4/">20 R4</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104473</th>
+		<td class="description">4D Write Pro: when a document contains (at least) one anchored picture and a text box, the selection of the image is lost when the textbox is moved by programming</td>
+		<td class="version"></td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104522</th>
+		<td class="description">In the structure editor, a chosen Wildcard field is not saved as Wildcard in link-inspector after unselect the link.</td>
+		<td class="version"><a href="../../versions/20_R4/">20 R4</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104536</th>
+		<td class="description">A perfectible management of internal connection processes (workers) can cause the 4D Server to crash during new connection attempts.</td>
+		<td class="version"><a href="../../versions/20_R4/">20 R4</a> <a href="../../versions/19.7_HF3/">19.7 HF3</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104542</th>
+		<td class="description">An entity attribute with a relation attribute doesn&#39;t accept NULL value</td>
+		<td class="version"><a href="../../versions/20_R5/">20 R5</a> <a href="../../versions/20_R4_HF1/">20 R4 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104548</th>
+		<td class="description">A Qodly Studio user no longer creates a REST session; so no visible in the &#39;User&#39; tab of the Administration window.</td>
+		<td class="version"><a href="../../versions/20_R5/">20 R5</a> <a href="../../versions/20_R4_HF1/">20 R4 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104562</th>
+		<td class="description">Renaming local variables via the method editor&#39;s contextual menu does not work if the declaration statement spans multiple lines.</td>
+		<td class="version"><a href="../../versions/20_R4/">20 R4</a> <a href="../../versions/20_R3_HF2/">20 R3 HF2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104608</th>
+		<td class="description">When sending an email in NETKIT with a .bcc defined, it doesn&#39;t send an email to the target</td>
+		<td class="version"><a href="../../versions/20_R4/">20 R4</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104625</th>
+		<td class="description">HTTPRequest class does not support a collection as body of a request</td>
+		<td class="version"><a href="../../versions/20_R4_HF1/">20 R4 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104628</th>
+		<td class="description">In client-server, the &quot;Current user&quot; command returns incorrect results in ORDA class functions; it may always return the result &#39;Designer&#39;.</td>
+		<td class="version"><a href="../../versions/20_R4/">20 R4</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104632</th>
+		<td class="description">Shift clicking processes in server administration window causes a &quot;MONI_PROCESS_SetInterface&quot; error</td>
+		<td class="version"></td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104639</th>
+		<td class="description">Unexpected error #-43, &quot;file not found&quot;, when closing the Quick Report editor and click on the “Do not save” button.</td>
+		<td class="version"><a href="../../versions/20_R4/">20 R4</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104646</th>
+		<td class="description">The closed button of the 4D Preferences dialog window may not work at all (doing nothing).</td>
+		<td class="version"><a href="../../versions/20_R4/">20 R4</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104652</th>
+		<td class="description">On Windows only, a popup window opened over a web area does not close when clicking outside of it</td>
+		<td class="version"><a href="../../versions/20_R4/">20 R4</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104675</th>
+		<td class="description">&#39;.equal&#39; function on a collection makes 4D quit unexpectedly if it contains objects with circular references.</td>
+		<td class="version"><a href="../../versions/20_R4/">20 R4</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104685</th>
+		<td class="description">Calling the command &quot;getBoxList&quot; (ex: &quot;$boxlist:&#61;$mail.getBoxList($option)&quot;) returns an unexpected error #13 with IMAP.</td>
+		<td class="version"><a href="../../versions/20_R4_HF1/">20 R4 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104688</th>
+		<td class="description">Unexpected error #126 is raised when catalog collation_locale is &quot;ja&quot; on a non-Japanese system and --create-data is passed.</td>
+		<td class="version"><a href="../../versions/20_R4/">20 R4</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104689</th>
+		<td class="description">Can&#39;t compile for silicon if Form name is Japanese and system language is not.</td>
+		<td class="version"><a href="../../versions/20_R4/">20 R4</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104702</th>
+		<td class="description">4D Helper Tool fails to install because its internal name has changed</td>
+		<td class="version"><a href="../../versions/20_R4/">20 R4</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104703</th>
+		<td class="description">The catalog file may not match the Structure Unique key setting if you open the structure with an old data file.</td>
+		<td class="version"><a href="../../versions/20_R5/">20 R5</a> <a href="../../versions/20_R4_HF1/">20 R4 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104710</th>
+		<td class="description">4D Write Pro: decimal tabs won&#39;t align at last digit of number if no decimal separator.</td>
+		<td class="version"><a href="../../versions/20_R4/">20 R4</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104718</th>
+		<td class="description">When building an application with the &quot;Intel only&quot; option, the generated executable contains 2 architectures: ARM is added.</td>
+		<td class="version"></td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104719</th>
+		<td class="description">Picture field lost with these 2 conditions: registered outside data file + smaller than the &#39;Internal storage max size&#39;</td>
+		<td class="version"></td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104733</th>
+		<td class="description">The 4D command &#39;Count users&#39; returns an extra user when a stored procedure is running</td>
+		<td class="version"><a href="../../versions/20_R4/">20 R4</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104746</th>
+		<td class="description">4D Remote may unexpectedly quit after restarting several time the database project, alternating compiled and interpreted mode.</td>
+		<td class="version"><a href="../../versions/20_R5/">20 R5</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104754</th>
+		<td class="description">By clicking on the &quot;enter&quot; key located at the bottom right of the numeric keypad, the data explorer closes.</td>
+		<td class="version"><a href="../../versions/20_R5/">20 R5</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104759</th>
+		<td class="description">&#39;SET AUTOMATIC RELATIONS(True; False)&#39; doesn&#39;t work anymore; in client-server mode only</td>
+		<td class="version"><a href="../../versions/20_R5/">20 R5</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104768</th>
+		<td class="description">A crash can occurred due to a related Field on Input Form; in client-server mode only.</td>
+		<td class="version"><a href="../../versions/20_R5/">20 R5</a> </td>
+	</tr>
+
+</table>
+
+</div>
+</body>
+</html>

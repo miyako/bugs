@@ -307,11 +307,11 @@ button[type="submit"]:disabled { cursor: wait; opacity: .6; }
   font-size: 10px;
 }
 
-.page-footer > div { display: flex; align-items: center; gap: 7px; }
+.freshness { display: flex; flex-wrap: wrap; gap: 4px 12px; }
+.freshness [data-stale="true"] { color: var(--amber); font-weight: 600; }
 .page-footer a { color: #66758a; text-decoration: none; }
 .page-footer a:hover { color: var(--blue); }
 .source-links { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 7px 16px; }
-.status-dot { width: 6px; height: 6px; border-radius: 50%; background: #35a878; }
 
 @media (max-width: 560px) {
   .shell { width: min(100% - 28px, 760px); padding-top: 18px; }

@@ -1,0 +1,279 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>4D - Bug Fixes</title>
+  <link rel="canonical" href="../../versions/21.0_HF1/">
+  <link rel="stylesheet" href="../../css/fixedbugs.css" type="text/css">
+  <script src="../../javascript/fixedbugs.js"></script>
+  <meta name="viewport" content="width=device-width, user-scalable=no">
+</head>
+<body>
+<div class="contain">
+<h1>All Products 21.0 HF1 <span class="superadmin">- Fixed bugs</span></h1>
+<a href="#top" title="Scroll top" class="scrollTop"></a>
+
+<table class="list">
+	<tr>
+		<td class="title">Reference</td>
+		<td class="description">Summary</td>
+		<td class="version">Fixed also with</td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0105571</th>
+		<td class="description">Web Services Wizard generates code than can&#39;t be compiled in strict typing mode</td>
+		<td class="version"></td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0105903</th>
+		<td class="description">4D Write Pro: in some cases, the command &#39;WP new&#39; adds unexpected page breaks to a section.</td>
+		<td class="version"><a href="../../versions/21_R2/">21 R2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0105958</th>
+		<td class="description">The command Folder() does not resolve parent directory if we append &quot;/../&quot; when created from a path string; it removes two folders instead of one.</td>
+		<td class="version"><a href="../../versions/21_R2/">21 R2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0106000</th>
+		<td class="description">Inconsistent behaviour with integer overflow across platforms and interpreted/compiled modes</td>
+		<td class="version"><a href="../../versions/21_R2/">21 R2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0106015</th>
+		<td class="description">In the Object Library, the &quot;Search area&quot; should not be displayed if the component 4D Widgets is not loaded</td>
+		<td class="version"></td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0106028</th>
+		<td class="description">With some columns behind a locked column, changing the width of the locked column make the horizontal scroll position &#39;jump&#39; unexpectedly.</td>
+		<td class="version"><a href="../../versions/21_R2/">21 R2</a> <a href="../../versions/20.8_HF2/">20.8 HF2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0106049</th>
+		<td class="description">Quick Report preview overrides previously exported PDF with the Execute option</td>
+		<td class="version"></td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0106072</th>
+		<td class="description">Sorting an entity selection by a property of type Number in an object attribute does not always yield correct results</td>
+		<td class="version"></td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0106074</th>
+		<td class="description">Not-a-Number (NaN) values as properties of object attributes interfere with entity selection sorting (via `.orderBy()` or `.query(&quot;... order by ...&quot;)`</td>
+		<td class="version"></td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0106080</th>
+		<td class="description">4D Write Pro: &#39;Carriage return&#39; with a different font size than the previous char may not display correctly.</td>
+		<td class="version"><a href="../../versions/20.8_HF2/">20.8 HF2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0106087</th>
+		<td class="description">4D Write Pro: A bottom break row gets inserted in the wrong place when we also have a top break row of a lower sorting criterion</td>
+		<td class="version"><a href="../../versions/21_R2/">21 R2</a> <a href="../../versions/20.8_HF2/">20.8 HF2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0106091</th>
+		<td class="description">Query editor returns incorrect result when using &#39;Date field&#39; + &quot;is within next&quot; + &quot;month&quot; and current date is November.</td>
+		<td class="version"><a href="../../versions/20.8_HF2/">20.8 HF2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0106095</th>
+		<td class="description">Syntax error reported for valid calls to Collection.find()</td>
+		<td class="version"></td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0106097</th>
+		<td class="description">4D Remote may hang or disconnect when downloading 1 MB of data multiple times over a 10 Gigabits interface.</td>
+		<td class="version"><a href="../../versions/21_R2/">21 R2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0106104</th>
+		<td class="description">Bug with Dynamic menu called from the host instance event of a widget</td>
+		<td class="version"></td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0106117</th>
+		<td class="description">The 4D command &#39;OBJECT Get format&#39; may return empty string instead of the default value with some objects (thermometer, ruler, stepper, spinner, picture pop-up menu, picture button,button). Project mode only.</td>
+		<td class="version"><a href="../../versions/21_R2/">21 R2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0106118</th>
+		<td class="description">Text alignment for drop-down lists doesn&#39;t work.</td>
+		<td class="version"><a href="../../versions/21_R2/">21 R2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0106122</th>
+		<td class="description">During a transaction, when a record is saved and the transaction is rolled back, the trigger-based updates are not properly reversed, resulting in data corruption; client-server mode only.</td>
+		<td class="version"><a href="../../versions/21_R2/">21 R2</a> <a href="../../versions/20.8_HF2/">20.8 HF2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0106125</th>
+		<td class="description">4D View Pro: On Windows, the interface freezes while trying to print a sheet</td>
+		<td class="version"><a href="../../versions/21_R2/">21 R2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0106126</th>
+		<td class="description">METHOD RESOLVE PATH doesn&#39;t support classes</td>
+		<td class="version"><a href="../../versions/21_R2/">21 R2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0106127</th>
+		<td class="description">The “Search in Design” dialog box generates an error when searching for methods modified on a specific date. </td>
+		<td class="version"><a href="../../versions/21_R2/">21 R2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0106132</th>
+		<td class="description">Bad value of a linked attribute after executing &#39;.fromObject()&#39; or &#39;.fromCollection()&#39;, when the link does not target primary keys</td>
+		<td class="version"><a href="../../versions/21_R2/">21 R2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0106134</th>
+		<td class="description">Missing Edit button in the list of properties for the associated class</td>
+		<td class="version"><a href="../../versions/21_R2/">21 R2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0106135</th>
+		<td class="description">Explorer: &quot;Commands/Processes/Process info&quot; shows XLIFF for the tip instead of the correct text.</td>
+		<td class="version"><a href="../../versions/21_R2/">21 R2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0106136</th>
+		<td class="description">You can set the &#39;Insert&#39; key as shortcut and use it in Binary mode; but it doesn&#39;t work in Project mode.</td>
+		<td class="version"><a href="../../versions/21_R2/">21 R2</a> <a href="../../versions/20.8_HF3/">20.8 HF3</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0106140</th>
+		<td class="description">OEM Application: Quit dialog window displays &quot;4D Server&quot; as window title instead of the application name</td>
+		<td class="version"><a href="../../versions/21_R2/">21 R2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0106146</th>
+		<td class="description">ORDA: Permissions - Restrict access by default prevents from dropping an entity</td>
+		<td class="version"><a href="../../versions/21_R2/">21 R2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0106151</th>
+		<td class="description">Use of &quot;Esc&quot; key to close Design/Explorer window</td>
+		<td class="version"><a href="../../versions/21_R2/">21 R2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0106155</th>
+		<td class="description">4D Qodly Pro - Text component: No scroll bar appears in renderer mode when containing long/big text </td>
+		<td class="version"></td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0106156</th>
+		<td class="description">4D Qodly Pro - Page editor: Tab not marked as &quot;touched&quot; after creating new state; no save prompt on close, state lost on reopen</td>
+		<td class="version"></td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0106158</th>
+		<td class="description">4D Qodly Pro - Changing the width of nested matrix stylebox return an error in the page</td>
+		<td class="version"></td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0106159</th>
+		<td class="description">4D Qodly Pro - Text Input: Date input shows an invalid date in Safari</td>
+		<td class="version"></td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0106160</th>
+		<td class="description">4D Qodly Pro - Nested Matrices Intermittently Fail to Load Data</td>
+		<td class="version"></td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0106162</th>
+		<td class="description">4D Remote crashes when resuming from sleep after the sleep timeout</td>
+		<td class="version"><a href="../../versions/21_R2/">21 R2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0106167</th>
+		<td class="description">Unexpected message “Expected type: string” on a numeric input field.</td>
+		<td class="version"><a href="../../versions/21_R2/">21 R2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0106169</th>
+		<td class="description">Non-enterable Input in front of Tab control (or Group Box) with no fill colour is now almost invisible since 4D 20.8; macOS only.</td>
+		<td class="version"><a href="../../versions/21_R2/">21 R2</a> <a href="../../versions/20.8_HF3/">20.8 HF3</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0106170</th>
+		<td class="description">Evaluating &#39;Callchain&#39; in debugger expression returns &#39;Callchain&#39; as formula</td>
+		<td class="version"><a href="../../versions/21_R2/">21 R2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0106183</th>
+		<td class="description">4D may crash when modifying the Data Source of a &quot;Current Selection&quot; Listbox in properties list; in binary mode only.</td>
+		<td class="version"><a href="../../versions/21_R2/">21 R2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0106188</th>
+		<td class="description">In dark mode, in the settings/compiler/warning, the search area is white and the text is white, so impossible to see the entered text</td>
+		<td class="version"></td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0106197</th>
+		<td class="description">In the Toolbox, Adding New Items in Lists Inserts Them at the Bottom Instead of After the Selected Item</td>
+		<td class="version"><a href="../../versions/21_R2/">21 R2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0106198</th>
+		<td class="description">Let a comment added after the &#39;return&#39; keyword (end of a function), on the same line code. When running, it may cause the function to return Null instead of an assigned value.</td>
+		<td class="version"><a href="../../versions/21_R2/">21 R2</a> <a href="../../versions/20.8_HF3/">20.8 HF3</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0106205</th>
+		<td class="description">Right click on the structure editor may lead to a crash.</td>
+		<td class="version"><a href="../../versions/21_R2/">21 R2</a> </td>
+	</tr>
+
+</table>
+
+</div>
+</body>
+</html>

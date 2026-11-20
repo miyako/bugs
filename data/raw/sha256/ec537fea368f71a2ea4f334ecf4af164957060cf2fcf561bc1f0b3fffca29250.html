@@ -1,0 +1,171 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>4D - Bug Fixes</title>
+  <link rel="canonical" href="../../versions/21.1_HF1/">
+  <link rel="stylesheet" href="../../css/fixedbugs.css" type="text/css">
+  <script src="../../javascript/fixedbugs.js"></script>
+  <meta name="viewport" content="width=device-width, user-scalable=no">
+</head>
+<body>
+<div class="contain">
+<h1>All Products 21.1 HF1 <span class="superadmin">- Fixed bugs</span></h1>
+<a href="#top" title="Scroll top" class="scrollTop"></a>
+
+<table class="list">
+	<tr>
+		<td class="title">Reference</td>
+		<td class="description">Summary</td>
+		<td class="version">Fixed also with</td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0106214</th>
+		<td class="description">Find highlights in the method editor overrides selection highlight; you can&#39;t distinguish properly what has been found. On Windows system only.</td>
+		<td class="version"></td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0106262</th>
+		<td class="description">Unexpected invalid index error (#1088) using several times &#39;SAVE RECORD&#39;, &#39;FLUSH CACHE&#39;, and &#39;DELETE SELECTION&#39;.</td>
+		<td class="version"><a href="../../versions/21_R3/">21 R3</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0106269</th>
+		<td class="description">An update of EDGE (start to &quot;146 ...&quot;) makes 4D crashing when displaying a web area. The control &#39;WebView2&#39; is not initialized correctly, so internal settings may bring instability in some cases: runtime options, Chromium upgrade, security update, etc ...</td>
+		<td class="version"><a href="../../versions/20.8_HF4/">20.8 HF4</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0106290</th>
+		<td class="description">Possible crashes when using pop-up dropdown objects in list form on old databases, created with 19.x, or before the 19 R3 (using the compatibility option &#39;Use DirectWrite for text&#39; may prevent the bug).</td>
+		<td class="version"></td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0106291</th>
+		<td class="description">4D Write Pro: Images in 4D Write Pro document get lost when that document title contains special characters (&quot;?&quot;, &quot;/&quot;, etc ...).</td>
+		<td class="version"><a href="../../versions/20.8_HF3/">20.8 HF3</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0106301</th>
+		<td class="description">When scroll left or right with touchpad on Windows system, direction is reversed.</td>
+		<td class="version"><a href="../../versions/21_R3/">21 R3</a> <a href="../../versions/20.8_HF4/">20.8 HF4</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0106318</th>
+		<td class="description">4D Write Pro: it shows empty/white output when clipPath child uses transform (works when transform is flattened)</td>
+		<td class="version"></td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0106319</th>
+		<td class="description">Entering data in a multi-style listbox cell saves unwanted standard style Tags; in Dark mode, it injects White text color (going back to Light mode, you can&#39;t see the text; white on white).</td>
+		<td class="version"><a href="../../versions/21_R3/">21 R3</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0106326</th>
+		<td class="description">MSC: when compacting a database with the option &#39;Force update all records&#39;, object fields with pointer are getting corrupted. After compaction, objects are empty.</td>
+		<td class="version"><a href="../../versions/21_R3/">21 R3</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0106333</th>
+		<td class="description">Main process cpu usage: Process activity.processes[0].cpuUsage returns inflated value on Windows compared to macOS</td>
+		<td class="version"><a href="../../versions/21_R3/">21 R3</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0106334</th>
+		<td class="description">Unexpected error &quot;Cannot read data from stream&quot; in 4D Remote when multiple processes perform database requests; with network component QUIC only. No problem with ServerNet.</td>
+		<td class="version"></td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0106339</th>
+		<td class="description">Session.info.IPAddress returns empty string in ds.authentify() </td>
+		<td class="version"><a href="../../versions/21_R3/">21 R3</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0106345</th>
+		<td class="description">4D Write Pro: the command &quot;WP New&quot; clones the whole document instead of just the table element that was passed</td>
+		<td class="version"><a href="../../versions/21_R3/">21 R3</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0106346</th>
+		<td class="description">4D application quits unexpectedly when calling &quot;License info&quot; from two processes in compiled mode</td>
+		<td class="version"><a href="../../versions/21_R3/">21 R3</a> <a href="../../versions/20.8_HF4/">20.8 HF4</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0106347</th>
+		<td class="description">Tool4D throws compilation errors on 4D.WebSocketServer and 4D.WebSocketConnection classes</td>
+		<td class="version"></td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0106349</th>
+		<td class="description">4D Qodly Pro - With the studio, the start page is not rendered when running the http://localhost/$lib/renderer/ URL</td>
+		<td class="version"><a href="../../versions/21_R3/">21 R3</a> <a href="../../versions/21_R2_HF2/">21 R2 HF2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0106353</th>
+		<td class="description">Pasting field name into Query Editor no longer changes the box to enter value</td>
+		<td class="version"></td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0106355</th>
+		<td class="description">Compiler does not raise warning/error when assigning 0 to a UUID field through ORDA</td>
+		<td class="version"><a href="../../versions/21_R3/">21 R3</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0106361</th>
+		<td class="description">Using QUIC, 4D Server could crash when closing the application.</td>
+		<td class="version"></td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0106362</th>
+		<td class="description">4D crashes while modifying a class after renaming it if it has been duplicated; when editing the name, an incorrect class name is displayed.</td>
+		<td class="version"><a href="../../versions/21_R3/">21 R3</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0106370</th>
+		<td class="description">Some 4D commands may not be logged in the debug log.</td>
+		<td class="version"><a href="../../versions/21_R3/">21 R3</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0106384</th>
+		<td class="description">After converting the binary database to a project database, the &quot;flat&quot; style may not be applied to objects that had the &quot;printing&quot; style.</td>
+		<td class="version"><a href="../../versions/21_R3_HF1/">21 R3 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0106391</th>
+		<td class="description">Unexpected quit when clicking &#39;Esc&#39; key while in debugger window.</td>
+		<td class="version"></td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0106416</th>
+		<td class="description">When editing a method that already contains a case of statement, inserting a new &#39;Case of&#39; at the beginning of the method or inside a &#39;if&#39; statement above existing &#39;Case of&#39; statement can cause a crash. </td>
+		<td class="version"></td>
+	</tr>
+
+</table>
+
+</div>
+</body>
+</html>

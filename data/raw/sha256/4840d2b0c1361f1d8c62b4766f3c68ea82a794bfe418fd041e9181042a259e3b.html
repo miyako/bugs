@@ -1,0 +1,267 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>4D - Bug Fixes</title>
+  <link rel="canonical" href="../../versions/20.9/">
+  <link rel="stylesheet" href="../../css/fixedbugs.css" type="text/css">
+  <script src="../../javascript/fixedbugs.js"></script>
+  <meta name="viewport" content="width=device-width, user-scalable=no">
+</head>
+<body>
+<div class="contain">
+<h1>All Products 20.9 <span class="superadmin">- Fixed bugs</span></h1>
+<a href="#top" title="Scroll top" class="scrollTop"></a>
+
+<table class="list">
+	<tr>
+		<td class="title">Reference</td>
+		<td class="description">Summary</td>
+		<td class="version">Fixed also with</td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0097827</th>
+		<td class="description">On Windows, for engined application or engined client /server, custom icon isn&#39;t display in several windows</td>
+		<td class="version"><a href="../../versions/21_R2/">21 R2</a> <a href="../../versions/21.0_HF2/">21.0 HF2</a> <a href="../../versions/20.8_HF3/">20.8 HF3</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0104807</th>
+		<td class="description">Debugger may not show correct values for named and indexed parameters in a method.</td>
+		<td class="version"><a href="../../versions/21/">21</a> <a href="../../versions/20.8_HF1/">20.8 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0105203</th>
+		<td class="description">When you try to import data using &#39;IMPORT DATA&#39; and an xml project, a Japanese text longer than 170 characters will cause the data to be incorrectly imported. </td>
+		<td class="version"><a href="../../versions/20_R7/">20 R7</a> <a href="../../versions/20_R6_HF1/">20 R6 HF1</a> <a href="../../versions/20.8_HF3/">20.8 HF3</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0105561</th>
+		<td class="description">While using the TRACE window in step-by-step debug mode, if a 4D execution error occurs (e.g., an alert is displayed due to a runtime error), the TRACE window UI does not refresh correctly. </td>
+		<td class="version"><a href="../../versions/20.8_HF3/">20.8 HF3</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0105904</th>
+		<td class="description">Saving the password to automatically connect the engined client to the engined server doesn&#39;t work.</td>
+		<td class="version"><a href="../../versions/21/">21</a> <a href="../../versions/20.8_HF1/">20.8 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0105906</th>
+		<td class="description">4D WebSocket server not forwarding messages to worker reliably</td>
+		<td class="version"><a href="../../versions/21/">21</a> <a href="../../versions/20.8_HF1/">20.8 HF1</a> <a href="../../versions/20_R10_HF2/">20 R10 HF2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0105962</th>
+		<td class="description">On Japanese Windows system, when code contains kerning text, selection highlight and cursor positioning are incorrect.</td>
+		<td class="version"><a href="../../versions/21/">21</a> <a href="../../versions/20.8_HF1/">20.8 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0105986</th>
+		<td class="description">The &#39;Search in Design&#39; dialog in Japanese localization has bottom line trimmed.</td>
+		<td class="version"><a href="../../versions/20.8_HF1/">20.8 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0106007</th>
+		<td class="description">Possible crash with the command &#39;WEB SEND RAW DATA&#39;.</td>
+		<td class="version"><a href="../../versions/21/">21</a> <a href="../../versions/20.8_HF1/">20.8 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0106020</th>
+		<td class="description">The command &#39;License info&#39; executed from a Web process, and another process accessing the menu bar may crash the application because of a bug of missing mutual exclusion (menu bar updated twice at the same time)</td>
+		<td class="version"><a href="../../versions/20.8_HF1/">20.8 HF1</a> <a href="../../versions/20_R10_HF2/">20 R10 HF2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0106028</th>
+		<td class="description">With some columns behind a locked column, changing the width of the locked column make the horizontal scroll position &#39;jump&#39; unexpectedly.</td>
+		<td class="version"><a href="../../versions/21_R2/">21 R2</a> <a href="../../versions/20.8_HF2/">20.8 HF2</a> <a href="../../versions/21.0_HF1/">21.0 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0106039</th>
+		<td class="description">A synchronization problem within a listbox object can cause the application to quit unexpectedly. This can occur with simultaneous actions such as adding/removing rows, entering data into a cell, and executing the command &#39;OBJECT SET SCROLL POSITION&#39;</td>
+		<td class="version"><a href="../../versions/21/">21</a> <a href="../../versions/20.8_HF1/">20.8 HF1</a> <a href="../../versions/20_R10_HF2/">20 R10 HF2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0106040</th>
+		<td class="description">4D Write Pro: It may crash when simulated keyboard input is performed in a Write Pro document; since minor version macOS 26.1 (no problem with 26.0.1).</td>
+		<td class="version"><a href="../../versions/21/">21</a> <a href="../../versions/20.8_HF1/">20.8 HF1</a> <a href="../../versions/20_R10_HF2/">20 R10 HF2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0106042</th>
+		<td class="description">Possible crash on client side while cloning a non-shared collection part of a shared graph </td>
+		<td class="version"><a href="../../versions/21/">21</a> <a href="../../versions/20.8_HF1/">20.8 HF1</a> <a href="../../versions/20_R10_HF2/">20 R10 HF2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0106046</th>
+		<td class="description">4D application quits unexpectedly if calling the commands QUERY [SELECTION] BY ATTRIBUTE without the operator argument</td>
+		<td class="version"><a href="../../versions/21/">21</a> <a href="../../versions/20.8_HF1/">20.8 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0106053</th>
+		<td class="description">The &#39;ZIP Create Archive&#39; command returns the incorrect status &quot;true&quot; if the folder doesn&#39;t exist, despite the occurrence of an expected error.</td>
+		<td class="version"><a href="../../versions/21/">21</a> <a href="../../versions/20.8_HF2/">20.8 HF2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0106060</th>
+		<td class="description">Error #1112 on a &#39;.query()&#39; when there is no space after an operator used for the request.</td>
+		<td class="version"><a href="../../versions/21/">21</a> <a href="../../versions/20.8_HF1/">20.8 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0106080</th>
+		<td class="description">4D Write Pro: &#39;Carriage return&#39; with a different font size than the previous char may not display correctly.</td>
+		<td class="version"><a href="../../versions/20.8_HF2/">20.8 HF2</a> <a href="../../versions/21.0_HF1/">21.0 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0106081</th>
+		<td class="description">When a web area in a form loads HTML page with a dropdown, selecting any dropdown option pauses &#39;On Timer&#39; form event.</td>
+		<td class="version"><a href="../../versions/21.0_HF2/">21.0 HF2</a> <a href="../../versions/20.8_HF3/">20.8 HF3</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0106086</th>
+		<td class="description">Compile error when using &#39;Choose&#39; command with numeric criterion (side effect of ACI0105909)</td>
+		<td class="version"><a href="../../versions/21/">21</a> <a href="../../versions/20.8_HF1/">20.8 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0106087</th>
+		<td class="description">4D Write Pro: A bottom break row gets inserted in the wrong place when we also have a top break row of a lower sorting criterion</td>
+		<td class="version"><a href="../../versions/21_R2/">21 R2</a> <a href="../../versions/20.8_HF2/">20.8 HF2</a> <a href="../../versions/21.0_HF1/">21.0 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0106091</th>
+		<td class="description">Query editor returns incorrect result when using &#39;Date field&#39; + &quot;is within next&quot; + &quot;month&quot; and current date is November.</td>
+		<td class="version"><a href="../../versions/20.8_HF2/">20.8 HF2</a> <a href="../../versions/21.0_HF1/">21.0 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0106122</th>
+		<td class="description">During a transaction, when a record is saved and the transaction is rolled back, the trigger-based updates are not properly reversed, resulting in data corruption; client-server mode only.</td>
+		<td class="version"><a href="../../versions/21_R2/">21 R2</a> <a href="../../versions/20.8_HF2/">20.8 HF2</a> <a href="../../versions/21.0_HF1/">21.0 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0106136</th>
+		<td class="description">You can set the &#39;Insert&#39; key as shortcut and use it in Binary mode; but it doesn&#39;t work in Project mode.</td>
+		<td class="version"><a href="../../versions/21_R2/">21 R2</a> <a href="../../versions/21.0_HF1/">21.0 HF1</a> <a href="../../versions/20.8_HF3/">20.8 HF3</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0106145</th>
+		<td class="description">Loss of custom icon on Windows client after an update from mac server</td>
+		<td class="version"><a href="../../versions/20.8_HF3/">20.8 HF3</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0106169</th>
+		<td class="description">Non-enterable Input in front of Tab control (or Group Box) with no fill colour is now almost invisible since 4D 20.8; macOS only.</td>
+		<td class="version"><a href="../../versions/21_R2/">21 R2</a> <a href="../../versions/21.0_HF1/">21.0 HF1</a> <a href="../../versions/20.8_HF3/">20.8 HF3</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0106178</th>
+		<td class="description">A syntax error in a parameter of the &#39;QUERY BY ATTRIBUTE&#39; command can cause the application to quit unexpectedly.</td>
+		<td class="version"><a href="../../versions/21_R2/">21 R2</a> <a href="../../versions/21.1/">21.1</a> <a href="../../versions/20.8_HF3/">20.8 HF3</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0106198</th>
+		<td class="description">Let a comment added after the &#39;return&#39; keyword (end of a function), on the same line code. When running, it may cause the function to return Null instead of an assigned value.</td>
+		<td class="version"><a href="../../versions/21_R2/">21 R2</a> <a href="../../versions/21.0_HF1/">21.0 HF1</a> <a href="../../versions/20.8_HF3/">20.8 HF3</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0106257</th>
+		<td class="description">Grouped form objects with missing objects in it after a copied/pasted in binary mode.</td>
+		<td class="version"><a href="../../versions/21.1/">21.1</a> <a href="../../versions/21_R2_HF1/">21 R2 HF1</a> <a href="../../versions/20.8_HF3/">20.8 HF3</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0106269</th>
+		<td class="description">An update of EDGE (start to &quot;146 ...&quot;) makes 4D crashing when displaying a web area. The control &#39;WebView2&#39; is not initialized correctly, so internal settings may bring instability in some cases: runtime options, Chromium upgrade, security update, etc ...</td>
+		<td class="version"><a href="../../versions/21.1_HF1/">21.1 HF1</a> <a href="../../versions/20.8_HF4/">20.8 HF4</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0106270</th>
+		<td class="description">Print Settings window does not display modal/popup windows; on macOS 26 only</td>
+		<td class="version"><a href="../../versions/21.1_HF2/">21.1 HF2</a> <a href="../../versions/20.8_HF4/">20.8 HF4</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0106291</th>
+		<td class="description">4D Write Pro: Images in 4D Write Pro document get lost when that document title contains special characters (&quot;?&quot;, &quot;/&quot;, etc ...).</td>
+		<td class="version"><a href="../../versions/20.8_HF3/">20.8 HF3</a> <a href="../../versions/21.1_HF1/">21.1 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0106296</th>
+		<td class="description">Corrupted memory occurs in TLS handshake of a client-server connection using OpenSSL</td>
+		<td class="version"><a href="../../versions/21_R4/">21 R4</a> <a href="../../versions/21.1_HF2/">21.1 HF2</a> <a href="../../versions/20.8_HF4/">20.8 HF4</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0106301</th>
+		<td class="description">When scroll left or right with touchpad on Windows system, direction is reversed.</td>
+		<td class="version"><a href="../../versions/21_R3/">21 R3</a> <a href="../../versions/21.1_HF1/">21.1 HF1</a> <a href="../../versions/20.8_HF4/">20.8 HF4</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0106310</th>
+		<td class="description">The 4D command &#39;WEB GET VARIABLES&#39; causes excessive CPU usage in HTTP Connection Handler.</td>
+		<td class="version"><a href="../../versions/21.1/">21.1</a> <a href="../../versions/20.8_HF3/">20.8 HF3</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0106346</th>
+		<td class="description">4D application quits unexpectedly when calling &quot;License info&quot; from two processes in compiled mode</td>
+		<td class="version"><a href="../../versions/21_R3/">21 R3</a> <a href="../../versions/21.1_HF1/">21.1 HF1</a> <a href="../../versions/20.8_HF4/">20.8 HF4</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0106430</th>
+		<td class="description">In compiled mode, 4D Remote on Apple silicon processor (Mac-ARM) doesn&#39;t execute component method defined to run on 4D Server.</td>
+		<td class="version"><a href="../../versions/21_R4/">21 R4</a> <a href="../../versions/21.2/">21.2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0106470</th>
+		<td class="description">Password is not remembered even when &quot;Remember Password&quot; is checked; client-server mode only.</td>
+		<td class="version"><a href="../../versions/21_R4/">21 R4</a> <a href="../../versions/21_R3_HF1/">21 R3 HF1</a> <a href="../../versions/21.1_HF2/">21.1 HF2</a> <a href="../../versions/20.8_HF4/">20.8 HF4</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0106499</th>
+		<td class="description">Wrong value type for time arrays referenced via pointers (compiled only)</td>
+		<td class="version"><a href="../../versions/21_R4/">21 R4</a> <a href="../../versions/21.2/">21.2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0106539</th>
+		<td class="description">4D 20.x Web Server falsely reports occupied ports on recent macOS versions (macOS 15.8, 26.7 and 27). This is fixed with 4D 20.9.</td>
+		<td class="version"></td>
+	</tr>
+
+</table>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,183 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>4D - Bug Fixes</title>
+  <link rel="canonical" href="../../versions/20.7_HF2/">
+  <link rel="stylesheet" href="../../css/fixedbugs.css" type="text/css">
+  <script src="../../javascript/fixedbugs.js"></script>
+  <meta name="viewport" content="width=device-width, user-scalable=no">
+</head>
+<body>
+<div class="contain">
+<h1>All Products 20.7 HF2 <span class="superadmin">- Fixed bugs</span></h1>
+<a href="#top" title="Scroll top" class="scrollTop"></a>
+
+<table class="list">
+	<tr>
+		<td class="title">Reference</td>
+		<td class="description">Summary</td>
+		<td class="version">Fixed also with</td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0103656</th>
+		<td class="description">When using &#39;MESSAGE&#39; command with &#39;GOTO XY&#39; command, the window remains blank and no message is displayed; Windows system only.</td>
+		<td class="version"></td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0105535</th>
+		<td class="description">4D may crash on screen redraw when &#39;OBJECT SET ENTERABLE&#39; is used in array listbox cell during &#39;On Load&#39; or records navigation.</td>
+		<td class="version"><a href="../../versions/20_R9/">20 R9</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0105540</th>
+		<td class="description">Dataclass.getInfo().exposed value is always True in Remote mode</td>
+		<td class="version"><a href="../../versions/20_R10/">20 R10</a> <a href="../../versions/20_R9_HF1/">20 R9 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0105670</th>
+		<td class="description">Query result issue on collections into object field with eval() statement, and with existence of indexes.</td>
+		<td class="version"><a href="../../versions/20_R10/">20 R10</a> <a href="../../versions/20_R9_HF1/">20 R9 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0105685</th>
+		<td class="description">When pasting an image file into the according area in the Menu tab of the &#39;ToolBox&#39; dialog, it raises an unexpected Error #0 in &quot;bat_MENUS_SET_BACKGROUND&quot;.</td>
+		<td class="version"></td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0105686</th>
+		<td class="description">On macOS, playing with code editor of a class by adding some &#39;case of&#39; (or &#39;For each&#39;) seems to corrupt memory; some crashes could happen because of the indentation</td>
+		<td class="version"><a href="../../versions/20_R9_HF1/">20 R9 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0105689</th>
+		<td class="description">Altering structure while using Data Explorer in browser makes it work incorrectly (inspect page and see unexpected errors).</td>
+		<td class="version"></td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0105704</th>
+		<td class="description">Irrelevant Auto-Completion: When Typing &quot;READ ONLY (*&quot; in method editor, it proposes a list of tables whereas it should not.</td>
+		<td class="version"><a href="../../versions/20_R9_HF1/">20 R9 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0105706</th>
+		<td class="description">When using a Picture Popup menu, the displayed image is misaligned by several pixels, making it difficult or impossible to select certain image areas correctly. </td>
+		<td class="version"><a href="../../versions/20_R9/">20 R9</a> <a href="../../versions/20_R8_HF2/">20 R8 HF2</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0105707</th>
+		<td class="description">The objects &quot;Input &amp; WritePro&quot; alignment in form editor is shifted one pixel to the right/Left with the border &quot;System &amp; sunken&quot;</td>
+		<td class="version"><a href="../../versions/20_R9/">20 R9</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0105715</th>
+		<td class="description">The window title of a project form is not fully displayed while using the round brackets &quot;()&quot; after a three letters text (or more)</td>
+		<td class="version"><a href="../../versions/20_R9/">20 R9</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0105728</th>
+		<td class="description">Executing code with invalid xpath crashed 4D instead of displaying syntax error alert.</td>
+		<td class="version"><a href="../../versions/20_R9/">20 R9</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0105730</th>
+		<td class="description">After conversion from binary mode to project mode of a subform whose selection mode is &quot;none&quot;, the selection mode is &quot;single line&quot;.</td>
+		<td class="version"><a href="../../versions/20_R9/">20 R9</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0105733</th>
+		<td class="description">Since version 20.x, in design mode, the form preview image in the Explorer windows may be in low-resolution and does not respect the system scale factor. </td>
+		<td class="version"><a href="../../versions/20_R9/">20 R9</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0105742</th>
+		<td class="description">An entity attribute of type &#39;object&#39; is marked as touched whereas it is just accessed.</td>
+		<td class="version"><a href="../../versions/20_R10/">20 R10</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0105748</th>
+		<td class="description">Wrong xliff loaded when using 20.6 and 20.7 in cross-version client-server</td>
+		<td class="version"></td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0105749</th>
+		<td class="description">4D may crash when &#39;OBJECT SET ENTERABLE&#39; is used in table dropdown listbox cells during in-cell editing.</td>
+		<td class="version"><a href="../../versions/20_R10/">20 R10</a> <a href="../../versions/20_R9_HF1/">20 R9 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0105753</th>
+		<td class="description">Unexpected deadlock when 4D attempts to redraw a web area after using the command &#39;WA Evaluate JavaScript&#39;.</td>
+		<td class="version"></td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0105754</th>
+		<td class="description">The MSC application verification raises an error randomly when using a variable name with a dot &quot;.&quot; in a form object.</td>
+		<td class="version"><a href="../../versions/20_R9/">20 R9</a> <a href="../../versions/20_R10/">20 R10</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0105759</th>
+		<td class="description">Impossible to persist negative time values via input fields.</td>
+		<td class="version"><a href="../../versions/20_R10/">20 R10</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0105792</th>
+		<td class="description">Error with print commands when the printer&#39;s name exceeds 30 characters</td>
+		<td class="version"><a href="../../versions/20_R10/">20 R10</a> <a href="../../versions/20_R9_HF1/">20 R9 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0105800</th>
+		<td class="description">On remote entities (including C/S), non-shared object attributes used in several threads might cause application instability</td>
+		<td class="version"><a href="../../versions/20_R10/">20 R10</a> <a href="../../versions/20_R9_HF1/">20 R9 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0105822</th>
+		<td class="description">Modal print dialog closes unexpectedly when tooltip is displayed.</td>
+		<td class="version"><a href="../../versions/20_R10/">20 R10</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0105823</th>
+		<td class="description">It may happen that method windows keep having an unreasonably large minimum width or/and height, despite their window resizes.</td>
+		<td class="version"><a href="../../versions/20_R10/">20 R10</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0105832</th>
+		<td class="description">Unexpected double freed (release simultaneously) of a same shared object from 2 different threads; this could lead to a crash.</td>
+		<td class="version"><a href="../../versions/20_R10/">20 R10</a> <a href="../../versions/20_R9_HF1/">20 R9 HF1</a> </td>
+	</tr>
+
+	<tr>
+		<th class="title 4D">ACI0105858</th>
+		<td class="description">Attempting to open a v13 structure file with 4D v20 may damage the structure, even if cancelling the upgrade in the dialog.</td>
+		<td class="version"><a href="../../versions/20_R10/">20 R10</a> </td>
+	</tr>
+
+</table>
+
+</div>
+</body>
+</html>

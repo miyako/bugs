@@ -1,0 +1,371 @@
+#!/usr/bin/env python3
+"""Fetch official 4D fixed-bug pages and generate the static browser dataset."""
+
+from __future__ import annotations
+
+import argparse
+import hashlib
+import json
+import re
+import sys
+import time
+from dataclasses import dataclass, field
+from datetime import datetime, timezone
+from html.parser import HTMLParser
+from pathlib import Path
+from urllib.error import HTTPError, URLError
+from urllib.parse import urljoin, urlparse
+from urllib.request import Request, urlopen
+
+ROOT = Path(__file__).resolve().parents[1]
+DATA_DIR = ROOT / "data"
+RAW_DIR = DATA_DIR / "raw" / "sha256"
+OUTPUT = ROOT / "public" / "data" / "fixed-bugs.json"
+DEFAULT_SEED = "https://developer.4d.com/FixedBugsList/versions/21.2/"
+HOST = "developer.4d.com"
+USER_AGENT = "4D-Fix-Finder/0.1 (+https://github.com/miyako/bugs)"
+ACI_PATTERN = re.compile(r"^ACI\d{7}$", re.IGNORECASE)
+VERSION_PATTERN = re.compile(r"^(?P<major>\d+)(?:\.(?P<minor>\d+))?(?:_R(?P<r>\d+))?(?:_HF(?P<hf>\d+))?$", re.IGNORECASE)
+
+
+@dataclass
+class Cell:
+    text: list[str] = field(default_factory=list)
+    links: list[tuple[str, str]] = field(default_factory=list)
+
+
+class FixedBugsPageParser(HTMLParser):
+    """Extract the table rows and linked fix targets without regexing HTML."""
+
+    def __init__(self) -> None:
+        super().__init__(convert_charrefs=True)
+        self.in_list_table = False
+        self.row: list[Cell] | None = None
+        self.cell: Cell | None = None
+        self.rows: list[list[Cell]] = []
+        self.active_link: tuple[str, list[str]] | None = None
+
+    def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
+        attributes = dict(attrs)
+        classes = (attributes.get("class") or "").split()
+        if tag == "table" and "list" in classes:
+            self.in_list_table = True
+        elif self.in_list_table and tag == "tr":
+            self.row = []
+        elif self.in_list_table and tag in {"td", "th"}:
+            self.cell = Cell()
+        elif self.in_list_table and tag == "a" and self.cell is not None:
+            self.active_link = (attributes.get("href") or "", [])
+
+    def handle_data(self, data: str) -> None:
+        if self.cell is None:
+            return
+        text = " ".join(data.split())
+        if text:
+            self.cell.text.append(text)
+            if self.active_link is not None:
+                self.active_link[1].append(text)
+
+    def handle_endtag(self, tag: str) -> None:
+        if self.in_list_table and tag == "a" and self.active_link is not None:
+            href, text = self.active_link
+            if self.cell is not None and href:
+                self.cell.links.append((href, " ".join(text).strip()))
+            self.active_link = None
+        elif self.in_list_table and tag in {"td", "th"} and self.cell is not None:
+            if self.row is not None:
+                self.row.append(self.cell)
+            self.cell = None
+        elif self.in_list_table and tag == "tr":
+            if self.row is not None and self.row:
+                self.rows.append(self.row)
+            self.row = None
+        elif tag == "table" and self.in_list_table:
+            self.in_list_table = False
+
+
+def version_from_url(url: str) -> dict[str, object]:
+    path = urlparse(url).path.rstrip("/")
+    slug = path.rsplit("/", 1)[-1]
+    match = VERSION_PATTERN.fullmatch(slug)
+    if not match:
+        raise ValueError(f"Unrecognized version slug in source URL: {url}")
+    major = int(match.group("major"))
+    feature = match.group("r")
+    minor = int(feature or match.group("minor") or 0)
+    hotfix = int(match.group("hf") or 0)
+    line = "R" if feature else "LTS"
+    key = slug
+    label = f"{major} R{minor}" if feature else (f"{major}.{minor}" if minor else str(major))
+    if hotfix:
+        label += f" HF{hotfix}"
+    if line == "LTS" and not feature:
+        label += " LTS"
+    return {
+        "versionKey": key,
+        "displayName": label,
+        "major": major,
+        "line": line,
+        "minor": minor,
+        "hotfix": hotfix,
+        "kind": "release",
+        "branchId": f"{major}-{line}" if line == "LTS" else f"{major}-R{minor}",
+        "officialSlug": slug,
+        "sourceUrl": url,
+    }
+
+
+def parse_page(html: str, page_url: str, content_hash: str) -> tuple[dict[str, str], list[dict[str, str]], list[str]]:
+    parser = FixedBugsPageParser()
+    parser.feed(html)
+    if not parser.rows:
+        raise ValueError(f"No fixed-bug listing table found at {page_url}")
+
+    headers = [" ".join(cell.text).strip().lower() for cell in parser.rows[0]]
+    try:
+        aci_column = next(index for index, value in enumerate(headers) if "reference" in value)
+        summary_column = next(index for index, value in enumerate(headers) if "summary" in value)
+    except StopIteration as exc:
+        raise ValueError(f"Fixed-bug table headers are incomplete at {page_url}") from exc
+    fixed_column = next(
+        (index for index, value in enumerate(headers) if "fixed also" in value),
+        None,
+    )
+
+    records: dict[str, str] = {}
+    evidence: list[dict[str, str]] = []
+    discovered_urls: set[str] = set()
+    page_version = version_from_url(page_url)
+    page_key = str(page_version["versionKey"])
+
+    for row in parser.rows[1:]:
+        if max(aci_column, summary_column) >= len(row):
+            raise ValueError(f"Malformed record row at {page_url}")
+        aci = " ".join(row[aci_column].text).strip().upper()
+        if not ACI_PATTERN.fullmatch(aci):
+            raise ValueError(f"Malformed ACI reference {aci!r} at {page_url}")
+        summary = " ".join(row[summary_column].text).strip()
+        if not summary:
+            raise ValueError(f"Missing summary for {aci} at {page_url}")
+        previous = records.get(aci)
+        if previous is not None and previous != summary:
+            raise ValueError(f"Conflicting duplicate {aci} at {page_url}")
+        records[aci] = summary
+        evidence.append({
+            "aci": aci,
+            "versionKey": page_key,
+            "evidenceType": "listed_on_version_page",
+            "sourceUrl": page_url,
+            "sourcePage": page_key,
+            "sourceHash": content_hash,
+        })
+
+        if fixed_column is None or fixed_column >= len(row):
+            continue
+        for href, label in row[fixed_column].links:
+            target_url = urljoin(page_url, href)
+            if urlparse(target_url).hostname != HOST or "/FixedBugsList/versions/" not in urlparse(target_url).path:
+                continue
+            try:
+                target_version = version_from_url(target_url)
+            except ValueError:
+                continue
+            target_key = str(target_version["versionKey"])
+            discovered_urls.add(target_url)
+            evidence.append({
+                "aci": aci,
+                "versionKey": target_key,
+                "evidenceType": "fixed_also_with",
+                "sourceUrl": page_url,
+                "sourcePage": page_key,
+                "sourceHash": content_hash,
+                "sourceText": label,
+            })
+
+    if not records:
+        raise ValueError(f"No valid ACI records found at {page_url}")
+    return records, evidence, sorted(discovered_urls)
+
+
+def request_page(url: str) -> tuple[bytes, dict[str, str]]:
+    parsed = urlparse(url)
+    if parsed.scheme != "https" or parsed.netloc != HOST:
+        raise ValueError(f"Refusing to fetch non-official URL: {url}")
+    request = Request(url, headers={"User-Agent": USER_AGENT, "Accept": "text/html"})
+    attempts = 3
+    for attempt in range(attempts):
+        try:
+            with urlopen(request, timeout=30) as response:
+                if urlparse(response.geturl()).netloc != HOST:
+                    raise ValueError(f"Official source redirected off-host: {url}")
+                if response.status != 200:
+                    raise ValueError(f"Unexpected HTTP status {response.status} for {url}")
+                return response.read(), dict(response.headers.items())
+        except HTTPError as error:
+            if error.code == 404 or error.code < 500 and error.code != 429:
+                raise
+            if attempt == attempts - 1:
+                raise
+            retry_after = error.headers.get("Retry-After")
+            delay = int(retry_after) if retry_after and retry_after.isdigit() else 2**attempt
+        except (URLError, TimeoutError):
+            if attempt == attempts - 1:
+                raise
+            delay = 2**attempt
+        time.sleep(delay)
+    raise RuntimeError(f"Could not fetch {url}")
+
+
+def crawl(seeds: list[str], max_pages: int) -> dict[str, object]:
+    queue = list(dict.fromkeys(seeds))
+    queued = set(queue)
+    fetched_urls: set[str] = set()
+    versions: dict[str, dict[str, object]] = {}
+    bugs: dict[str, str] = {}
+    evidence_by_key: dict[tuple[str, str, str, str], dict[str, str]] = {}
+    source_pages: list[dict[str, object]] = []
+    failures: list[str] = []
+    last_request = 0.0
+
+    while queue and len(fetched_urls) < max_pages:
+        url = queue.pop(0)
+        queued.discard(url)
+        if url in fetched_urls:
+            continue
+        pause = 1.0 - (time.monotonic() - last_request)
+        if pause > 0:
+            time.sleep(pause)
+        try:
+            body, _headers = request_page(url)
+            last_request = time.monotonic()
+            content_hash = hashlib.sha256(body).hexdigest()
+            RAW_DIR.mkdir(parents=True, exist_ok=True)
+            snapshot = RAW_DIR / f"{content_hash}.html"
+            if not snapshot.exists():
+                snapshot.write_bytes(body)
+            html = body.decode("utf-8", errors="replace")
+            page_version = version_from_url(url)
+            records, page_evidence, discoveries = parse_page(html, url, content_hash)
+        except (HTTPError, URLError, TimeoutError, ValueError, UnicodeError) as error:
+            last_request = time.monotonic()
+            failures.append(f"{url}: {error}")
+            print(f"warning: {failures[-1]}", file=sys.stderr)
+            fetched_urls.add(url)
+            continue
+
+        key = str(page_version["versionKey"])
+        version = {**page_version, "complete": True}
+        versions[key] = version
+        for aci, summary in records.items():
+            existing = bugs.get(aci)
+            if existing is not None and existing != summary:
+                raise ValueError(f"Conflicting summaries for {aci} across official pages")
+            bugs[aci] = summary
+        for item in page_evidence:
+            dedupe_key = (
+                item["aci"],
+                item["versionKey"],
+                item["evidenceType"],
+                item["sourceUrl"],
+            )
+            evidence_by_key[dedupe_key] = item
+        source_pages.append({
+            "versionKey": key,
+            "url": url,
+            "fetchedAt": datetime.now(timezone.utc).isoformat(),
+            "contentSha256": content_hash,
+            "recordCount": len(records),
+        })
+        fetched_urls.add(url)
+
+        for discovered_url in discoveries:
+            discovered = version_from_url(discovered_url)
+            discovered_key = str(discovered["versionKey"])
+            versions.setdefault(discovered_key, {**discovered, "complete": False})
+            if discovered_url not in fetched_urls and discovered_url not in queued:
+                queue.append(discovered_url)
+                queued.add(discovered_url)
+
+    if not source_pages:
+        raise RuntimeError("No official source page could be parsed; refusing to generate data")
+    if failures:
+        raise RuntimeError(
+            "One or more discovered source pages failed; refusing to replace the dataset:\n"
+            + "\n".join(failures)
+        )
+
+    return {
+        "schemaVersion": 1,
+        "generatedAt": datetime.now(timezone.utc).isoformat(),
+        "bugs": [{"aci": aci, "summary": bugs[aci]} for aci in sorted(bugs)],
+        "versions": sorted(
+            versions.values(),
+            key=lambda item: (
+                int(item["major"]),
+                0 if item["line"] == "LTS" else 1,
+                int(item["minor"]),
+                int(item["hotfix"]),
+            ),
+        ),
+        "evidence": sorted(
+            evidence_by_key.values(),
+            key=lambda item: (item["aci"], item["versionKey"], item["evidenceType"]),
+        ),
+        "sourcePages": source_pages,
+    }
+
+
+def validate_database(database: dict[str, object]) -> None:
+    bugs = database["bugs"]
+    versions = database["versions"]
+    evidence = database["evidence"]
+    if not isinstance(bugs, list) or not isinstance(versions, list) or not isinstance(evidence, list):
+        raise ValueError("Generated dataset collections must be arrays")
+    bug_ids = [str(item["aci"]) for item in bugs]
+    version_ids = [str(item["versionKey"]) for item in versions]
+    if len(bug_ids) != len(set(bug_ids)):
+        raise ValueError("Duplicate canonical ACI")
+    if len(version_ids) != len(set(version_ids)):
+        raise ValueError("Duplicate version key")
+    if not bug_ids or not version_ids:
+        raise ValueError("Dataset must include at least one ACI and version")
+    known_bugs = set(bug_ids)
+    known_versions = set(version_ids)
+    for item in evidence:
+        if item["aci"] not in known_bugs:
+            raise ValueError(f"Evidence references unknown ACI: {item['aci']}")
+        if item["versionKey"] not in known_versions:
+            raise ValueError(f"Evidence references unknown version: {item['versionKey']}")
+        if item["evidenceType"] not in {"listed_on_version_page", "fixed_also_with"}:
+            raise ValueError(f"Unknown evidence type: {item['evidenceType']}")
+        if urlparse(str(item["sourceUrl"])).hostname != HOST:
+            raise ValueError(f"Non-official evidence URL: {item['sourceUrl']}")
+
+
+def main() -> int:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--seed-url", action="append", default=[], help="Official version page to seed")
+    parser.add_argument("--max-pages", type=int, default=40, help="Maximum pages to fetch (default: 40)")
+    args = parser.parse_args()
+    if args.max_pages < 1:
+        parser.error("--max-pages must be at least 1")
+    seeds = args.seed_url or [DEFAULT_SEED]
+    try:
+        database = crawl(seeds, args.max_pages)
+        validate_database(database)
+        OUTPUT.parent.mkdir(parents=True, exist_ok=True)
+        temp_output = OUTPUT.with_suffix(".json.tmp")
+        temp_output.write_text(json.dumps(database, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+        temp_output.replace(OUTPUT)
+    except (HTTPError, URLError, TimeoutError, ValueError, RuntimeError) as error:
+        print(f"error: {error}", file=sys.stderr)
+        return 1
+    print(
+        f"Wrote {len(database['bugs'])} bugs, {len(database['versions'])} versions, "
+        f"and {len(database['evidence'])} fix events to {OUTPUT.relative_to(ROOT)}"
+    )
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

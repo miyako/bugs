@@ -280,3 +280,60 @@ button[type="submit"]:disabled { cursor: wait; opacity: .6; }
   .result-explanation, .build-result, .evidence { margin-left: 0; }
   .page-footer { align-items: flex-start; flex-direction: column; font-size: 10px; }
 }
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+    color: #e4ebf5;
+    background: #0e1521;
+    --ink: #e4ebf5;
+    --muted: #a0aec0;
+    --line: #334156;
+    --blue: #8ab4ff;
+    --green: #63d3a2;
+    --red: #ff938b;
+    --amber: #f3c66f;
+  }
+
+  body {
+    background:
+      radial-gradient(ellipse at 50% 0%, rgba(76, 125, 214, .12), transparent 38rem),
+      #0e1521;
+  }
+
+  .wordmark-mark { background: #264a78; }
+  .intro-copy { color: #a4b1c3; }
+  .checker-card, .result-card {
+    border-color: #2a384c;
+    background: rgba(23, 33, 48, .96);
+    box-shadow: 0 14px 40px rgba(0, 0, 0, .2), 0 2px 6px rgba(0, 0, 0, .12);
+  }
+  label { color: #c5d0df; }
+  input, select {
+    border-color: #35445a;
+    background: #172130;
+    color: #e4ebf5;
+  }
+  input::placeholder { color: #7f8da2; }
+  input:focus, select:focus { border-color: #7aa4f6; }
+  select:disabled { background: #202b3b; color: #a0aec0; }
+  .field-hint, .optional, .load-status { color: #91a0b4; }
+  button[type="submit"] { background: #315fae; }
+  button[type="submit"]:hover:not(:disabled) { background: #3a6dc4; }
+  .verdict-yes .verdict-icon { background: #173a32; }
+  .verdict-no .verdict-icon { background: #432a2c; }
+  .verdict-unknown .verdict-icon { background: #413821; }
+  .bug-summary { color: #9caabd; }
+  .copy-button {
+    border-color: #334156;
+    background: #172130;
+    color: #bdc9d8;
+  }
+  .result-explanation { color: #b4c0d0; }
+  .build-result { background: #3c3320; color: #f1d28c; }
+  .evidence { border-top-color: #2b384a; }
+  .evidence-row { color: #aab7c8; }
+  .evidence-row.other-fixes { color: #c2cede; }
+  .page-footer { color: #91a0b4; }
+  .page-footer a { color: #aab8ca; }
+}

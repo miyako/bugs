@@ -21,6 +21,10 @@ them. Increase `--max-pages` for larger graphs, or provide additional
 `--seed-url` arguments. Requests are sequential and rate-limited.
 The default crawl also starts from the official 4D 19 through 19.4 release
 lists, which were missing from the previously indexed release graph.
+The [4D 19 launch announcement](https://blog.4d.com/4d-v19-is-here/) dates
+the base release to July 12, 2021. Dates on the 19.1 through 19.4 fix notes
+are not used as release dates: they date the notes, not necessarily the
+release itself.
 The crawler stores content-addressed HTML under `data/raw/` and writes the
 browser dataset to `public/data/fixed-bugs.json`. Any page reached but failing
 to parse or any non-404 fetch failure aborts the refresh. Official version

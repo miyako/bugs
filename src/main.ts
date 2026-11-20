@@ -154,6 +154,17 @@ function renderResult(result: ResolverResult): void {
     const fix = result.build.evidence;
     buildResult.textContent = `Build ${result.build.buildNumber}: FIXED on the ${fix.branch} nightly branch — first listed at build ${fix.buildNumber}. The release result above is independent. `;
     addEvidenceLink(buildResult, "View official build list ↗", fix.sourceUrl);
+  } else if (result.build?.reasonCode === "FIX_LISTED_LATER") {
+    const { buildNumber, evidence, releaseBuildSource } = result.build;
+    const anchor = releaseBuildSource
+      ? `${result.queriedVersion?.displayName} (build ${buildNumber})`
+      : `Build ${buildNumber}`;
+    buildResult.textContent = `${anchor}: not yet listed as fixed. The first indexed fix on this branch is in build ${evidence.buildNumber}. `;
+    addEvidenceLink(buildResult, "View official build list ↗", evidence.sourceUrl);
+    if (releaseBuildSource) {
+      buildResult.append(" · ");
+      addEvidenceLink(buildResult, "Verify release build ↗", releaseBuildSource);
+    }
   } else if (result.build) {
     buildResult.textContent = `Build ${result.build.buildNumber}: UNKNOWN — no indexed fix at or before this build on the selected branch. The release result above is independent.`;
   }

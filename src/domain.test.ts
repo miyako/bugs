@@ -282,9 +282,30 @@ describe("resolveFixStatus", () => {
         verdict: "YES", reasonCode: "NIGHTLY_FIX", buildNumber: build, evidence: fix,
       });
     }
-    expect(resolveFixStatus(database, fix.aci, "21.2", "", [fix]).build).toBeNull();
-    expect(resolveFixStatus(database, fix.aci, "21.2", "100669", [fix]).build?.verdict).toBe("UNKNOWN");
     expect(resolveFixStatus(database, fix.aci, "21_R4", "100672", [fix]).build?.verdict).toBe("UNKNOWN");
+  });
+
+  it("shows the earliest later fix for a verified release build or an explicitly entered build", () => {
+    const firstFix = {
+      aci: "ACI0106659",
+      branch: "21",
+      buildNumber: 100670,
+      sourceUrl: "https://developer.4d.com/FixedBugsList/nightly/21/",
+    };
+    const fixes = [{ ...firstFix, buildNumber: 100675 }, { ...firstFix, branch: "21_R4" }, firstFix];
+    const releaseResult = resolveFixStatus(database, firstFix.aci, "21.2", "", fixes);
+    expect(releaseResult.verdict).toBe("UNKNOWN");
+    expect(releaseResult.build).toEqual({
+      verdict: "UNKNOWN", reasonCode: "FIX_LISTED_LATER", buildNumber: "100579",
+      evidence: firstFix, releaseBuildSource: "https://eu-en.4d.com/4d-212-lts-full-installer",
+    });
+    expect(resolveFixStatus(database, firstFix.aci, "21.2", "100669", fixes).build)
+      .toMatchObject({ reasonCode: "FIX_LISTED_LATER", buildNumber: "100669", evidence: firstFix });
+    expect(resolveFixStatus(database, firstFix.aci, "21.1", "", fixes).build).toBeNull();
+    expect(resolveFixStatus(database, firstFix.aci, "21_R4", "100669", [firstFix]).build)
+      .toMatchObject({ reasonCode: "BUILD_DATA_UNAVAILABLE" });
+    expect(resolveFixStatus(database, "ACI0106214", "21.2", "", [{ ...firstFix, aci: "ACI0106214" }]).build)
+      .toBeNull();
   });
 
   it("returns UNKNOWN for unknown ACIs and versions", () => {

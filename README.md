@@ -39,6 +39,11 @@ the page limit also remain incomplete and cannot produce a negative verdict.
   known. The build lookup assumes the number belongs to the selected release's
   nightly branch. A fix listed at or before that build on the same branch is
   **YES**; nightly evidence never changes a release-only verdict.
+- If the earliest indexed fix on the branch is later than the requested build,
+  the checker shows that build as a note alongside the verdict. With no build
+  entered, the note uses the release's build number if verified (currently
+  `21.2`, build `100579`). A later listing does not prove that earlier builds
+  were unfixed.
 
 The Pages workflow refreshes the nightly and beta build snapshot from the
 official branch listings. To refresh it locally, run

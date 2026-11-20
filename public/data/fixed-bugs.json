@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "generatedAt": "2026-11-20T12:01:49.501365+00:00",
   "bugs": [
     {
@@ -2775,7 +2775,9 @@
       "branchId": "19-LTS",
       "officialSlug": "19.7_HF2",
       "sourceUrl": "https://developer.4d.com/FixedBugsList/versions/19.7_HF2/",
-      "complete": false
+      "complete": false,
+      "releasedAt": null,
+      "releaseDateSource": null
     },
     {
       "versionKey": "19.7_HF3",
@@ -2788,7 +2790,9 @@
       "branchId": "19-LTS",
       "officialSlug": "19.7_HF3",
       "sourceUrl": "https://developer.4d.com/FixedBugsList/versions/19.7_HF3/",
-      "complete": false
+      "complete": false,
+      "releasedAt": null,
+      "releaseDateSource": null
     },
     {
       "versionKey": "19.8",
@@ -2801,7 +2805,9 @@
       "branchId": "19-LTS",
       "officialSlug": "19.8",
       "sourceUrl": "https://developer.4d.com/FixedBugsList/versions/19.8/",
-      "complete": false
+      "complete": false,
+      "releasedAt": "2024-07-11",
+      "releaseDateSource": "https://eu-en.4d.com/product-release-life-cycle"
     },
     {
       "versionKey": "20",
@@ -2814,7 +2820,9 @@
       "branchId": "20-LTS",
       "officialSlug": "20",
       "sourceUrl": "https://developer.4d.com/FixedBugsList/versions/20/",
-      "complete": false
+      "complete": false,
+      "releasedAt": "2023-07-10",
+      "releaseDateSource": "https://eu-en.4d.com/product-release-life-cycle"
     },
     {
       "versionKey": "20.2_HF1",
@@ -2827,7 +2835,9 @@
       "branchId": "20-LTS",
       "officialSlug": "20.2_HF1",
       "sourceUrl": "https://developer.4d.com/FixedBugsList/versions/20.2_HF1/",
-      "complete": false
+      "complete": false,
+      "releasedAt": null,
+      "releaseDateSource": null
     },
     {
       "versionKey": "20.3",
@@ -2840,7 +2850,9 @@
       "branchId": "20-LTS",
       "officialSlug": "20.3",
       "sourceUrl": "https://developer.4d.com/FixedBugsList/versions/20.3/",
-      "complete": false
+      "complete": false,
+      "releasedAt": null,
+      "releaseDateSource": null
     },
     {
       "versionKey": "20.3_HF1",
@@ -2853,7 +2865,9 @@
       "branchId": "20-LTS",
       "officialSlug": "20.3_HF1",
       "sourceUrl": "https://developer.4d.com/FixedBugsList/versions/20.3_HF1/",
-      "complete": false
+      "complete": false,
+      "releasedAt": null,
+      "releaseDateSource": null
     },
     {
       "versionKey": "20.3_HF2",
@@ -2866,7 +2880,9 @@
       "branchId": "20-LTS",
       "officialSlug": "20.3_HF2",
       "sourceUrl": "https://developer.4d.com/FixedBugsList/versions/20.3_HF2/",
-      "complete": false
+      "complete": false,
+      "releasedAt": null,
+      "releaseDateSource": null
     },
     {
       "versionKey": "20.4",
@@ -2879,7 +2895,9 @@
       "branchId": "20-LTS",
       "officialSlug": "20.4",
       "sourceUrl": "https://developer.4d.com/FixedBugsList/versions/20.4/",
-      "complete": false
+      "complete": false,
+      "releasedAt": null,
+      "releaseDateSource": null
     },
     {
       "versionKey": "20.4_HF1",
@@ -2892,7 +2910,9 @@
       "branchId": "20-LTS",
       "officialSlug": "20.4_HF1",
       "sourceUrl": "https://developer.4d.com/FixedBugsList/versions/20.4_HF1/",
-      "complete": true
+      "complete": true,
+      "releasedAt": null,
+      "releaseDateSource": null
     },
     {
       "versionKey": "20.4_HF2",
@@ -2905,7 +2925,9 @@
       "branchId": "20-LTS",
       "officialSlug": "20.4_HF2",
       "sourceUrl": "https://developer.4d.com/FixedBugsList/versions/20.4_HF2/",
-      "complete": false
+      "complete": false,
+      "releasedAt": null,
+      "releaseDateSource": null
     },
     {
       "versionKey": "20.5",
@@ -2918,7 +2940,9 @@
       "branchId": "20-LTS",
       "officialSlug": "20.5",
       "sourceUrl": "https://developer.4d.com/FixedBugsList/versions/20.5/",
-      "complete": true
+      "complete": true,
+      "releasedAt": null,
+      "releaseDateSource": null
     },
     {
       "versionKey": "20.5_HF1",
@@ -2931,7 +2955,9 @@
       "branchId": "20-LTS",
       "officialSlug": "20.5_HF1",
       "sourceUrl": "https://developer.4d.com/FixedBugsList/versions/20.5_HF1/",
-      "complete": true
+      "complete": true,
+      "releasedAt": null,
+      "releaseDateSource": null
     },
     {
       "versionKey": "20.5_HF2",
@@ -2944,7 +2970,9 @@
       "branchId": "20-LTS",
       "officialSlug": "20.5_HF2",
       "sourceUrl": "https://developer.4d.com/FixedBugsList/versions/20.5_HF2/",
-      "complete": true
+      "complete": true,
+      "releasedAt": null,
+      "releaseDateSource": null
     },
     {
       "versionKey": "20.6",
@@ -2957,7 +2985,9 @@
       "branchId": "20-LTS",
       "officialSlug": "20.6",
       "sourceUrl": "https://developer.4d.com/FixedBugsList/versions/20.6/",
-      "complete": true
+      "complete": true,
+      "releasedAt": null,
+      "releaseDateSource": null
     },
     {
       "versionKey": "20.6_HF1",
@@ -2970,7 +3000,9 @@
       "branchId": "20-LTS",
       "officialSlug": "20.6_HF1",
       "sourceUrl": "https://developer.4d.com/FixedBugsList/versions/20.6_HF1/",
-      "complete": false
+      "complete": false,
+      "releasedAt": null,
+      "releaseDateSource": null
     },
     {
       "versionKey": "20.6_HF2",
@@ -2983,7 +3015,9 @@
       "branchId": "20-LTS",
       "officialSlug": "20.6_HF2",
       "sourceUrl": "https://developer.4d.com/FixedBugsList/versions/20.6_HF2/",
-      "complete": false
+      "complete": false,
+      "releasedAt": null,
+      "releaseDateSource": null
     },
     {
       "versionKey": "20.7",
@@ -2996,7 +3030,9 @@
       "branchId": "20-LTS",
       "officialSlug": "20.7",
       "sourceUrl": "https://developer.4d.com/FixedBugsList/versions/20.7/",
-      "complete": false
+      "complete": false,
+      "releasedAt": null,
+      "releaseDateSource": null
     },
     {
       "versionKey": "20.7_HF1",
@@ -3009,7 +3045,9 @@
       "branchId": "20-LTS",
       "officialSlug": "20.7_HF1",
       "sourceUrl": "https://developer.4d.com/FixedBugsList/versions/20.7_HF1/",
-      "complete": true
+      "complete": true,
+      "releasedAt": null,
+      "releaseDateSource": null
     },
     {
       "versionKey": "20.7_HF2",
@@ -3022,7 +3060,9 @@
       "branchId": "20-LTS",
       "officialSlug": "20.7_HF2",
       "sourceUrl": "https://developer.4d.com/FixedBugsList/versions/20.7_HF2/",
-      "complete": true
+      "complete": true,
+      "releasedAt": null,
+      "releaseDateSource": null
     },
     {
       "versionKey": "20.8",
@@ -3035,7 +3075,9 @@
       "branchId": "20-LTS",
       "officialSlug": "20.8",
       "sourceUrl": "https://developer.4d.com/FixedBugsList/versions/20.8/",
-      "complete": true
+      "complete": true,
+      "releasedAt": "2025-11-06",
+      "releaseDateSource": "https://ch-fr.4d.com/4d-208-lts"
     },
     {
       "versionKey": "20.8_HF1",
@@ -3048,7 +3090,9 @@
       "branchId": "20-LTS",
       "officialSlug": "20.8_HF1",
       "sourceUrl": "https://developer.4d.com/FixedBugsList/versions/20.8_HF1/",
-      "complete": true
+      "complete": true,
+      "releasedAt": null,
+      "releaseDateSource": null
     },
     {
       "versionKey": "20.8_HF2",
@@ -3061,7 +3105,9 @@
       "branchId": "20-LTS",
       "officialSlug": "20.8_HF2",
       "sourceUrl": "https://developer.4d.com/FixedBugsList/versions/20.8_HF2/",
-      "complete": true
+      "complete": true,
+      "releasedAt": null,
+      "releaseDateSource": null
     },
     {
       "versionKey": "20.8_HF3",
@@ -3074,7 +3120,9 @@
       "branchId": "20-LTS",
       "officialSlug": "20.8_HF3",
       "sourceUrl": "https://developer.4d.com/FixedBugsList/versions/20.8_HF3/",
-      "complete": true
+      "complete": true,
+      "releasedAt": "2026-06-05",
+      "releaseDateSource": "https://github.com/4d/4D_Info_Report/releases/tag/4.98.2"
     },
     {
       "versionKey": "20.8_HF4",
@@ -3087,7 +3135,9 @@
       "branchId": "20-LTS",
       "officialSlug": "20.8_HF4",
       "sourceUrl": "https://developer.4d.com/FixedBugsList/versions/20.8_HF4/",
-      "complete": true
+      "complete": true,
+      "releasedAt": "2026-08-20",
+      "releaseDateSource": "https://github.com/4d/4D_Info_Report/releases/tag/4.98.2"
     },
     {
       "versionKey": "20.9",
@@ -3100,7 +3150,9 @@
       "branchId": "20-LTS",
       "officialSlug": "20.9",
       "sourceUrl": "https://developer.4d.com/FixedBugsList/versions/20.9/",
-      "complete": true
+      "complete": true,
+      "releasedAt": "2026-09-23",
+      "releaseDateSource": "https://us.4d.com/product-download/4D-20-LTS"
     },
     {
       "versionKey": "20_R3",
@@ -3113,7 +3165,9 @@
       "branchId": "20-R3",
       "officialSlug": "20_R3",
       "sourceUrl": "https://developer.4d.com/FixedBugsList/versions/20_R3/",
-      "complete": false
+      "complete": false,
+      "releasedAt": null,
+      "releaseDateSource": null
     },
     {
       "versionKey": "20_R3_HF1",
@@ -3126,7 +3180,9 @@
       "branchId": "20-R3",
       "officialSlug": "20_R3_HF1",
       "sourceUrl": "https://developer.4d.com/FixedBugsList/versions/20_R3_HF1/",
-      "complete": false
+      "complete": false,
+      "releasedAt": null,
+      "releaseDateSource": null
     },
     {
       "versionKey": "20_R4",
@@ -3139,7 +3195,9 @@
       "branchId": "20-R4",
       "officialSlug": "20_R4",
       "sourceUrl": "https://developer.4d.com/FixedBugsList/versions/20_R4/",
-      "complete": false
+      "complete": false,
+      "releasedAt": null,
+      "releaseDateSource": null
     },
     {
       "versionKey": "20_R4_HF1",
@@ -3152,7 +3210,9 @@
       "branchId": "20-R4",
       "officialSlug": "20_R4_HF1",
       "sourceUrl": "https://developer.4d.com/FixedBugsList/versions/20_R4_HF1/",
-      "complete": false
+      "complete": false,
+      "releasedAt": null,
+      "releaseDateSource": null
     },
     {
       "versionKey": "20_R5",
@@ -3165,7 +3225,9 @@
       "branchId": "20-R5",
       "officialSlug": "20_R5",
       "sourceUrl": "https://developer.4d.com/FixedBugsList/versions/20_R5/",
-      "complete": true
+      "complete": true,
+      "releasedAt": null,
+      "releaseDateSource": null
     },
     {
       "versionKey": "20_R5_HF1",
@@ -3178,7 +3240,9 @@
       "branchId": "20-R5",
       "officialSlug": "20_R5_HF1",
       "sourceUrl": "https://developer.4d.com/FixedBugsList/versions/20_R5_HF1/",
-      "complete": true
+      "complete": true,
+      "releasedAt": null,
+      "releaseDateSource": null
     },
     {
       "versionKey": "20_R5_HF2",
@@ -3191,7 +3255,9 @@
       "branchId": "20-R5",
       "officialSlug": "20_R5_HF2",
       "sourceUrl": "https://developer.4d.com/FixedBugsList/versions/20_R5_HF2/",
-      "complete": false
+      "complete": false,
+      "releasedAt": null,
+      "releaseDateSource": null
     },
     {
       "versionKey": "20_R6",
@@ -3204,7 +3270,9 @@
       "branchId": "20-R6",
       "officialSlug": "20_R6",
       "sourceUrl": "https://developer.4d.com/FixedBugsList/versions/20_R6/",
-      "complete": true
+      "complete": true,
+      "releasedAt": null,
+      "releaseDateSource": null
     },
     {
       "versionKey": "20_R6_HF1",
@@ -3217,7 +3285,9 @@
       "branchId": "20-R6",
       "officialSlug": "20_R6_HF1",
       "sourceUrl": "https://developer.4d.com/FixedBugsList/versions/20_R6_HF1/",
-      "complete": true
+      "complete": true,
+      "releasedAt": null,
+      "releaseDateSource": null
     },
     {
       "versionKey": "20_R6_HF2",
@@ -3230,7 +3300,9 @@
       "branchId": "20-R6",
       "officialSlug": "20_R6_HF2",
       "sourceUrl": "https://developer.4d.com/FixedBugsList/versions/20_R6_HF2/",
-      "complete": true
+      "complete": true,
+      "releasedAt": null,
+      "releaseDateSource": null
     },
     {
       "versionKey": "20_R7",
@@ -3243,7 +3315,9 @@
       "branchId": "20-R7",
       "officialSlug": "20_R7",
       "sourceUrl": "https://developer.4d.com/FixedBugsList/versions/20_R7/",
-      "complete": true
+      "complete": true,
+      "releasedAt": null,
+      "releaseDateSource": null
     },
     {
       "versionKey": "20_R7_HF1",
@@ -3256,7 +3330,9 @@
       "branchId": "20-R7",
       "officialSlug": "20_R7_HF1",
       "sourceUrl": "https://developer.4d.com/FixedBugsList/versions/20_R7_HF1/",
-      "complete": false
+      "complete": false,
+      "releasedAt": null,
+      "releaseDateSource": null
     },
     {
       "versionKey": "20_R7_HF2",
@@ -3269,7 +3345,9 @@
       "branchId": "20-R7",
       "officialSlug": "20_R7_HF2",
       "sourceUrl": "https://developer.4d.com/FixedBugsList/versions/20_R7_HF2/",
-      "complete": false
+      "complete": false,
+      "releasedAt": null,
+      "releaseDateSource": null
     },
     {
       "versionKey": "20_R8",
@@ -3282,7 +3360,9 @@
       "branchId": "20-R8",
       "officialSlug": "20_R8",
       "sourceUrl": "https://developer.4d.com/FixedBugsList/versions/20_R8/",
-      "complete": true
+      "complete": true,
+      "releasedAt": "2025-04-16",
+      "releaseDateSource": "https://blog.4d.com/4d-20-r8-is-here/"
     },
     {
       "versionKey": "20_R8_HF1",
@@ -3295,7 +3375,9 @@
       "branchId": "20-R8",
       "officialSlug": "20_R8_HF1",
       "sourceUrl": "https://developer.4d.com/FixedBugsList/versions/20_R8_HF1/",
-      "complete": false
+      "complete": false,
+      "releasedAt": null,
+      "releaseDateSource": null
     },
     {
       "versionKey": "20_R8_HF2",
@@ -3308,7 +3390,9 @@
       "branchId": "20-R8",
       "officialSlug": "20_R8_HF2",
       "sourceUrl": "https://developer.4d.com/FixedBugsList/versions/20_R8_HF2/",
-      "complete": true
+      "complete": true,
+      "releasedAt": null,
+      "releaseDateSource": null
     },
     {
       "versionKey": "20_R9",
@@ -3321,7 +3405,9 @@
       "branchId": "20-R9",
       "officialSlug": "20_R9",
       "sourceUrl": "https://developer.4d.com/FixedBugsList/versions/20_R9/",
-      "complete": true
+      "complete": true,
+      "releasedAt": "2025-07-08",
+      "releaseDateSource": "https://blog.4d.com/4d-20-r9-is-here/"
     },
     {
       "versionKey": "20_R9_HF1",
@@ -3334,7 +3420,9 @@
       "branchId": "20-R9",
       "officialSlug": "20_R9_HF1",
       "sourceUrl": "https://developer.4d.com/FixedBugsList/versions/20_R9_HF1/",
-      "complete": true
+      "complete": true,
+      "releasedAt": null,
+      "releaseDateSource": null
     },
     {
       "versionKey": "20_R10",
@@ -3347,7 +3435,9 @@
       "branchId": "20-R10",
       "officialSlug": "20_R10",
       "sourceUrl": "https://developer.4d.com/FixedBugsList/versions/20_R10/",
-      "complete": false
+      "complete": false,
+      "releasedAt": "2025-10-07",
+      "releaseDateSource": "https://blog.4d.com/4d-20-r10-is-here/"
     },
     {
       "versionKey": "20_R10_HF1",
@@ -3360,7 +3450,9 @@
       "branchId": "20-R10",
       "officialSlug": "20_R10_HF1",
       "sourceUrl": "https://developer.4d.com/FixedBugsList/versions/20_R10_HF1/",
-      "complete": true
+      "complete": true,
+      "releasedAt": null,
+      "releaseDateSource": null
     },
     {
       "versionKey": "20_R10_HF2",
@@ -3373,7 +3465,9 @@
       "branchId": "20-R10",
       "officialSlug": "20_R10_HF2",
       "sourceUrl": "https://developer.4d.com/FixedBugsList/versions/20_R10_HF2/",
-      "complete": true
+      "complete": true,
+      "releasedAt": null,
+      "releaseDateSource": null
     },
     {
       "versionKey": "21",
@@ -3386,7 +3480,9 @@
       "branchId": "21-LTS",
       "officialSlug": "21",
       "sourceUrl": "https://developer.4d.com/FixedBugsList/versions/21/",
-      "complete": true
+      "complete": true,
+      "releasedAt": "2026-01-13",
+      "releaseDateSource": "https://blog.4d.com/4d-21-lts-is-here/"
     },
     {
       "versionKey": "21.0_HF1",
@@ -3399,7 +3495,9 @@
       "branchId": "21-LTS",
       "officialSlug": "21.0_HF1",
       "sourceUrl": "https://developer.4d.com/FixedBugsList/versions/21.0_HF1/",
-      "complete": true
+      "complete": true,
+      "releasedAt": null,
+      "releaseDateSource": null
     },
     {
       "versionKey": "21.0_HF2",
@@ -3412,7 +3510,9 @@
       "branchId": "21-LTS",
       "officialSlug": "21.0_HF2",
       "sourceUrl": "https://developer.4d.com/FixedBugsList/versions/21.0_HF2/",
-      "complete": true
+      "complete": true,
+      "releasedAt": null,
+      "releaseDateSource": null
     },
     {
       "versionKey": "21.1",
@@ -3425,7 +3525,9 @@
       "branchId": "21-LTS",
       "officialSlug": "21.1",
       "sourceUrl": "https://developer.4d.com/FixedBugsList/versions/21.1/",
-      "complete": true
+      "complete": true,
+      "releasedAt": "2026-05-20",
+      "releaseDateSource": "https://es.4d.com/211-lts"
     },
     {
       "versionKey": "21.1_HF1",
@@ -3438,7 +3540,9 @@
       "branchId": "21-LTS",
       "officialSlug": "21.1_HF1",
       "sourceUrl": "https://developer.4d.com/FixedBugsList/versions/21.1_HF1/",
-      "complete": true
+      "complete": true,
+      "releasedAt": "2026-06-26",
+      "releaseDateSource": "https://github.com/4d/4D_Info_Report/releases/tag/4.98.2"
     },
     {
       "versionKey": "21.1_HF2",
@@ -3451,7 +3555,9 @@
       "branchId": "21-LTS",
       "officialSlug": "21.1_HF2",
       "sourceUrl": "https://developer.4d.com/FixedBugsList/versions/21.1_HF2/",
-      "complete": true
+      "complete": true,
+      "releasedAt": "2026-08-19",
+      "releaseDateSource": "https://github.com/4d/4D_Info_Report/releases/tag/4.98.1"
     },
     {
       "versionKey": "21.2",
@@ -3464,7 +3570,9 @@
       "branchId": "21-LTS",
       "officialSlug": "21.2",
       "sourceUrl": "https://developer.4d.com/FixedBugsList/versions/21.2/",
-      "complete": true
+      "complete": true,
+      "releasedAt": "2026-09-07",
+      "releaseDateSource": "https://eu-en.4d.com/4d-212-lts"
     },
     {
       "versionKey": "21.2_HF1",
@@ -3477,7 +3585,9 @@
       "branchId": "21-LTS",
       "officialSlug": "21.2_HF1",
       "sourceUrl": "https://developer.4d.com/FixedBugsList/versions/21.2_HF1/",
-      "complete": true
+      "complete": true,
+      "releasedAt": null,
+      "releaseDateSource": null
     },
     {
       "versionKey": "21_R2",
@@ -3490,7 +3600,9 @@
       "branchId": "21-R2",
       "officialSlug": "21_R2",
       "sourceUrl": "https://developer.4d.com/FixedBugsList/versions/21_R2/",
-      "complete": true
+      "complete": true,
+      "releasedAt": "2026-04-21",
+      "releaseDateSource": "https://blog.4d.com/4d-21-r2-is-here/"
     },
     {
       "versionKey": "21_R2_HF1",
@@ -3503,7 +3615,9 @@
       "branchId": "21-R2",
       "officialSlug": "21_R2_HF1",
       "sourceUrl": "https://developer.4d.com/FixedBugsList/versions/21_R2_HF1/",
-      "complete": true
+      "complete": true,
+      "releasedAt": null,
+      "releaseDateSource": null
     },
     {
       "versionKey": "21_R2_HF2",
@@ -3516,7 +3630,9 @@
       "branchId": "21-R2",
       "officialSlug": "21_R2_HF2",
       "sourceUrl": "https://developer.4d.com/FixedBugsList/versions/21_R2_HF2/",
-      "complete": true
+      "complete": true,
+      "releasedAt": "2026-06-18",
+      "releaseDateSource": "https://github.com/4d/4D_Info_Report/releases/tag/4.98.2"
     },
     {
       "versionKey": "21_R3",
@@ -3529,7 +3645,9 @@
       "branchId": "21-R3",
       "officialSlug": "21_R3",
       "sourceUrl": "https://developer.4d.com/FixedBugsList/versions/21_R3/",
-      "complete": true
+      "complete": true,
+      "releasedAt": "2026-07-07",
+      "releaseDateSource": "https://blog.4d.com/4d-21-r3-is-here/"
     },
     {
       "versionKey": "21_R3_HF1",
@@ -3542,7 +3660,9 @@
       "branchId": "21-R3",
       "officialSlug": "21_R3_HF1",
       "sourceUrl": "https://developer.4d.com/FixedBugsList/versions/21_R3_HF1/",
-      "complete": true
+      "complete": true,
+      "releasedAt": "2026-08-17",
+      "releaseDateSource": "https://github.com/4d/4D_Info_Report/releases/tag/4.98.1"
     },
     {
       "versionKey": "21_R3_HF2",
@@ -3555,7 +3675,9 @@
       "branchId": "21-R3",
       "officialSlug": "21_R3_HF2",
       "sourceUrl": "https://developer.4d.com/FixedBugsList/versions/21_R3_HF2/",
-      "complete": true
+      "complete": true,
+      "releasedAt": "2026-09-09",
+      "releaseDateSource": "https://github.com/4d/4D_Info_Report/releases/tag/4.98.2"
     },
     {
       "versionKey": "21_R4",
@@ -3568,7 +3690,9 @@
       "branchId": "21-R4",
       "officialSlug": "21_R4",
       "sourceUrl": "https://developer.4d.com/FixedBugsList/versions/21_R4/",
-      "complete": true
+      "complete": true,
+      "releasedAt": "2026-10-12",
+      "releaseDateSource": "https://blog.4d.com/4d-21-r4-is-here/"
     },
     {
       "versionKey": "21_R4_HF1",
@@ -3581,7 +3705,9 @@
       "branchId": "21-R4",
       "officialSlug": "21_R4_HF1",
       "sourceUrl": "https://developer.4d.com/FixedBugsList/versions/21_R4_HF1/",
-      "complete": false
+      "complete": false,
+      "releasedAt": null,
+      "releaseDateSource": null
     }
   ],
   "evidence": [
@@ -32727,5 +32853,6 @@
       "contentSha256": "4ad3f156adeea6cdf729cc32e4b77578be2de6550d641830aa43c67a912fc3f5",
       "recordCount": 26
     }
-  ]
+  ],
+  "historicalCoverageComplete": false
 }

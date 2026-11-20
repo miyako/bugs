@@ -26,6 +26,50 @@ HOST = "developer.4d.com"
 USER_AGENT = "4D-Fix-Finder/0.1 (+https://github.com/miyako/bugs)"
 ACI_PATTERN = re.compile(r"^ACI\d{7}$", re.IGNORECASE)
 VERSION_PATTERN = re.compile(r"^(?P<major>\d+)(?:\.(?P<minor>\d+))?(?:_R(?P<r>\d+))?(?:_HF(?P<hf>\d+))?$", re.IGNORECASE)
+LIFECYCLE_URL = "https://eu-en.4d.com/product-release-life-cycle"
+RELEASE_DATES = {
+    "18.6": "2022-06-13",
+    "19.8": "2024-07-11",
+    "20": "2023-07-10",
+    "20_R8": "2025-04-16",
+    "20_R9": "2025-07-08",
+    "20_R10": "2025-10-07",
+    "20.8": "2025-11-06",
+    "20.8_HF3": "2026-06-05",
+    "20.8_HF4": "2026-08-20",
+    "20.9": "2026-09-23",
+    "21": "2026-01-13",
+    "21_R2": "2026-04-21",
+    "21_R2_HF2": "2026-06-18",
+    "21.1": "2026-05-20",
+    "21.1_HF1": "2026-06-26",
+    "21.1_HF2": "2026-08-19",
+    "21_R3": "2026-07-07",
+    "21_R3_HF1": "2026-08-17",
+    "21_R3_HF2": "2026-09-09",
+    "21.2": "2026-09-07",
+    "21_R4": "2026-10-12",
+}
+RELEASE_DATE_SOURCES = {
+    "20_R8": "https://blog.4d.com/4d-20-r8-is-here/",
+    "20_R9": "https://blog.4d.com/4d-20-r9-is-here/",
+    "20_R10": "https://blog.4d.com/4d-20-r10-is-here/",
+    "20.8": "https://ch-fr.4d.com/4d-208-lts",
+    "20.8_HF3": "https://github.com/4d/4D_Info_Report/releases/tag/4.98.2",
+    "20.8_HF4": "https://github.com/4d/4D_Info_Report/releases/tag/4.98.2",
+    "20.9": "https://us.4d.com/product-download/4D-20-LTS",
+    "21": "https://blog.4d.com/4d-21-lts-is-here/",
+    "21_R2": "https://blog.4d.com/4d-21-r2-is-here/",
+    "21_R2_HF2": "https://github.com/4d/4D_Info_Report/releases/tag/4.98.2",
+    "21.1": "https://es.4d.com/211-lts",
+    "21.1_HF1": "https://github.com/4d/4D_Info_Report/releases/tag/4.98.2",
+    "21.1_HF2": "https://github.com/4d/4D_Info_Report/releases/tag/4.98.1",
+    "21_R3": "https://blog.4d.com/4d-21-r3-is-here/",
+    "21_R3_HF1": "https://github.com/4d/4D_Info_Report/releases/tag/4.98.1",
+    "21_R3_HF2": "https://github.com/4d/4D_Info_Report/releases/tag/4.98.2",
+    "21.2": "https://eu-en.4d.com/4d-212-lts",
+    "21_R4": "https://blog.4d.com/4d-21-r4-is-here/",
+}
 
 
 @dataclass
@@ -101,7 +145,7 @@ def version_from_url(url: str) -> dict[str, object]:
         label += f" HF{hotfix}"
     if line == "LTS" and not feature:
         label += " LTS"
-    return {
+    version = {
         "versionKey": key,
         "displayName": label,
         "major": major,
@@ -113,6 +157,11 @@ def version_from_url(url: str) -> dict[str, object]:
         "officialSlug": slug,
         "sourceUrl": url,
     }
+    release_date = RELEASE_DATES.get(key)
+    date_source = RELEASE_DATE_SOURCES.get(key, LIFECYCLE_URL)
+    version["releasedAt"] = release_date
+    version["releaseDateSource"] = date_source if release_date else None
+    return version
 
 
 def parse_page(html: str, page_url: str, content_hash: str) -> tuple[dict[str, str], list[dict[str, str]], list[str]]:
@@ -295,8 +344,9 @@ def crawl(seeds: list[str], max_pages: int) -> dict[str, object]:
         )
 
     return {
-        "schemaVersion": 1,
+        "schemaVersion": 2,
         "generatedAt": datetime.now(timezone.utc).isoformat(),
+        "historicalCoverageComplete": False,
         "bugs": [{"aci": aci, "summary": bugs[aci]} for aci in sorted(bugs)],
         "versions": sorted(
             versions.values(),

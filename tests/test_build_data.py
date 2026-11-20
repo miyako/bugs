@@ -14,6 +14,27 @@ class BuildDataTests(unittest.TestCase):
         self.assertEqual(feature["versionKey"], "21_R4_HF1")
         self.assertEqual(feature["line"], "R")
         self.assertEqual(feature["branchId"], "21-R4")
+        self.assertEqual(lts["releasedAt"], "2026-09-07")
+        self.assertIsNone(feature["releasedAt"])
+
+    def test_release_chronology_is_explicit_and_versioned_by_date(self):
+        lts = version_from_url("https://developer.4d.com/FixedBugsList/versions/21.1/")
+        feature = version_from_url("https://developer.4d.com/FixedBugsList/versions/21_R3/")
+
+        self.assertLess(lts["releasedAt"], "2026-09-07")
+        self.assertLess(feature["releasedAt"], "2026-09-07")
+        self.assertEqual(lts["releaseDateSource"], "https://es.4d.com/211-lts")
+
+        hotfix = version_from_url(
+            "https://developer.4d.com/FixedBugsList/versions/21.1_HF2/"
+        )
+        self.assertEqual(hotfix["releasedAt"], "2026-08-19")
+        self.assertTrue(str(hotfix["releaseDateSource"]).startswith("https://github.com/4d/"))
+
+        older_hotfix = version_from_url(
+            "https://developer.4d.com/FixedBugsList/versions/20.8_HF3/"
+        )
+        self.assertEqual(older_hotfix["releasedAt"], "2026-06-05")
 
     def test_parser_keeps_direct_evidence_and_explicit_fix_links(self):
         html = """

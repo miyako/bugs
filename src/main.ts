@@ -36,9 +36,15 @@ function addEvidenceLink(container: HTMLElement, label: string, url: string): vo
 function describeResult(result: ResolverResult): string {
   switch (result.reasonCode) {
     case "FIXED_EXPLICIT":
-      return `The official ${result.evidence[0].sourcePage} Fixed Bugs List explicitly records this ACI as fixed in ${result.queriedVersion?.displayName}.`;
+      return `The official ${result.evidence[0].sourcePage} Fixed Bugs List explicitly records this ACI as fixed in ${database.versions.find((version) => version.versionKey === result.evidence[0].versionKey)?.displayName ?? result.evidence[0].versionKey}.`;
+    case "FIXED_CARRIED_FORWARD": {
+      const fixedVersion = database.versions.find(
+        (version) => version.versionKey === result.evidence[0].versionKey,
+      );
+      return `The official ${result.evidence[0].sourcePage} Fixed Bugs List records this ACI as fixed in ${fixedVersion?.displayName ?? result.evidence[0].versionKey}. Its release date (${fixedVersion?.releasedAt}) is earlier than ${result.queriedVersion?.displayName}, so the fix carries forward.`;
+    }
     case "NOT_LISTED_IN_VERSION":
-      return `This ACI is not listed on the indexed ${result.queriedVersion?.displayName} page. This applies only to that release; no other branch is inferred.`;
+      return `This ACI is not listed in the indexed release history through ${result.queriedVersion?.displayName}.`;
     case "ACI_INVALID":
       return "Enter a seven-digit ACI number. Short or ambiguous identifiers are not expanded automatically.";
     case "ACI_NOT_FOUND":
@@ -47,6 +53,10 @@ function describeResult(result: ResolverResult): string {
       return "This release is not in the indexed dataset. No status is inferred from a newer or different release.";
     case "VERSION_DATA_INCOMPLETE":
       return `The ${result.queriedVersion?.displayName} source page has not been indexed completely. Its absence cannot be treated as evidence that the bug is not fixed.`;
+    case "HISTORICAL_COVERAGE_INCOMPLETE":
+      return `The ${result.queriedVersion?.displayName} page is complete, but older release history is not fully indexed. An older fix may carry forward, so absence is inconclusive.`;
+    case "CHRONOLOGY_UNAVAILABLE":
+      return "A known fix exists, but official release chronology is unavailable for comparison with the requested version.";
   }
 }
 
@@ -68,11 +78,21 @@ function renderResult(result: ResolverResult): void {
   for (const item of result.evidence) {
     const row = document.createElement("p");
     row.className = "evidence-row";
+    const fixedVersion = database.versions.find(
+      (version) => version.versionKey === item.versionKey,
+    );
     row.textContent =
       item.evidenceType === "listed_on_version_page"
-        ? "Listed in the fixed bugs for this version."
-        : "Listed as “Fixed also with” in an official page.";
+        ? `Listed as fixed in ${fixedVersion?.displayName ?? item.versionKey}.`
+        : `Listed as “Fixed also with” ${fixedVersion?.displayName ?? item.versionKey} in an official page.`;
     addEvidenceLink(row, `View official ${item.sourcePage} source ↗`, item.sourceUrl);
+    if (result.reasonCode === "FIXED_CARRIED_FORWARD" && fixedVersion?.releaseDateSource) {
+      addEvidenceLink(
+        row,
+        `Verify ${fixedVersion.displayName} release date ↗`,
+        fixedVersion.releaseDateSource,
+      );
+    }
     resultEvidence.append(row);
   }
 

@@ -1,9 +1,8 @@
 # 4D Fix Finder
 
-A static, evidence-based checker for whether an ACI is listed as fixed in a
-specific 4D release. The checker uses only explicit official-list evidence:
-release-number ordering never implies that a fix exists on another release
-line.
+A static, evidence-based checker for whether an ACI is fixed in a 4D release.
+The checker uses official fix listings and verified release chronology to carry
+older fixes forward across release lines.
 
 ## Run locally
 
@@ -25,12 +24,13 @@ limit remain marked incomplete and cannot produce a negative verdict.
 
 ## Data and verdict semantics
 
-- **YES** means the official source explicitly lists the ACI on that version or
-  links it as “Fixed also with” that version.
-- **NO** means the ACI is absent from a successfully fetched and parsed page
-  for that exact version.
-- **UNKNOWN** means the ACI, version, or source evidence is unavailable or
-  incomplete. An absent ACI on an unindexed page is never treated as NO.
+- **YES** means the official source lists the ACI on that version or on an
+  earlier release with a verified release date.
+- **NO** means the complete historical dataset shows no fix on or before the
+  requested release. A fix from a later release is never applied backward.
+- **UNKNOWN** means the ACI, version, release chronology, or historical
+  coverage is unavailable or incomplete. A complete target page alone cannot
+  establish NO when older releases may contain a fix.
 - Build numbers are a separate result. Without authoritative build mappings,
   a requested build is reported as UNKNOWN even when the version verdict is
   known.

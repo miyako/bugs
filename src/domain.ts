@@ -11,6 +11,8 @@ export interface ReleaseVersion {
   branchId: string;
   officialSlug: string;
   sourceUrl: string;
+  releasedAt: string | null;
+  releaseDateSource: string | null;
   complete: boolean;
 }
 
@@ -38,8 +40,9 @@ export interface SourcePage {
 }
 
 export interface BugDatabase {
-  schemaVersion: 1;
+  schemaVersion: 2;
   generatedAt: string;
+  historicalCoverageComplete: boolean;
   bugs: Bug[];
   versions: ReleaseVersion[];
   evidence: FixEvidence[];
@@ -50,7 +53,10 @@ export interface ResolverResult {
   verdict: Verdict;
   reasonCode:
     | "FIXED_EXPLICIT"
+    | "FIXED_CARRIED_FORWARD"
     | "NOT_LISTED_IN_VERSION"
+    | "HISTORICAL_COVERAGE_INCOMPLETE"
+    | "CHRONOLOGY_UNAVAILABLE"
     | "ACI_INVALID"
     | "ACI_NOT_FOUND"
     | "VERSION_NOT_INDEXED"
@@ -147,10 +153,66 @@ export function resolveFixStatus(
     };
   }
 
+  const carriedEvidence = knownEvidence.filter((entry) => {
+    const fixedVersion = database.versions.find(
+      (candidate) => candidate.versionKey === entry.versionKey,
+    );
+    return fixedVersion?.releasedAt !== null
+      && fixedVersion?.releasedAt !== undefined
+      && version.releasedAt !== null
+      && version.releasedAt !== undefined
+      && fixedVersion.releasedAt < version.releasedAt;
+  });
+  if (carriedEvidence.length > 0) {
+    return {
+      verdict: "YES",
+      reasonCode: "FIXED_CARRIED_FORWARD",
+      aci,
+      queriedVersion: version,
+      evidence: carriedEvidence,
+      otherKnownFixes,
+      build,
+    };
+  }
+
   if (!version.complete) {
     return {
       verdict: "UNKNOWN",
       reasonCode: "VERSION_DATA_INCOMPLETE",
+      aci,
+      queriedVersion: version,
+      evidence: [],
+      otherKnownFixes,
+      build,
+    };
+  }
+
+  if (!database.historicalCoverageComplete) {
+    return {
+      verdict: "UNKNOWN",
+      reasonCode: "HISTORICAL_COVERAGE_INCOMPLETE",
+      aci,
+      queriedVersion: version,
+      evidence: [],
+      otherKnownFixes,
+      build,
+    };
+  }
+
+  if (
+    version.releasedAt === null
+    || version.releasedAt === undefined
+    || knownEvidence.some((entry) => {
+      const fixedVersion = database.versions.find(
+        (candidate) => candidate.versionKey === entry.versionKey,
+      );
+      return fixedVersion?.releasedAt === null
+        || fixedVersion?.releasedAt === undefined;
+    })
+  ) {
+    return {
+      verdict: "UNKNOWN",
+      reasonCode: "CHRONOLOGY_UNAVAILABLE",
       aci,
       queriedVersion: version,
       evidence: [],

@@ -57,7 +57,11 @@ export interface NightlyFix {
 }
 
 const RELEASE_BUILDS: Readonly<Partial<Record<string, { number: string; sourceUrl: string }>>> = {
+  "19.8": { number: "292264", sourceUrl: "https://eu-en.4d.com/4d-198-lts-full-installer" },
+  "20.9": { number: "102090", sourceUrl: "https://us.4d.com/4d-209-full-installer" },
+  "21.1": { number: "100468", sourceUrl: "https://eu-en.4d.com/4d-211-lts-full-installer" },
   "21.2": { number: "100579", sourceUrl: "https://eu-en.4d.com/4d-212-lts-full-installer" },
+  "21.2_HF2": { number: "100653", sourceUrl: "https://developer.4d.com/FixedBugsList/nightly/21/" },
 };
 
 type BuildResult = {

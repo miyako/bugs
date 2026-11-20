@@ -55,10 +55,20 @@ export interface BugDatabase {
   schemaVersion: 2;
   generatedAt: string;
   historicalCoverageComplete: boolean;
+  knownReleases?: Pick<ReleaseVersion, "versionKey" | "displayName" | "sourceUrl">[];
   bugs: Bug[];
   versions: ReleaseVersion[];
   evidence: FixEvidence[];
   sourcePages: SourcePage[];
+}
+
+export function releaseCoverage(database: Pick<BugDatabase, "versions" | "knownReleases">) {
+  const indexedKeys = new Set(database.versions.map((version) => version.versionKey));
+  return {
+    indexed: database.versions.filter((version) => version.complete),
+    incomplete: database.versions.filter((version) => !version.complete),
+    missing: (database.knownReleases ?? []).filter((version) => !indexedKeys.has(version.versionKey)),
+  };
 }
 
 export interface NightlyFix {
@@ -69,6 +79,10 @@ export interface NightlyFix {
 }
 
 const RELEASE_BUILDS: Readonly<Partial<Record<string, { number: string; sourceUrl: string }>>> = {
+  "19.1": { number: "273454", sourceUrl: "https://product-download.4d.com/?branch=19.x&flag=lts-release&type=installer&version_number=19.1" },
+  "19.2": { number: "276674", sourceUrl: "https://product-download.4d.com/?branch=19.x&flag=lts-release&type=installer&version_number=19.2" },
+  "19.3": { number: "279615", sourceUrl: "https://product-download.4d.com/?branch=19.x&flag=lts-release&type=installer&version_number=19.3" },
+  "19.4": { number: "282375", sourceUrl: "https://product-download.4d.com/?branch=19.x&flag=lts-release&type=installer&version_number=19.4" },
   "19.8": { number: "292264", sourceUrl: "https://eu-en.4d.com/4d-198-lts-full-installer" },
   "20.9": { number: "102090", sourceUrl: "https://us.4d.com/4d-209-full-installer" },
   "21.1": { number: "100468", sourceUrl: "https://eu-en.4d.com/4d-211-lts-full-installer" },

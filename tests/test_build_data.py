@@ -4,10 +4,28 @@ from pathlib import Path
 from urllib.error import HTTPError
 from unittest.mock import patch
 
-from scripts.build_data import crawl, parse_page, version_from_url, version_seed_urls
+from scripts.build_data import check_coverage_regression, crawl, parse_page, version_from_url, version_seed_urls
 
 
 class BuildDataTests(unittest.TestCase):
+    def test_published_coverage_guard(self):
+        source = "https://developer.4d.com/FixedBugsList/versions/19.2/"
+        version = {**version_from_url(source), "complete": True}
+        bugs = [{"aci": f"ACI{i:07d}"} for i in range(22)]
+        evidence = [
+            {"aci": bug["aci"], "versionKey": "19.2",
+             "evidenceType": "listed_on_version_page", "sourceUrl": source}
+            for bug in bugs
+        ]
+        previous = {"bugs": bugs, "versions": [version], "evidence": evidence[:20]}
+        check_coverage_regression(previous, {**previous, "evidence": evidence[1:]})
+        with self.assertRaisesRegex(ValueError, "lost 2 of 20 published ACI/release pairs"):
+            check_coverage_regression(previous, {**previous, "evidence": evidence[2:]})
+        with self.assertRaisesRegex(ValueError, "missing or incomplete: 19.2"):
+            check_coverage_regression(previous, {
+                **previous, "versions": [{**version, "complete": False}], "evidence": evidence,
+            })
+
     def test_version_identity_keeps_lts_and_feature_lines_distinct(self):
         lts = version_from_url("https://developer.4d.com/FixedBugsList/versions/21.2/")
         feature = version_from_url("https://developer.4d.com/FixedBugsList/versions/21_R4_HF1/")

@@ -4,6 +4,7 @@ import {
   dataFreshness,
   findFixHistory,
   normalizeAci,
+  releaseCoverage,
   resolveFixStatus,
 } from "./domain";
 
@@ -181,6 +182,18 @@ describe("dataFreshness", () => {
   it("does not claim freshness for a missing or invalid refresh timestamp", () => {
     expect(dataFreshness(null, now)).toBe("unavailable");
     expect(dataFreshness("invalid", now)).toBe("unavailable");
+  });
+});
+
+describe("releaseCoverage", () => {
+  it("distinguishes indexed, incomplete, and known missing releases", () => {
+    const indexed = { ...database.versions[0], complete: true };
+    const incomplete = { ...database.versions[1], complete: false };
+    const missing = { ...indexed, versionKey: "19.4" };
+    expect(releaseCoverage({
+      versions: [indexed, incomplete],
+      knownReleases: [indexed, incomplete, missing],
+    })).toEqual({ indexed: [indexed], incomplete: [incomplete], missing: [missing] });
   });
 });
 
@@ -440,6 +453,40 @@ describe("resolveFixStatus", () => {
     const olderBranchFix = { ...fix, branch: "20", buildNumber: 102099 };
     expect(resolveFixStatus(indexed, fix.aci, "20.9", "", [fix, olderBranchFix]).build)
       .toMatchObject({ reasonCode: "FIX_LISTED_LATER", buildNumber: "102090", evidence: olderBranchFix });
+  });
+
+  it.each([
+    ["19.1", "273454", 1],
+    ["19.2", "276674", 2],
+    ["19.3", "279615", 3],
+    ["19.4", "282375", 4],
+  ] as const)("shows a later nightly fix for %s with no build entered", (versionKey, buildNumber, minor) => {
+    const version = {
+      ...database.versions[0],
+      versionKey,
+      displayName: `${versionKey} LTS`,
+      officialSlug: versionKey,
+      major: 19,
+      minor,
+      branchId: "19-LTS",
+    };
+    const indexed = { ...database, versions: [...database.versions, version] };
+    const fix = {
+      aci: "ACI0106659",
+      branch: "19",
+      buildNumber: Number(buildNumber) + 1,
+      sourceUrl: "https://developer.4d.com/FixedBugsList/nightly/19/",
+    };
+    const wrongBranch = { ...fix, branch: "19_R4" };
+    const result = resolveFixStatus(indexed, fix.aci, versionKey, "", [wrongBranch, fix]);
+    expect(result.verdict).toBe("UNKNOWN");
+    expect(result.build).toEqual({
+      verdict: "UNKNOWN", reasonCode: "FIX_LISTED_LATER", buildNumber, evidence: fix,
+      releaseBuildSource: expect.stringContaining(`version_number=${versionKey}`),
+    });
+    expect(resolveFixStatus(indexed, fix.aci, versionKey, "", [wrongBranch]).build).toBeNull();
+    expect(resolveFixStatus(indexed, fix.aci, versionKey, String(fix.buildNumber), [fix]).build)
+      .toMatchObject({ verdict: "YES", reasonCode: "NIGHTLY_FIX", evidence: fix });
   });
 
   it("returns UNKNOWN for unknown ACIs and versions", () => {

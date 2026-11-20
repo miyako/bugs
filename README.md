@@ -32,6 +32,15 @@ browser dataset to `public/data/fixed-bugs.json`. Any page reached but failing
 to parse or any non-404 fetch failure aborts the refresh. Official version
 pages returning 404 remain explicitly incomplete; references not reached before
 the page limit also remain incomplete and cannot produce a negative verdict.
+The **Release coverage** panel distinguishes these incomplete listings from
+fully indexed releases and known releases that are absent from the snapshot.
+It is not a catalog of every 4D release.
+
+The Pages workflow seeds from the currently published snapshot and compares
+the refresh against it. It blocks publication if any previously complete
+release is lost or becomes incomplete, or if more than 5% of published
+ACI/release pairs disappear. If the baseline cannot be loaded, the workflow
+fails without replacing the live snapshot.
 
 ## Data and verdict semantics
 
@@ -55,10 +64,11 @@ enter a build number for that version's nightly branch.
   **YES**; nightly evidence never changes a release-only verdict.
 - If the earliest indexed fix on the branch is later than the requested build,
   the checker shows that build as a note alongside the verdict. With no build
-  entered, the note uses a verified release build when available (`19.8`,
-  `20.9`, `21.1`, `21.2`, or `21.2 HF2`). These mappings come from 4D installer
-  pages or the official nightly list's named release baseline. A later listing
-  does not prove that earlier builds were unfixed.
+  entered, the note uses a verified release build when available (`19.1`–`19.4`,
+  `19.8`, `20.9`, `21.1`, `21.2`, or `21.2 HF2`). These mappings come from 4D
+  installer listings or the official nightly list's named release baseline.
+  The note still requires indexed nightly evidence on the same branch; a later
+  listing does not prove that earlier builds were unfixed.
 
 The Pages workflow merges current nightly and beta listings into the
 `nightly-history` branch before deploying. It keeps entries that roll off the

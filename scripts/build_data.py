@@ -190,17 +190,18 @@ def version_seed_urls(versions: list[dict[str, object]]) -> list[str]:
     return seeds
 
 
-def existing_version_seeds() -> list[str]:
-    if not OUTPUT.exists():
-        return []
+def read_database(path: Path) -> dict[str, object]:
     try:
-        database = json.loads(OUTPUT.read_text(encoding="utf-8"))
+        database = json.loads(path.read_text(encoding="utf-8"))
     except (OSError, json.JSONDecodeError) as error:
-        raise ValueError(f"Could not read existing version seeds from {OUTPUT}: {error}") from error
-    versions = database.get("versions") if isinstance(database, dict) else None
-    if not isinstance(versions, list):
-        raise ValueError(f"Existing dataset has no version list: {OUTPUT}")
-    return version_seed_urls(versions)
+        raise ValueError(f"Could not read dataset from {path}: {error}") from error
+    if not isinstance(database, dict) or not isinstance(database.get("versions"), list):
+        raise ValueError(f"Dataset has no version list: {path}")
+    return database
+
+
+def existing_version_seeds() -> list[str]:
+    return version_seed_urls(read_database(OUTPUT)["versions"]) if OUTPUT.exists() else []
 
 
 def parse_page(html: str, page_url: str, content_hash: str) -> tuple[dict[str, str], list[dict[str, str]], list[str]]:
@@ -392,6 +393,15 @@ def crawl(seeds: list[str], max_pages: int) -> dict[str, object]:
         "schemaVersion": 2,
         "generatedAt": datetime.now(timezone.utc).isoformat(),
         "historicalCoverageComplete": False,
+        "knownReleases": [
+            {key: version[key] for key in ("versionKey", "displayName", "sourceUrl")}
+            for url in version_seed_urls([
+                {"officialSlug": slug}
+                for slug in sorted(RELEASE_DATES.keys() | INSTALLER_CREATED_DATES.keys()
+                                   | set(HISTORICAL_RELEASE_SEEDS))
+            ])
+            for version in [version_from_url(url)]
+        ],
         "bugs": [{"aci": aci, "summary": bugs[aci]} for aci in sorted(bugs)],
         "versions": sorted(
             versions.values(),
@@ -437,9 +447,32 @@ def validate_database(database: dict[str, object]) -> None:
             raise ValueError(f"Non-official evidence URL: {item['sourceUrl']}")
 
 
+def check_coverage_regression(previous: dict[str, object], candidate: dict[str, object]) -> None:
+    validate_database(previous)
+    if not previous["evidence"] or not any(version["complete"] for version in previous["versions"]):
+        raise ValueError("Published baseline has no fix evidence or no complete release listings")
+    previous_complete = {v["versionKey"] for v in previous["versions"] if v["complete"]}
+    candidate_complete = {v["versionKey"] for v in candidate["versions"] if v["complete"]}
+    lost_releases = previous_complete - candidate_complete
+    problems = []
+    if lost_releases:
+        problems.append(f"previously indexed releases missing or incomplete: {', '.join(sorted(lost_releases))}")
+
+    def fix_pairs(database: dict[str, object]) -> set[tuple[str, str]]:
+        return {(item["aci"], item["versionKey"]) for item in database["evidence"]}
+
+    previous_pairs = fix_pairs(previous)
+    lost_pairs = previous_pairs - fix_pairs(candidate)
+    if len(lost_pairs) * 100 > len(previous_pairs) * 5:
+        problems.append(f"lost {len(lost_pairs)} of {len(previous_pairs)} published ACI/release pairs (limit: 5%)")
+    if problems:
+        raise ValueError("Refusing to replace published release data: " + "; ".join(problems))
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--seed-url", action="append", default=[], help="Official version page to seed")
+    parser.add_argument("--baseline", type=Path, help="Protect coverage of this published dataset")
     parser.add_argument(
         "--max-pages",
         type=int,
@@ -450,14 +483,18 @@ def main() -> int:
     if args.max_pages < 1:
         parser.error("--max-pages must be at least 1")
     try:
+        baseline = read_database(args.baseline) if args.baseline else None
+        published_seeds = version_seed_urls(baseline["versions"]) if baseline is not None else []
         historical_seeds = version_seed_urls([
             {"officialSlug": slug} for slug in HISTORICAL_RELEASE_SEEDS
         ])
         seeds = args.seed_url or list(dict.fromkeys([
-            DEFAULT_SEED, *historical_seeds, *existing_version_seeds(),
+            DEFAULT_SEED, *historical_seeds, *published_seeds, *existing_version_seeds(),
         ]))
         database = crawl(seeds, args.max_pages)
         validate_database(database)
+        if baseline is not None:
+            check_coverage_regression(baseline, database)
         OUTPUT.parent.mkdir(parents=True, exist_ok=True)
         temp_output = OUTPUT.with_suffix(".json.tmp")
         temp_output.write_text(json.dumps(database, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")

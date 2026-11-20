@@ -1,7 +1,9 @@
 import "./style.css";
+import nightlyFixes from "./data/nightly-fixes.json";
 import {
   type BugDatabase,
   type ResolverResult,
+  nightlyBranch,
   resolveFixStatus,
 } from "./domain";
 
@@ -76,7 +78,7 @@ function describeResult(result: ResolverResult): string {
     case "ACI_INVALID":
       return "Enter a seven-digit ACI number. Short or ambiguous identifiers are not expanded automatically.";
     case "ACI_NOT_FOUND":
-      return "This ACI does not appear in the indexed bug data, so its status cannot be determined.";
+      return "This ACI does not appear in the indexed release data, so its release status cannot be determined.";
     case "VERSION_NOT_INDEXED":
       return "This release is not in the indexed dataset. No status is inferred from a newer or different release.";
     case "VERSION_DATA_INCOMPLETE":
@@ -147,9 +149,14 @@ function renderResult(result: ResolverResult): void {
   }
 
   buildResult.hidden = result.build === null;
-  buildResult.textContent = result.build
-    ? `Build ${result.build.buildNumber}: UNKNOWN — no authoritative build mapping is indexed. The version result above is independent.`
-    : "";
+  buildResult.replaceChildren();
+  if (result.build?.verdict === "YES") {
+    const fix = result.build.evidence;
+    buildResult.textContent = `Build ${result.build.buildNumber}: FIXED on the ${fix.branch} nightly branch — first listed at build ${fix.buildNumber}. The release result above is independent. `;
+    addEvidenceLink(buildResult, "View official build list ↗", fix.sourceUrl);
+  } else if (result.build) {
+    buildResult.textContent = `Build ${result.build.buildNumber}: UNKNOWN — no indexed fix at or before this build on the selected branch. The release result above is independent.`;
+  }
   updateUrl();
 }
 
@@ -175,7 +182,7 @@ function updateSourceLinks(): void {
     return;
   }
 
-  const branch = version.line === "R" ? `${version.major}_R${version.minor}` : `${version.major}`;
+  const branch = nightlyBranch(version);
   const nightlyName = nightlySource.querySelector("span");
   const releaseName = releaseSource.querySelector("span");
   nightlySource.href = `https://developer.4d.com/FixedBugsList/nightly/${branch}/`;
@@ -322,7 +329,7 @@ form.addEventListener("submit", (event) => {
   event.preventDefault();
   if (!database || !versionSelect.value) return;
   renderResult(
-    resolveFixStatus(database, aciInput.value, versionSelect.value, buildInput.value),
+    resolveFixStatus(database, aciInput.value, versionSelect.value, buildInput.value, nightlyFixes),
   );
 });
 

@@ -268,6 +268,25 @@ describe("resolveFixStatus", () => {
     });
   });
 
+  it("finds a nightly-only ACI in its first fixed build and carries it forward on the same branch", () => {
+    const fix = {
+      aci: "ACI0106659",
+      branch: "21",
+      buildNumber: 100670,
+      sourceUrl: "https://developer.4d.com/FixedBugsList/nightly/21/",
+    };
+    for (const build of ["100670", "100672"]) {
+      const result = resolveFixStatus(database, fix.aci, "21.2", build, [fix]);
+      expect(result.verdict).toBe("UNKNOWN");
+      expect(result.build).toEqual({
+        verdict: "YES", reasonCode: "NIGHTLY_FIX", buildNumber: build, evidence: fix,
+      });
+    }
+    expect(resolveFixStatus(database, fix.aci, "21.2", "", [fix]).build).toBeNull();
+    expect(resolveFixStatus(database, fix.aci, "21.2", "100669", [fix]).build?.verdict).toBe("UNKNOWN");
+    expect(resolveFixStatus(database, fix.aci, "21_R4", "100672", [fix]).build?.verdict).toBe("UNKNOWN");
+  });
+
   it("returns UNKNOWN for unknown ACIs and versions", () => {
     expect(resolveFixStatus(database, "ACI9999999", "21.2").reasonCode).toBe(
       "ACI_NOT_FOUND",

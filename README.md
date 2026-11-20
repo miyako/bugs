@@ -36,7 +36,14 @@ the page limit also remain incomplete and cannot produce a negative verdict.
   establish NO when older releases may contain a fix.
 - Build numbers are a separate result. Without authoritative build mappings,
   a requested build is reported as UNKNOWN even when the version verdict is
-  known.
+  known. The build lookup assumes the number belongs to the selected release's
+  nightly branch. A fix listed at or before that build on the same branch is
+  **YES**; nightly evidence never changes a release-only verdict.
+
+The Pages workflow refreshes the nightly and beta build snapshot from the
+official branch listings. To refresh it locally, run
+`python3 -m scripts.build_nightly_data`. These lists cover published fixes in
+the current listing window, not the entire build history.
 
 Every verdict includes its source page and fetch date. A failed refresh cannot
 replace the last deployed dataset.

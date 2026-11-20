@@ -49,6 +49,20 @@ export interface BugDatabase {
   sourcePages: SourcePage[];
 }
 
+export interface NightlyFix {
+  aci: string;
+  branch: string;
+  buildNumber: number;
+  sourceUrl: string;
+}
+
+type BuildResult = {
+  buildNumber: string;
+} & (
+  | { verdict: "YES"; reasonCode: "NIGHTLY_FIX"; evidence: NightlyFix }
+  | { verdict: "UNKNOWN"; reasonCode: "BUILD_DATA_UNAVAILABLE" }
+);
+
 export interface ResolverResult {
   verdict: Verdict;
   reasonCode:
@@ -65,11 +79,11 @@ export interface ResolverResult {
   queriedVersion: ReleaseVersion | null;
   evidence: FixEvidence[];
   otherKnownFixes: ReleaseVersion[];
-  build: {
-    verdict: "UNKNOWN";
-    reasonCode: "BUILD_DATA_UNAVAILABLE";
-    buildNumber: string;
-  } | null;
+  build: BuildResult | null;
+}
+
+export function nightlyBranch(version: ReleaseVersion): string {
+  return version.line === "R" ? `${version.major}_R${version.minor}` : `${version.major}`;
 }
 
 export function normalizeAci(value: string): string | null {
@@ -83,16 +97,22 @@ export function resolveFixStatus(
   aciInput: string,
   versionKey: string,
   buildInput = "",
+  nightlyFixes: readonly NightlyFix[] = [],
 ): ResolverResult {
   const aci = normalizeAci(aciInput);
   const version = database.versions.find((entry) => entry.versionKey === versionKey);
   const buildNumber = buildInput.trim();
-  const build = buildNumber
-    ? {
-        verdict: "UNKNOWN" as const,
-        reasonCode: "BUILD_DATA_UNAVAILABLE" as const,
-        buildNumber,
-      }
+  const branch = version && nightlyBranch(version);
+  const matchingFix = aci && branch && /^[1-9][0-9]{0,8}$/.test(buildNumber)
+    ? nightlyFixes.reduce<NightlyFix | undefined>((earliest, fix) =>
+        fix.aci === aci && fix.branch === branch && fix.buildNumber <= Number(buildNumber)
+          && (!earliest || fix.buildNumber < earliest.buildNumber) ? fix : earliest,
+      undefined)
+    : undefined;
+  const build: BuildResult | null = buildNumber
+    ? matchingFix
+      ? { verdict: "YES", reasonCode: "NIGHTLY_FIX", buildNumber, evidence: matchingFix }
+      : { verdict: "UNKNOWN", reasonCode: "BUILD_DATA_UNAVAILABLE", buildNumber }
     : null;
 
   if (!aci) {

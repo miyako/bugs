@@ -11,17 +11,19 @@ permissions:
   contents: read
 
 concurrency:
-  group: pages
-  cancel-in-progress: true
+  group: pages-${{ github.ref }}
+  cancel-in-progress: false
 
 jobs:
   build:
     runs-on: ubuntu-latest
     permissions:
-      contents: read
+      contents: write
       pages: read
     steps:
       - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
@@ -29,9 +31,17 @@ jobs:
         with:
           node-version: "22"
           cache: npm
-      - run: python scripts/build_data.py --max-pages 200
-      - run: python -m scripts.build_nightly_data
       - run: python -m unittest discover -s tests
+      - name: Refresh and preserve nightly fix history
+        env:
+          GH_TOKEN: ${{ github.ref == 'refs/heads/main' && github.token || '' }}
+        run: |
+          if [[ "$GITHUB_REF" == "refs/heads/main" ]]; then
+            bash scripts/refresh_nightly_history.sh --publish
+          else
+            bash scripts/refresh_nightly_history.sh
+          fi
+      - run: python scripts/build_data.py --max-pages 200
       - run: npm ci
       - run: npm test
       - run: npm run build

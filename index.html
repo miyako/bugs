@@ -25,8 +25,7 @@
         <p class="eyebrow">4D FIXED BUGS CHECKER</p>
         <h1 id="page-title">Is it fixed in your release?</h1>
         <p class="intro-copy">
-          Check an ACI against the official 4D Fixed Bugs List. Every answer
-          links back to its source.
+          Find where an ACI was fixed, or check a specific 4D version.
         </p>
       </section>
 
@@ -45,7 +44,7 @@
 
         <div class="form-row">
           <div class="field">
-            <label for="version-search">4D version</label>
+            <label for="version-search">4D version <span class="optional">(optional)</span></label>
             <div class="version-picker">
               <input
                 id="version-search"
@@ -57,7 +56,6 @@
                 aria-describedby="version-search-status"
                 autocomplete="off"
                 placeholder="Type to search, e.g. 21.2"
-                required
                 disabled
               />
               <ul id="version-options" class="version-options" role="listbox" hidden></ul>
@@ -73,7 +71,7 @@
               <option value="">Loading indexed versions…</option>
             </select>
             <p id="version-search-status" class="version-search-status" role="status" aria-live="polite">
-              Type to search releases and hotfixes.
+              Leave blank to see all indexed fixes for the ACI.
             </p>
           </div>
           <div class="field">
@@ -86,8 +84,9 @@
               pattern="[0-9]*"
               placeholder="e.g. 100672"
               aria-describedby="build-hint"
+              disabled
             />
-            <p id="build-hint" class="field-hint">Use a build number from the selected version’s nightly branch.</p>
+            <p id="build-hint" class="field-hint">Select a version to check a build on its nightly branch.</p>
           </div>
         </div>
         <button id="submit" type="submit" disabled>Check status <span aria-hidden="true">→</span></button>

@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 import {
   type BugDatabase,
+  findFixHistory,
   normalizeAci,
   resolveFixStatus,
 } from "./domain";
@@ -176,6 +177,48 @@ describe("normalizeAci", () => {
 
   it.each(["106214", "ACI010621", "not-an-aci"])("rejects ambiguous %s", (input) => {
     expect(normalizeAci(input)).toBeNull();
+  });
+});
+
+describe("findFixHistory", () => {
+  const nightly = {
+    aci: "ACI0106659",
+    branch: "21",
+    buildNumber: 100670,
+    sourceUrl: "https://developer.4d.com/FixedBugsList/nightly/21/",
+  };
+
+  it("finds nightly-only fixes and reports the earliest indexed build per branch", () => {
+    const beta = { ...nightly, branch: "21_R5", buildNumber: 100159 };
+    const history = findFixHistory(database, "0106659", [
+      { ...nightly, buildNumber: 100672 }, beta, nightly,
+    ]);
+    expect(history.aci).toBe(nightly.aci);
+    expect(history.releases).toEqual([]);
+    expect(history.nightlies).toEqual([nightly, beta]);
+  });
+
+  it("lists only explicitly evidenced releases once and prefers a direct listing", () => {
+    const direct = database.evidence[0];
+    const history = findFixHistory({
+      ...database,
+      evidence: [
+        { ...direct, evidenceType: "fixed_also_with" },
+        ...database.evidence,
+      ],
+    }, direct.aci, [nightly]);
+    expect(history.releases.map((fix) => fix.versionKey).sort()).toEqual(["21.1_HF1", "21.2"]);
+    expect(history.releases.find((fix) => fix.versionKey === direct.versionKey)).toEqual(direct);
+    expect(history.nightlies).toEqual([]);
+  });
+
+  it("distinguishes no data from an invalid ACI", () => {
+    expect(findFixHistory(database, "ACI9999999", [nightly])).toEqual({
+      aci: "ACI9999999", releases: [], nightlies: [],
+    });
+    expect(findFixHistory(database, "999", [nightly])).toEqual({
+      aci: null, releases: [], nightlies: [],
+    });
   });
 });
 

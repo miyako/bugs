@@ -8,6 +8,7 @@ import {
   dataFreshness,
   findFixHistory,
   nightlyBranch,
+  releaseCoverage,
   resolveFixStatus,
 } from "./domain";
 
@@ -29,6 +30,8 @@ const explanation = document.querySelector<HTMLParagraphElement>("#result-explan
 const resultEvidence = document.querySelector<HTMLDivElement>("#result-evidence")!;
 const buildResult = document.querySelector<HTMLDivElement>("#build-result")!;
 const releaseFreshness = document.querySelector<HTMLElement>("#release-freshness")!;
+const coveragePanel = document.querySelector<HTMLDetailsElement>("#release-coverage")!;
+const coverageGroups = document.querySelector<HTMLDivElement>("#release-coverage-groups")!;
 const nightlyFreshness = document.querySelector<HTMLElement>("#nightly-freshness")!;
 const copyButton = document.querySelector<HTMLButtonElement>("#copy-link")!;
 const nightlySource = document.querySelector<HTMLAnchorElement>("#nightly-source")!;
@@ -465,6 +468,33 @@ function renderFreshness(element: HTMLElement, label: string, timestamp: string 
   element.replaceChildren(`${label} checked `, time, status === "overdue" ? " (overdue)" : "");
 }
 
+function renderCoverage(): void {
+  const { indexed, incomplete, missing } = releaseCoverage(database);
+  const groups = [
+    { label: "Indexed", releases: indexed },
+    { label: "Incomplete", releases: incomplete },
+    { label: "Known but not indexed", releases: missing },
+  ];
+  for (const { label, releases } of groups) {
+    const heading = document.createElement("h2");
+    heading.textContent = `${label} (${releases.length})`;
+    coverageGroups.append(heading);
+    if (!releases.length) continue;
+    const list = document.createElement("ul");
+    const sorted = [...releases].sort((a, b) =>
+      b.displayName.localeCompare(a.displayName, undefined, { numeric: true }),
+    );
+    for (const release of sorted) {
+      const item = document.createElement("li");
+      if (label === "Indexed") addEvidenceLink(item, release.displayName, release.sourceUrl);
+      else item.textContent = release.displayName;
+      list.append(item);
+    }
+    coverageGroups.append(list);
+  }
+  coveragePanel.hidden = false;
+}
+
 async function initialize(): Promise<void> {
   renderFreshness(nightlyFreshness, "Nightly lists", nightlyRefresh.refreshedAt);
   try {
@@ -502,6 +532,7 @@ async function initialize(): Promise<void> {
       ? `${completeVersions} releases fully indexed · ${versions.length - completeVersions} with partial evidence · ${database.bugs.length.toLocaleString()} bugs`
       : "No release data is available yet.";
     renderFreshness(releaseFreshness, "Release lists", database.generatedAt);
+    renderCoverage();
     updateVersionContext();
 
     if (query.get("aci")) form.requestSubmit();

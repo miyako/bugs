@@ -299,6 +299,12 @@ button[type="submit"]:disabled { cursor: wait; opacity: .6; }
 .evidence-row a:hover { text-decoration: underline; }
 .evidence-row.other-fixes { color: #45556b; }
 
+.release-coverage { margin-top: 20px; font-size: 13px; }
+.release-coverage summary { cursor: pointer; font-weight: 600; }
+.release-coverage h2 { font-size: inherit; margin-bottom: 4px; }
+.release-coverage ul { display: flex; flex-wrap: wrap; gap: 4px 16px; padding: 0; list-style: none; }
+.release-coverage a { color: inherit; }
+
 .page-footer {
   justify-content: space-between;
   gap: 15px;

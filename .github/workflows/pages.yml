@@ -32,6 +32,12 @@ jobs:
           node-version: "22"
           cache: npm
       - run: python -m unittest discover -s tests
+      - name: Refresh and protect published release coverage
+        run: |
+          baseline="$RUNNER_TEMP/published-fixed-bugs.json"
+          curl --fail --silent --show-error --retry 3 --max-time 30 \
+            https://miyako.github.io/bugs/data/fixed-bugs.json --output "$baseline"
+          python scripts/build_data.py --max-pages 200 --baseline "$baseline"
       - name: Refresh and preserve nightly fix history
         env:
           GH_TOKEN: ${{ github.ref == 'refs/heads/main' && github.token || '' }}
@@ -41,7 +47,6 @@ jobs:
           else
             bash scripts/refresh_nightly_history.sh
           fi
-      - run: python scripts/build_data.py --max-pages 200
       - run: npm ci
       - run: npm test
       - run: npm run build

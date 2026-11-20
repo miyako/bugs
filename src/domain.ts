@@ -19,7 +19,13 @@ export interface ReleaseVersion {
   sourceUrl: string;
   releasedAt: string | null;
   releaseDateSource: string | null;
+  installerCreatedAt?: string;
+  installerDateSource?: string;
   complete: boolean;
+}
+
+export function chronologyDate(version: ReleaseVersion | null | undefined): string | null {
+  return version?.releasedAt ?? version?.installerCreatedAt ?? null;
 }
 
 export interface Bug {
@@ -226,15 +232,13 @@ export function resolveFixStatus(
     };
   }
 
+  const targetDate = chronologyDate(version);
   const carriedEvidence = knownEvidence.filter((entry) => {
     const fixedVersion = database.versions.find(
       (candidate) => candidate.versionKey === entry.versionKey,
     );
-    return fixedVersion?.releasedAt !== null
-      && fixedVersion?.releasedAt !== undefined
-      && version.releasedAt !== null
-      && version.releasedAt !== undefined
-      && fixedVersion.releasedAt < version.releasedAt;
+    const fixDate = chronologyDate(fixedVersion);
+    return fixDate !== null && targetDate !== null && fixDate < targetDate;
   });
   if (carriedEvidence.length > 0) {
     return {
@@ -273,14 +277,12 @@ export function resolveFixStatus(
   }
 
   if (
-    version.releasedAt === null
-    || version.releasedAt === undefined
+    targetDate === null
     || knownEvidence.some((entry) => {
       const fixedVersion = database.versions.find(
         (candidate) => candidate.versionKey === entry.versionKey,
       );
-      return fixedVersion?.releasedAt === null
-        || fixedVersion?.releasedAt === undefined;
+      return chronologyDate(fixedVersion) === null;
     })
   ) {
     return {

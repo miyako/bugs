@@ -318,6 +318,34 @@ describe("resolveFixStatus", () => {
     expect(result.reasonCode).toBe("HISTORICAL_COVERAGE_INCOMPLETE");
   });
 
+  it("uses LTS installer dates as a fallback for forward, but not backward, propagation", () => {
+    const historicalVersions = [
+      { versionKey: "19.2", installerCreatedAt: "2022-03-04" },
+      { versionKey: "19.4", installerCreatedAt: "2022-09-09" },
+    ].map(({ versionKey, installerCreatedAt }) => ({
+      ...database.versions[0],
+      versionKey,
+      displayName: versionKey,
+      releasedAt: null,
+      releaseDateSource: null,
+      installerCreatedAt,
+    }));
+    const fix = { ...database.evidence[0], versionKey: "19.2" };
+    const indexed = {
+      ...database,
+      versions: [...database.versions, ...historicalVersions],
+      evidence: [fix],
+    };
+    for (const target of ["19.4", "21.2"]) {
+      expect(resolveFixStatus(indexed, fix.aci, target))
+        .toMatchObject({ verdict: "YES", reasonCode: "FIXED_CARRIED_FORWARD", evidence: [fix] });
+    }
+
+    const laterFix = { ...fix, versionKey: "19.4" };
+    expect(resolveFixStatus({ ...indexed, evidence: [laterFix] }, fix.aci, "19.2").verdict)
+      .toBe("UNKNOWN");
+  });
+
   it("returns UNKNOWN when a known fix has no comparable release date", () => {
     const unknownChronology = {
       ...database,

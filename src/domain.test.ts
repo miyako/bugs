@@ -287,6 +287,30 @@ describe("resolveFixStatus", () => {
     expect(result.reasonCode).toBe("FIXED_CARRIED_FORWARD");
   });
 
+  it("uses a dated 4D 19 fix for later releases but never applies a later fix to 4D 19", () => {
+    const url = "https://developer.4d.com/FixedBugsList/versions/19/";
+    const release19: BugDatabase["versions"][number] = {
+      versionKey: "19",
+      displayName: "19",
+      major: 19,
+      line: "LTS",
+      minor: 0,
+      hotfix: 0,
+      kind: "release",
+      branchId: "19-LTS",
+      officialSlug: "19",
+      sourceUrl: url,
+      releasedAt: "2021-07-12",
+      releaseDateSource: "https://blog.4d.com/4d-v19-is-here/",
+      complete: true,
+    };
+    const indexed = { ...database, versions: [...database.versions, release19] };
+    const fix = { ...database.evidence[0], versionKey: "19", sourcePage: "19", sourceUrl: url };
+    expect(resolveFixStatus({ ...indexed, evidence: [fix] }, fix.aci, "21.2"))
+      .toMatchObject({ verdict: "YES", reasonCode: "FIXED_CARRIED_FORWARD", evidence: [fix] });
+    expect(resolveFixStatus(indexed, fix.aci, "19").verdict).toBe("UNKNOWN");
+  });
+
   it("returns UNKNOWN when complete target data lacks historical coverage", () => {
     const laterOnly = { ...database, evidence: [database.evidence[0]] };
     const result = resolveFixStatus(laterOnly, "ACI0106214", "21_R3");

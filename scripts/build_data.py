@@ -31,6 +31,7 @@ VERSION_PATTERN = re.compile(r"^(?P<major>\d+)(?:\.(?P<minor>\d+))?(?:_R(?P<r>\d
 LIFECYCLE_URL = "https://eu-en.4d.com/product-release-life-cycle"
 RELEASE_DATES = {
     "18.6": "2022-06-13",
+    "19": "2021-07-12",
     "19.8": "2024-07-11",
     "20": "2023-07-10",
     "20_R8": "2025-04-16",
@@ -53,6 +54,7 @@ RELEASE_DATES = {
     "21_R4": "2026-10-12",
 }
 RELEASE_DATE_SOURCES = {
+    "19": "https://blog.4d.com/4d-v19-is-here/",
     "20_R8": "https://blog.4d.com/4d-20-r8-is-here/",
     "20_R9": "https://blog.4d.com/4d-20-r9-is-here/",
     "20_R10": "https://blog.4d.com/4d-20-r10-is-here/",

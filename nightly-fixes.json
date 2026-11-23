@@ -21,6 +21,13 @@
     "firstObservedOn": "2026-11-20"
   },
   {
+    "aci": "ACI0106387",
+    "buildNumber": 102103,
+    "branch": "20",
+    "sourceUrl": "https://developer.4d.com/FixedBugsList/nightly/20/",
+    "firstObservedOn": "2026-11-23"
+  },
+  {
     "aci": "ACI0106514",
     "buildNumber": 100657,
     "branch": "21",

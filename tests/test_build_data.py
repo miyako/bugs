@@ -4,7 +4,14 @@ from pathlib import Path
 from urllib.error import HTTPError
 from unittest.mock import patch
 
-from scripts.build_data import check_coverage_regression, crawl, parse_page, version_from_url, version_seed_urls
+from scripts.build_data import (
+    check_coverage_regression,
+    crawl,
+    parse_page,
+    request_page,
+    version_from_url,
+    version_seed_urls,
+)
 
 
 class BuildDataTests(unittest.TestCase):
@@ -112,6 +119,17 @@ class BuildDataTests(unittest.TestCase):
         self.assertFalse(versions["15"]["complete"])
         self.assertTrue(versions["21.2"]["complete"])
         self.assertEqual([bug["aci"] for bug in database["bugs"]], ["ACI0106214"])
+
+    def test_request_page_backs_off_on_5xx_despite_zero_retry_after(self):
+        url = "https://developer.4d.com/FixedBugsList/versions/18.5_HF2/"
+        unavailable = HTTPError(url, 503, "Service Unavailable", {"Retry-After": "0"}, None)
+
+        with patch("scripts.build_data.urlopen", side_effect=unavailable), \
+                patch("scripts.build_data.time.sleep") as sleep:
+            with self.assertRaises(HTTPError):
+                request_page(url)
+
+        self.assertEqual([call.args[0] for call in sleep.call_args_list], [1, 2, 4, 8])
 
     def test_parser_keeps_direct_evidence_and_explicit_fix_links(self):
         html = """

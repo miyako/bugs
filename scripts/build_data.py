@@ -281,7 +281,7 @@ def request_page(url: str) -> tuple[bytes, dict[str, str]]:
     if parsed.scheme != "https" or parsed.netloc != HOST:
         raise ValueError(f"Refusing to fetch non-official URL: {url}")
     request = Request(url, headers={"User-Agent": USER_AGENT, "Accept": "text/html"})
-    attempts = 3
+    attempts = 5
     for attempt in range(attempts):
         try:
             with urlopen(request, timeout=30) as response:
@@ -296,7 +296,7 @@ def request_page(url: str) -> tuple[bytes, dict[str, str]]:
             if attempt == attempts - 1:
                 raise
             retry_after = error.headers.get("Retry-After")
-            delay = int(retry_after) if retry_after and retry_after.isdigit() else 2**attempt
+            delay = max(int(retry_after) if retry_after and retry_after.isdigit() else 0, 2**attempt)
         except (URLError, TimeoutError):
             if attempt == attempts - 1:
                 raise
